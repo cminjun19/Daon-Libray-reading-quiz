@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Daon Library Quiz</title>
+<title>Daon Library</title>
 
 <style>
 body{
@@ -15,18 +15,18 @@ text-align:center;
 
 /* 상단 제목 */
 header{
+background:#1e293b;
 padding:40px;
 font-size:40px;
-background:#1e293b;
+font-weight:bold;
 }
 
-/* 메뉴 바 */
+/* 메뉴 */
 nav{
 background:#334155;
 padding:15px;
 }
 
-/* 메뉴 버튼 */
 nav button{
 background:#475569;
 color:white;
@@ -35,13 +35,21 @@ padding:10px 20px;
 margin:5px;
 font-size:16px;
 border-radius:8px;
-cursor:pointer;
 }
 
-/* 내용 영역 */
-section{
-padding:60px;
+/* 홈 화면 */
+.hero{
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
 font-size:20px;
+opacity:0.8;
 }
 </style>
 
@@ -50,7 +58,7 @@ font-size:20px;
 <body>
 
 <header>
-Daon Library Quiz
+📚 Daon Library
 </header>
 
 <nav>
@@ -60,9 +68,11 @@ Daon Library Quiz
 <button>연락</button>
 </nav>
 
-<section>
-<p>여기에 사이트 내용을 넣을 수 있습니다.</p>
-</section>
+<div class="hero">
+<h1>환영합니다!</h1>
+<p>이곳은 독서 퀴즈 사이트입니다.</p>
+<p>책을 읽고 퀴즈를 풀어보세요.</p>
+</div>
 
 </body>
 </html>
