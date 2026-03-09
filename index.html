@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Daon Library</title>
+<title>다온 작은도서관 월간독서퀴즈</title>
 
 <style>
 body{
@@ -10,40 +10,46 @@ margin:0;
 font-family:Arial;
 background:#0f172a;
 color:white;
-text-align:center;
 }
 
-/* 상단 제목 */
+/* 상단 바 */
 header{
+display:flex;
+justify-content:space-between;
+align-items:center;
 background:#1e293b;
-padding:40px;
-font-size:40px;
+padding:15px 30px;
+}
+
+/* 사이트 이름 */
+.logo{
+font-size:20px;
 font-weight:bold;
 }
 
-/* 메뉴 */
-nav{
-background:#334155;
-padding:15px;
+/* 로그인 영역 */
+.auth{
+font-size:14px;
 }
 
-nav button{
+.auth button{
 background:#475569;
 color:white;
 border:none;
-padding:10px 20px;
-margin:5px;
-font-size:16px;
-border-radius:8px;
+padding:8px 15px;
+margin-left:10px;
+border-radius:6px;
+cursor:pointer;
 }
 
 /* 홈 화면 */
 .hero{
-padding:100px 20px;
+text-align:center;
+padding:120px 20px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:48px;
 margin-bottom:20px;
 }
 
@@ -58,20 +64,17 @@ opacity:0.8;
 <body>
 
 <header>
-📚 Daon Library
+<div class="logo">다온 작은도서관 월간독서퀴즈</div>
+
+<div class="auth">
+<button>로그인</button>
+<button>회원가입</button>
+</div>
 </header>
 
-<nav>
-<button>홈</button>
-<button>소개</button>
-<button>퀴즈</button>
-<button>연락</button>
-</nav>
-
 <div class="hero">
-<h1>환영합니다!</h1>
-<p>이곳은 독서 퀴즈 사이트입니다.</p>
-<p>책을 읽고 퀴즈를 풀어보세요.</p>
+<h1>환영합니다</h1>
+<p>다온 작은도서관 월간 독서 퀴즈 사이트입니다.</p>
 </div>
 
 </body>
