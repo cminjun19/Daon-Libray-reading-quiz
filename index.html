@@ -14,16 +14,23 @@ color:#333;
 }
 
 /* ===== 헤더 ===== */
+
 header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:25px 50px;
 background:white;
 box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* 로고 + 이름 */
+/* 상단 줄 */
+
+.top-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 50px;
+}
+
+/* 로고 */
+
 .logo{
 display:flex;
 align-items:center;
@@ -37,36 +44,35 @@ width:45px;
 margin-right:12px;
 }
 
-/* 메뉴 */
-.menu{
-display:flex;
-gap:25px;
-}
-
-.menu a{
-text-decoration:none;
-font-weight:bold;
-color:#374151;
-font-size:16px;
-}
-
-.menu a:hover{
-color:#4f46e5;
-}
-
-/* 로그인 영역 */
-.auth{
-font-size:15px;
-}
+/* 로그인 */
 
 .auth a{
 text-decoration:none;
 color:#374151;
-margin-left:10px;
 font-weight:bold;
+margin-left:10px;
 }
 
 .auth a:hover{
+color:#4f46e5;
+}
+
+/* ===== 메뉴 ===== */
+
+.menu{
+border-top:1px solid #eee;
+padding:14px 50px;
+background:#fafafa;
+}
+
+.menu a{
+margin-right:25px;
+text-decoration:none;
+font-weight:bold;
+color:#374151;
+}
+
+.menu a:hover{
 color:#4f46e5;
 }
 
@@ -88,7 +94,7 @@ font-size:20px;
 color:#555;
 }
 
-/* 퀴즈 시작 버튼 */
+/* 퀴즈 버튼 */
 
 .start-btn{
 margin-top:35px;
@@ -107,15 +113,25 @@ background:#4338ca;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
+<div class="top-bar">
+
 <div class="logo">
 <img src="logo.png">
 다온 작은도서관 월간독서퀴즈
+</div>
+
+<div class="auth">
+<a href="#">로그인</a> |
+<a href="#">회원가입</a>
+</div>
+
 </div>
 
 <nav class="menu">
@@ -124,11 +140,6 @@ background:#4338ca;
 <a href="#">공지사항</a>
 <a href="#">문의</a>
 </nav>
-
-<div class="auth">
-<a href="#">로그인</a> |
-<a href="#">회원가입</a>
-</div>
 
 </header>
 
