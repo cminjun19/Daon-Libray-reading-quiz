@@ -5,20 +5,21 @@
 <title>다온 작은도서관 월간독서퀴즈</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
-background:#f5f7fb;
+background:#f4f6fb;
 color:#333;
 }
 
-/* 상단 바 */
+/* 상단바 */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:15px 40px;
 background:white;
-padding:15px 30px;
 border-bottom:1px solid #ddd;
 }
 
@@ -35,33 +36,46 @@ width:35px;
 margin-right:10px;
 }
 
-/* 로그인 버튼 */
+/* 로그인 영역 */
 .auth button{
-background:#4f46e5;
+background:#3b82f6;
 color:white;
 border:none;
-padding:8px 15px;
+padding:8px 16px;
 margin-left:10px;
 border-radius:6px;
 cursor:pointer;
 }
 
-/* 홈 화면 */
+/* 홈 메인 */
 .hero{
 text-align:center;
 padding:120px 20px;
+background:linear-gradient(180deg,#ffffff,#eef2ff);
 }
 
 .hero h1{
 font-size:48px;
 margin-bottom:20px;
-color:#1e293b;
 }
 
 .hero p{
 font-size:20px;
 color:#555;
 }
+
+/* 시작 버튼 */
+.start-btn{
+margin-top:30px;
+background:#4f46e5;
+color:white;
+padding:15px 30px;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
 </style>
 
 </head>
@@ -83,9 +97,14 @@ color:#555;
 </header>
 
 <div class="hero">
-<h1>환영합니다</h1>
-<p>다온 작은도서관 월간 독서 퀴즈 사이트입니다.</p>
+
+<h1>📚 월간 독서 퀴즈</h1>
+
 <p>책을 읽고 퀴즈를 풀어보세요.</p>
+<p>매달 새로운 독서 퀴즈가 준비되어 있습니다.</p>
+
+<button class="start-btn">퀴즈 시작</button>
+
 </div>
 
 </body>
