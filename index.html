@@ -177,19 +177,21 @@ line-height:1.6;
 footer{
 background:#222;
 color:#ddd;
-text-align:center;
-padding:40px 20px;
-margin-top:40px;
-}
-
-footer h3{
-margin-bottom:10px;
-color:white;
-}
-
-footer p{
-margin:5px 0;
+padding:18px 30px;
 font-size:14px;
+border-top:1px solid #444;
+}
+
+.footer-content{
+display:flex;
+align-items:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+footer a{
+color:#bbb;
+text-decoration:none;
 }
 
 </style>
@@ -197,12 +199,12 @@ font-size:14px;
 <script>
 
 /* 우클릭 금지 */
-document.addEventListener("contextmenu", function(e){
+document.addEventListener("contextmenu",function(e){
 e.preventDefault();
 });
 
 /* 단축키 차단 */
-document.addEventListener("keydown", function(e){
+document.addEventListener("keydown",function(e){
 
 if(e.ctrlKey && e.key === "c"){
 e.preventDefault();
@@ -216,6 +218,13 @@ if(e.ctrlKey && e.key === "u"){
 e.preventDefault();
 }
 
+});
+
+/* 모바일 이미지 저장 방지 */
+document.addEventListener("touchstart",function(e){
+if(e.target.tagName==="IMG"){
+e.preventDefault();
+}
 });
 
 </script>
@@ -331,12 +340,19 @@ e.preventDefault();
 
 <footer>
 
-<h3>다온 작은도서관</h3>
+<div class="footer-content">
 
-<p>주소 : ○○시 ○○구 ○○아파트</p>
-<p>운영시간 : 10:00 ~ 18:00</p>
-<p>문의 : 000-0000</p>
-<p>© 2026 Daon Library</p>
+<a href="#">개인정보처리방침</a>
+
+<span>다온 작은도서관</span>
+
+<span>
+주소 울산광역시 울주군 청량읍 덕하1로 55 지하1층 커뮤니티센터내
+</span>
+
+<span>© 2026 Daon Library</span>
+
+</div>
 
 </footer>
 
