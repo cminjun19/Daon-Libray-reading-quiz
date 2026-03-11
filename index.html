@@ -14,7 +14,6 @@ user-select:none;
 }
 
 /* 이미지 보호 */
-
 img{
 -webkit-user-drag:none;
 user-drag:none;
@@ -182,33 +181,58 @@ align-items:center;
 justify-content:space-between;
 }
 
-/* 개인정보처리방침 버튼 */
-
-.privacy-btn{
-background:#444;
-color:white;
-padding:6px 14px;
-border-radius:6px;
-font-size:13px;
-cursor:default;
-}
-
-/* 중앙 텍스트 */
-
-.footer-center{
-text-align:center;
-flex:1;
-}
+/* 왼쪽 */
 
 .footer-left{
-margin-right:20px;
+margin-left:10px;
 }
 
+/* 가운데 */
+
+.footer-center{
+flex:1;
+text-align:center;
+}
+
+/* 오른쪽 */
+
 .footer-right{
-margin-left:20px;
+margin-right:10px;
+}
+
+/* 개인정보 버튼 */
+
+.privacy-btn{
+background:none;
+border:none;
+color:#bbb;
+font-size:14px;
+cursor:pointer;
+}
+
+.privacy-btn:hover{
+text-decoration:underline;
 }
 
 </style>
+
+<script>
+
+/* 우클릭 금지 */
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
+
+/* 단축키 차단 */
+document.addEventListener("keydown",function(e){
+
+if(e.ctrlKey && e.key==="c") e.preventDefault();
+if(e.ctrlKey && e.key==="s") e.preventDefault();
+if(e.ctrlKey && e.key==="u") e.preventDefault();
+
+});
+
+</script>
 
 </head>
 
@@ -302,7 +326,7 @@ margin-left:20px;
 <div class="footer">
 
 <div class="footer-left">
-<span class="privacy-btn">개인정보처리방침</span>
+<button class="privacy-btn">개인정보처리방침</button>
 </div>
 
 <div class="footer-center">
