@@ -26,12 +26,14 @@ align-items:center;
 padding:18px 50px;
 }
 
-/* 왼쪽 도서관 */
+/* 도서관 이름 (버튼) */
 
-.library{
+.library a{
 display:flex;
 align-items:center;
-font-size:20px;
+text-decoration:none;
+color:#000;
+font-size:16px; /* 작게 */
 font-weight:bold;
 }
 
@@ -44,7 +46,7 @@ margin-right:10px;
 
 .site-title{
 text-align:center;
-font-size:24px;
+font-size:30px; /* 크게 */
 font-weight:bold;
 }
 
@@ -71,10 +73,10 @@ width:18px;
 height:18px;
 }
 
-/* ===== 버튼 메뉴 ===== */
+/* ===== 메뉴 버튼 ===== */
 
 .menu{
-background:#f1f3f5; /* 깔끔한 연한 회색 */
+background:#f1f3f5;
 display:flex;
 justify-content:space-around;
 padding:16px 0;
@@ -142,14 +144,22 @@ background:#4338ca;
 
 <div class="top-bar">
 
+<!-- 왼쪽 (홈 버튼) -->
+
 <div class="library">
+<a href="index.html">
 <img src="아파트 도서관 로고.1.1.png">
 다온 작은도서관
+</a>
 </div>
+
+<!-- 가운데 제목 -->
 
 <div class="site-title">
 월간독서퀴즈
 </div>
+
+<!-- 로그인 -->
 
 <div class="auth">
 
