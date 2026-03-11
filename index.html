@@ -177,13 +177,15 @@ line-height:1.6;
 footer{
 background:#222;
 color:#ddd;
-padding:18px 30px;
+padding:18px 20px;
 font-size:14px;
 border-top:1px solid #444;
+text-align:center;
 }
 
 .footer-content{
 display:flex;
+justify-content:center;
 align-items:center;
 gap:25px;
 flex-wrap:wrap;
@@ -206,15 +208,15 @@ e.preventDefault();
 /* 단축키 차단 */
 document.addEventListener("keydown",function(e){
 
-if(e.ctrlKey && e.key === "c"){
+if(e.ctrlKey && e.key==="c"){
 e.preventDefault();
 }
 
-if(e.ctrlKey && e.key === "s"){
+if(e.ctrlKey && e.key==="s"){
 e.preventDefault();
 }
 
-if(e.ctrlKey && e.key === "u"){
+if(e.ctrlKey && e.key==="u"){
 e.preventDefault();
 }
 
