@@ -11,16 +11,18 @@ margin:0;
 font-family:Arial, sans-serif;
 background:#f5f7fb;
 
-/* 텍스트 드래그 방지 */
+/* 텍스트 선택 금지 */
 user-select:none;
+-webkit-user-select:none;
 }
 
-/* 이미지 드래그 및 선택 방지 */
+/* 이미지 보호 */
 
 img{
 -webkit-user-drag:none;
 user-drag:none;
 pointer-events:none;
+-webkit-touch-callout:none;
 }
 
 /* 헤더 */
@@ -177,14 +179,33 @@ document.addEventListener("contextmenu", function(e){
 e.preventDefault();
 });
 
-/* Ctrl+C 복사 금지 */
+/* 키보드 단축키 차단 */
 
 document.addEventListener("keydown", function(e){
 
+/* Ctrl+C */
 if(e.ctrlKey && e.key === "c"){
 e.preventDefault();
 }
 
+/* Ctrl+S */
+if(e.ctrlKey && e.key === "s"){
+e.preventDefault();
+}
+
+/* Ctrl+U (소스보기) */
+if(e.ctrlKey && e.key === "u"){
+e.preventDefault();
+}
+
+});
+
+/* 모바일 이미지 길게누르기 방지 */
+
+document.addEventListener("touchstart", function(e){
+if(e.target.tagName === "IMG"){
+e.preventDefault();
+}
 });
 
 </script>
