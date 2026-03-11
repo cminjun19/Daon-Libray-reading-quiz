@@ -23,7 +23,7 @@ box-shadow:0 2px 8px rgba(0,0,0,0.08);
 display:grid;
 grid-template-columns: 1fr 1fr 1fr;
 align-items:center;
-padding:18px 50px;   /* 세로 길이 줄임 */
+padding:18px 50px;
 }
 
 /* 왼쪽 도서관 */
@@ -85,6 +85,14 @@ color:white;
 text-decoration:none;
 font-weight:bold;
 font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.menu img{
+width:20px;
+height:20px;
 }
 
 .menu a:hover{
@@ -159,10 +167,25 @@ background:#4338ca;
 
 <nav class="menu">
 
-<a href="#">도서관 안내</a>
-<a href="#">이달의 선정도서</a>
-<a href="#">당첨자 목록</a>
-<a href="#">공지사항</a>
+<a href="#">
+<img src="도서관 안내.png">
+도서관 안내
+</a>
+
+<a href="#">
+<img src="이달의 선정도서.png">
+이달의 선정도서
+</a>
+
+<a href="#">
+<img src="당첨자 목록.png">
+당첨자 목록
+</a>
+
+<a href="#">
+<img src="공지사항.png">
+공지사항
+</a>
 
 </nav>
 
