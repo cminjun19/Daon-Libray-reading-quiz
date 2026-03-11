@@ -11,7 +11,6 @@ margin:0;
 font-family:Arial, sans-serif;
 background:#f5f7fb;
 user-select:none;
--webkit-user-select:none;
 }
 
 /* 이미지 보호 */
@@ -121,7 +120,7 @@ margin-bottom:12px;
 font-size:30px;
 }
 
-/* 카드 영역 */
+/* 카드 */
 
 .cards-section{
 text-align:center;
@@ -153,7 +152,7 @@ transition:0.25s;
 }
 
 .card:hover{
-transform:translateY(-8px) scale(1.03);
+transform:translateY(-8px);
 box-shadow:0 12px 25px rgba(0,0,0,0.12);
 }
 
@@ -162,14 +161,9 @@ width:40px;
 margin-bottom:10px;
 }
 
-.card h3{
-margin:10px 0;
-}
-
 .card p{
 color:#666;
 font-size:14px;
-line-height:1.6;
 }
 
 /* Footer */
@@ -177,59 +171,44 @@ line-height:1.6;
 footer{
 background:#222;
 color:#ddd;
-padding:18px 20px;
-font-size:14px;
+padding:18px 40px;
 border-top:1px solid #444;
-text-align:center;
+font-size:14px;
 }
 
-.footer-content{
+.footer{
 display:flex;
-justify-content:center;
 align-items:center;
-gap:25px;
-flex-wrap:wrap;
+justify-content:space-between;
 }
 
-footer a{
-color:#bbb;
-text-decoration:none;
+/* 개인정보처리방침 버튼 */
+
+.privacy-btn{
+background:#444;
+color:white;
+padding:6px 14px;
+border-radius:6px;
+font-size:13px;
+cursor:default;
+}
+
+/* 중앙 텍스트 */
+
+.footer-center{
+text-align:center;
+flex:1;
+}
+
+.footer-left{
+margin-right:20px;
+}
+
+.footer-right{
+margin-left:20px;
 }
 
 </style>
-
-<script>
-
-/* 우클릭 금지 */
-document.addEventListener("contextmenu",function(e){
-e.preventDefault();
-});
-
-/* 단축키 차단 */
-document.addEventListener("keydown",function(e){
-
-if(e.ctrlKey && e.key==="c"){
-e.preventDefault();
-}
-
-if(e.ctrlKey && e.key==="s"){
-e.preventDefault();
-}
-
-if(e.ctrlKey && e.key==="u"){
-e.preventDefault();
-}
-
-});
-
-/* 모바일 이미지 저장 방지 */
-document.addEventListener("touchstart",function(e){
-if(e.target.tagName==="IMG"){
-e.preventDefault();
-}
-});
-
-</script>
 
 </head>
 
@@ -252,15 +231,8 @@ e.preventDefault();
 
 <div class="auth">
 
-<a href="#">
-<img src="로그인.png">
-로그인
-</a>
-
-<a href="#">
-<img src="회원가입.png">
-회원가입
-</a>
+<a href="#"><img src="로그인.png">로그인</a>
+<a href="#"><img src="회원가입.png">회원가입</a>
 
 </div>
 
@@ -268,25 +240,10 @@ e.preventDefault();
 
 <nav class="menu">
 
-<a href="#">
-<img src="도서관 안내.png">
-도서관 안내
-</a>
-
-<a href="#">
-<img src="이달의 선정도서.png">
-이달의 선정도서
-</a>
-
-<a href="#">
-<img src="당첨자 목록.png">
-당첨자 목록
-</a>
-
-<a href="#">
-<img src="공지사항.png">
-공지사항
-</a>
+<a href="#"><img src="도서관 안내.png">도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
+<a href="#"><img src="공지사항.png">공지사항</a>
 
 </nav>
 
@@ -342,17 +299,19 @@ e.preventDefault();
 
 <footer>
 
-<div class="footer-content">
+<div class="footer">
 
-<a href="#">개인정보처리방침</a>
+<div class="footer-left">
+<span class="privacy-btn">개인정보처리방침</span>
+</div>
 
-<span>다온 작은도서관</span>
+<div class="footer-center">
+다온 작은도서관 주소 울산광역시 울주군 청량읍 덕하1로 55 지하1층 커뮤니티센터내
+</div>
 
-<span>
-주소 울산광역시 울주군 청량읍 덕하1로 55 지하1층 커뮤니티센터내
-</span>
-
-<span>© 2026 Daon Library</span>
+<div class="footer-right">
+© 2026 Daon Library
+</div>
 
 </div>
 
