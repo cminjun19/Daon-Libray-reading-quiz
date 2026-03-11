@@ -21,9 +21,9 @@ box-shadow:0 2px 8px rgba(0,0,0,0.08);
 
 .top-bar{
 display:grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns:1fr 1fr 1fr;
 align-items:center;
-padding:18px 50px;
+padding:16px 50px;
 }
 
 .library a{
@@ -31,7 +31,7 @@ display:flex;
 align-items:center;
 text-decoration:none;
 color:#000;
-font-size:30px;
+font-size:32px;
 font-weight:bold;
 }
 
@@ -42,7 +42,7 @@ margin-right:10px;
 
 .site-title{
 text-align:center;
-font-size:24px;
+font-size:20px;
 font-weight:bold;
 }
 
@@ -55,8 +55,8 @@ align-items:center;
 .auth a{
 text-decoration:none;
 color:#000;
-font-weight:bold;
 font-size:14px;
+font-weight:bold;
 display:flex;
 align-items:center;
 gap:6px;
@@ -65,7 +65,6 @@ margin-left:18px;
 
 .auth img{
 width:16px;
-height:16px;
 }
 
 /* ===== 메뉴 ===== */
@@ -95,57 +94,65 @@ width:20px;
 
 /* ===== 메인 배너 ===== */
 
-.main-banner{
-background:linear-gradient(135deg,#667eea,#764ba2);
+.banner{
+background:linear-gradient(135deg,#5f72ff,#9b59b6);
 color:white;
 text-align:center;
 padding:120px 20px;
 }
 
-.main-banner h1{
-font-size:48px;
-margin-bottom:15px;
+.banner h1{
+font-size:44px;
+margin-bottom:10px;
 }
 
-.main-banner p{
-font-size:20px;
+.banner h2{
+font-size:24px;
+font-weight:normal;
+margin-bottom:10px;
+}
+
+.banner p{
+font-size:18px;
 opacity:0.9;
 }
 
-/* ===== 카드 영역 ===== */
-
-.content{
-padding:60px 40px;
-max-width:1100px;
-margin:auto;
-}
+/* ===== 카드 ===== */
 
 .cards{
+max-width:1100px;
+margin:60px auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
+padding:0 20px;
 }
 
 .card{
 background:white;
-border-radius:12px;
 padding:30px;
+border-radius:12px;
+text-align:center;
 box-shadow:0 6px 15px rgba(0,0,0,0.08);
 transition:0.2s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
+}
+
+.card img{
+width:40px;
+margin-bottom:10px;
 }
 
 .card h3{
-margin-bottom:10px;
-font-size:20px;
+margin:10px 0;
 }
 
 .card p{
 color:#666;
-line-height:1.5;
+font-size:14px;
 }
 
 </style>
@@ -210,46 +217,42 @@ line-height:1.5;
 
 </header>
 
-<!-- ===== 메인 배너 ===== -->
+<!-- 메인 배너 -->
 
-<section class="main-banner">
+<section class="banner">
 
-<h1>다온 작은도서관 독서퀴즈</h1>
-
+<h1>다온 작은도서관 월간독서퀴즈</h1>
+<h2>홈페이지에 오신걸 환영합니다</h2>
 <p>책을 읽고 퀴즈에 참여해보세요</p>
 
 </section>
 
-<!-- ===== 카드 영역 ===== -->
+<!-- 카드 -->
 
-<section class="content">
-
-<div class="cards">
+<section class="cards">
 
 <div class="card">
-<h3>📚 월간 독서퀴즈</h3>
-<p>
-매달 새로운 선정도서를 읽고
-독서 퀴즈에 참여할 수 있습니다.
-</p>
+<img src="도서관 안내.png">
+<h3>도서관 안내</h3>
+<p>다온 작은도서관 이용 방법을 확인할 수 있습니다.</p>
 </div>
 
 <div class="card">
-<h3>📖 이달의 선정도서</h3>
-<p>
-매달 선정된 도서를 확인하고
-책을 읽은 뒤 퀴즈에 참여하세요.
-</p>
+<img src="이달의 선정도서.png">
+<h3>이달의 선정도서</h3>
+<p>이번 달 독서퀴즈 선정 도서를 확인하세요.</p>
 </div>
 
 <div class="card">
-<h3>🏆 당첨자 발표</h3>
-<p>
-정답자 중 추첨을 통해
-당첨자가 선정됩니다.
-</p>
+<img src="당첨자 목록.png">
+<h3>당첨자 목록</h3>
+<p>독서퀴즈 당첨자를 확인할 수 있습니다.</p>
 </div>
 
+<div class="card">
+<img src="공지사항.png">
+<h3>공지사항</h3>
+<p>도서관의 새로운 소식을 확인하세요.</p>
 </div>
 
 </section>
