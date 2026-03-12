@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>개인정보처리방침 | 다온 작은도서관 월간독서퀴즈</title>
+<title>개인정보처리방침 | 다온 작은도서관</title>
 
 <style>
 
@@ -15,131 +15,65 @@ background:#f5f7fb;
 /* 헤더 */
 
 header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:16px 40px;
 background:white;
 box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
-
-.header-left{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.header-left img{
-width:40px;
-}
-
-.library-name{
-font-size:28px;
-font-weight:bold;
-text-decoration:none;
-color:black;
-}
-
-.header-center{
+padding:15px 40px;
 font-size:22px;
 font-weight:bold;
 }
 
-.header-right{
-font-size:14px;
-}
+/* 전체 레이아웃 */
 
-.header-right button{
-background:none;
-border:none;
-font-size:14px;
-cursor:pointer;
-color:black;
-}
-
-/* 메뉴 */
-
-.menu{
+.wrapper{
 display:flex;
-justify-content:center;
-gap:18px;
-padding:18px;
-background:white;
-}
-
-.menu button{
-display:flex;
-align-items:center;
-gap:6px;
-padding:10px 18px;
-border:none;
-border-radius:8px;
-background:#e7ebff;
-cursor:pointer;
-font-weight:bold;
-}
-
-/* 배너 */
-
-.banner{
+max-width:1200px;
 margin:40px auto;
-width:90%;
-max-width:1100px;
-padding:35px;
-border-radius:12px;
-background:linear-gradient(135deg,#5f72ff,#9ba9ff);
-color:white;
-text-align:center;
-font-size:30px;
-font-weight:bold;
+gap:30px;
 }
 
-/* 내용 */
+/* 좌측 목차 */
+
+.toc{
+width:260px;
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+height:fit-content;
+position:sticky;
+top:20px;
+}
+
+.toc h3{
+margin-top:0;
+font-size:18px;
+}
+
+.toc a{
+display:block;
+text-decoration:none;
+color:#333;
+font-size:14px;
+padding:6px 0;
+}
+
+.toc a:hover{
+color:#5f72ff;
+}
+
+/* 본문 */
 
 .content{
-width:90%;
-max-width:1100px;
-margin:auto;
+flex:1;
 background:white;
 padding:40px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-line-height:1.9;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+line-height:1.8;
 }
 
 .content h2{
-margin-top:35px;
-}
-
-/* 푸터 */
-
-footer{
-margin-top:60px;
-padding:22px;
-background:#f1f1f1;
-position:relative;
-font-size:14px;
-}
-
-.footer-left{
-position:absolute;
-left:20px;
-}
-
-.footer-center{
-text-align:center;
-}
-
-.footer-right{
-position:absolute;
-right:20px;
-}
-
-.policy-btn{
-background:none;
-border:none;
-font-size:14px;
-cursor:pointer;
+margin-top:40px;
 }
 
 </style>
@@ -149,93 +83,139 @@ cursor:pointer;
 <body>
 
 <header>
-
-<div class="header-left">
-<img src="아파트 도서관 로고.1.1.png">
-<a href="index.html" class="library-name">다온 작은도서관</a>
-</div>
-
-<div class="header-center">
-월간독서퀴즈
-</div>
-
-<div class="header-right">
-<button>로그인</button>
-<button>회원가입</button>
-</div>
-
+다온 작은도서관 개인정보처리방침
 </header>
 
-<div class="menu">
-<button><img src="도서관 안내.png" width="18">도서관 안내</button>
-<button><img src="이달의 선정도서.png" width="18">이달의 선정도서</button>
-<button><img src="당첨자 목록.png" width="18">당첨자 목록</button>
-<button><img src="공지사항.png" width="18">공지사항</button>
+<div class="wrapper">
+
+<!-- 좌측 목차 -->
+
+<div class="toc">
+
+<h3>목차</h3>
+
+<a href="#s1">제1조 개인정보의 처리 목적</a>
+<a href="#s2">제2조 개인정보의 처리 및 보유기간</a>
+<a href="#s3">제3조 처리하는 개인정보 항목</a>
+<a href="#s4">제4조 14세 미만 아동의 개인정보 처리</a>
+<a href="#s5">제5조 개인정보 영향평가 수행 결과</a>
+<a href="#s6">제6조 개인정보의 제3자 제공</a>
+<a href="#s7">제7조 개인정보처리의 위탁</a>
+<a href="#s8">제8조 개인정보의 파기</a>
+<a href="#s9">제9조 정보주체의 권리</a>
+<a href="#s10">제10조 개인정보 안전성 확보 조치</a>
+<a href="#s11">제11조 개인정보 자동 수집 장치</a>
+<a href="#s12">제12조 가명정보의 처리</a>
+<a href="#s13">제13조 개인정보 보호책임자</a>
+<a href="#s14">제14조 개인정보 열람청구</a>
+<a href="#s15">제15조 권익침해 구제 방법</a>
+<a href="#s16">제16조 추가 이용 제공 판단</a>
+<a href="#s17">제17조 개인정보처리방침 변경</a>
+
 </div>
 
-<div class="banner">
-개인정보처리방침
-</div>
+<!-- 본문 -->
 
 <div class="content">
 
-<h2>제1조 (개인정보의 처리 목적)</h2>
+<p><strong>시행일 : 2026년 1월 1일</strong></p>
+
+<h2 id="s1">제1조 개인정보의 처리 목적</h2>
 <p>
-다온 작은도서관 월간독서퀴즈 홈페이지는 회원가입, 독서퀴즈 참여,
-당첨자 안내 등 서비스 제공을 위해 개인정보를 처리합니다.
+회원가입, 독서퀴즈 참여, 당첨자 안내 등 도서관 서비스 제공을 위해 개인정보를 처리합니다.
 </p>
 
-<h2>제2조 (개인정보의 처리 및 보유기간)</h2>
+<h2 id="s2">제2조 개인정보의 처리 및 보유기간</h2>
 <p>
 회원가입 정보는 회원 탈퇴 시까지 보관됩니다.<br>
 독서퀴즈 참여 정보는 행사 종료 후 1개월 이내 파기됩니다.
 </p>
 
-<h2>제3조 (처리하는 개인정보 항목)</h2>
-
-<p><strong>회원가입 시</strong></p>
-<p>이름, 동/호수, 연락처, 아이디</p>
-
-<p><strong>독서퀴즈 참여 시</strong></p>
-<p>이름, 동/호수, 연락처</p>
-
-<h2>제4조 (개인정보의 제3자 제공)</h2>
+<h2 id="s3">제3조 처리하는 개인정보 항목</h2>
 <p>
-다온 작은도서관은 이용자의 개인정보를 외부에 제공하지 않습니다.
+① 회원가입 시<br>
+이름, 동/호수, 연락처, 아이디
 </p>
 
-<h2>제5조 (개인정보의 파기)</h2>
+<p>
+② 독서퀴즈 참여 시<br>
+이름, 동/호수, 연락처
+</p>
+
+<h2 id="s4">제4조 14세 미만 아동의 개인정보 처리</h2>
+<p>
+필요한 경우 법정대리인의 동의를 받을 수 있습니다.
+</p>
+
+<h2 id="s5">제5조 개인정보 영향평가 수행 결과</h2>
+<p>
+현재 개인정보 영향평가 대상 기관에 해당하지 않습니다.
+</p>
+
+<h2 id="s6">제6조 개인정보의 제3자 제공</h2>
+<p>
+법령에 따른 경우를 제외하고 개인정보를 외부에 제공하지 않습니다.
+</p>
+
+<h2 id="s7">제7조 개인정보처리의 위탁</h2>
+<p>
+개인정보 처리 업무를 외부에 위탁하고 있지 않습니다.
+</p>
+
+<h2 id="s8">제8조 개인정보의 파기</h2>
 <p>
 보유기간이 지나거나 처리 목적이 달성된 경우 개인정보를 안전하게 파기합니다.
 </p>
 
-<h2>제6조 (개인정보 보호책임자)</h2>
+<h2 id="s9">제9조 정보주체의 권리</h2>
 <p>
-기관명 : 다온 작은도서관
+개인정보 열람, 정정, 삭제, 처리정지를 요청할 수 있습니다.
 </p>
 
-<h2>제7조 (개인정보처리방침의 변경)</h2>
+<h2 id="s10">제10조 개인정보 안전성 확보 조치</h2>
 <p>
-이 개인정보처리방침은 2026년 1월 1일부터 적용됩니다.
+개인정보 보호를 위해 접근 제한 및 관리 책임자를 지정하고 있습니다.
+</p>
+
+<h2 id="s11">제11조 개인정보 자동 수집 장치</h2>
+<p>
+쿠키 등 자동 수집 장치를 사용하지 않습니다.
+</p>
+
+<h2 id="s12">제12조 가명정보의 처리</h2>
+<p>
+가명정보를 처리하지 않습니다.
+</p>
+
+<h2 id="s13">제13조 개인정보 보호책임자</h2>
+<p>
+기관명 : 다온 작은도서관<br>
+연락처 : 추후 안내
+</p>
+
+<h2 id="s14">제14조 개인정보 열람청구</h2>
+<p>
+개인정보 보호법에 따라 열람을 요청할 수 있습니다.
+</p>
+
+<h2 id="s15">제15조 권익침해 구제 방법</h2>
+<p>
+개인정보침해신고센터, 개인정보분쟁조정위원회 등을 통해 도움을 받을 수 있습니다.
+</p>
+
+<h2 id="s16">제16조 추가적인 이용 제공 판단</h2>
+<p>
+추가 이용 또는 제공 시 관련 법령을 준수합니다.
+</p>
+
+<h2 id="s17">제17조 개인정보처리방침 변경</h2>
+<p>
+이 방침은 2026년 1월 1일부터 적용됩니다.
 </p>
 
 </div>
 
-<footer>
-
-<div class="footer-left">
-<button class="policy-btn">개인정보처리방침</button>
 </div>
-
-<div class="footer-center">
-다온 작은도서관 | 주소 울산광역시 울주군 청량읍 덕하1로 55 지하1층 커뮤니티센터 내
-</div>
-
-<div class="footer-right">
-© 2026 Daon Library
-</div>
-
-</footer>
 
 </body>
 </html>
