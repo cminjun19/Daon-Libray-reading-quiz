@@ -9,224 +9,166 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#f5f7fb;
-user-select:none;
-}
-
-/* 이미지 보호 */
-
-img{
--webkit-user-drag:none;
-user-drag:none;
--webkit-touch-callout:none;
+background:#f2f2f2;
 }
 
 /* 헤더 */
 
 header{
 background:white;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
-
-.top-bar{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-align-items:center;
-padding:16px 50px;
-}
-
-.library a{
+padding:15px 40px;
 display:flex;
+justify-content:space-between;
 align-items:center;
-text-decoration:none;
-color:#000;
-font-size:32px;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:22px;
 font-weight:bold;
-}
-
-.library img{
-width:38px;
-margin-right:10px;
-}
-
-.site-title{
-text-align:center;
-font-size:20px;
-font-weight:bold;
-}
-
-.auth{
-display:flex;
-justify-content:flex-end;
-align-items:center;
 }
 
 .auth a{
+margin-left:15px;
 text-decoration:none;
-color:#000;
-font-size:14px;
-font-weight:bold;
-display:flex;
-align-items:center;
-gap:6px;
-margin-left:18px;
-}
-
-.auth img{
-width:16px;
+color:#333;
 }
 
 /* 메뉴 */
 
 .menu{
-background:#f1f3f5;
+background:#17a2a0;
 display:flex;
-justify-content:space-around;
-padding:16px 0;
-border-top:1px solid #e0e0e0;
-border-bottom:1px solid #e0e0e0;
+justify-content:center;
+gap:80px;
+padding:14px 0;
 }
 
 .menu a{
-color:#000;
+color:white;
 text-decoration:none;
 font-weight:bold;
-font-size:16px;
-display:flex;
-align-items:center;
-gap:8px;
 }
 
-.menu img{
-width:20px;
-}
+/* 배너 영역 */
 
-/* 배너 */
-
-.banner{
-
-height:320px;
-
-background:
-linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-url("배너이미지.png");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
+.banner-section{
+padding:30px 0;
 display:flex;
 justify-content:center;
-align-items:center;
+}
 
-color:white;
-text-align:center;
+/* 배너 박스 */
+
+.banner-box{
+
+width:1200px;
+
+border-radius:20px;
+
+overflow:hidden;
+
+position:relative;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+/* 배너 이미지 */
+
+.banner-box img{
+
+width:100%;
+
+display:block;
+
 }
 
 /* 배너 글자 */
 
-.banner-title{
-font-size:42px;
+.banner-text{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+color:white;
+
+font-size:38px;
+
 font-weight:bold;
-}
 
-/* 카드 */
+text-shadow:0 2px 10px rgba(0,0,0,0.4);
 
-.cards-section{
 text-align:center;
-padding-top:40px;
+
 }
 
-.cards-title{
-font-size:24px;
-font-weight:bold;
-margin-bottom:30px;
-}
+/* 카드 영역 */
 
 .cards{
-max-width:1100px;
-margin:0 auto 70px auto;
+
+max-width:1200px;
+
+margin:40px auto;
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+grid-template-columns:repeat(4,1fr);
+
 gap:25px;
-padding:0 20px;
+
 }
 
 .card{
+
 background:white;
+
 padding:30px;
+
 border-radius:12px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+
 text-align:center;
-box-shadow:0 6px 15px rgba(0,0,0,0.08);
-transition:0.25s;
+
 }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 12px 25px rgba(0,0,0,0.12);
-}
+.card h3{
 
-.card img{
-width:40px;
 margin-bottom:10px;
+
 }
 
 .card p{
-color:#666;
-font-size:14px;
-}
 
-/* Footer */
+color:#666;
+
+font-size:14px;
+
+}
 
 footer{
+
+margin-top:60px;
+
+padding:20px;
+
 background:#222;
-color:#ddd;
-padding:18px 40px;
-border-top:1px solid #444;
-font-size:14px;
-}
 
-.footer{
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
+color:#ccc;
 
-.footer-left{
-margin-left:10px;
-}
-
-.footer-center{
-flex:1;
 text-align:center;
-}
 
-.footer-right{
-margin-right:10px;
-}
-
-.privacy-btn{
-background:none;
-border:none;
-color:#bbb;
 font-size:14px;
-cursor:pointer;
+
 }
 
 </style>
-
-<script>
-
-document.addEventListener("contextmenu",function(e){
-e.preventDefault();
-});
-
-document.addEventListener("keydown",function(e){
-if(e.ctrlKey && e.key==="c") e.preventDefault();
-if(e.ctrlKey && e.key==="s") e.preventDefault();
-});
-
-</script>
 
 </head>
 
@@ -234,98 +176,70 @@ if(e.ctrlKey && e.key==="s") e.preventDefault();
 
 <header>
 
-<div class="top-bar">
-
-<div class="library">
-<a href="index.html">
-<img src="아파트 도서관 로고.1.1.png">
-다온 작은도서관
-</a>
-</div>
-
-<div class="site-title">
-월간독서퀴즈
-</div>
+<div class="logo">다온 작은도서관</div>
 
 <div class="auth">
-<a href="#"><img src="로그인.png">로그인</a>
-<a href="#"><img src="회원가입.png">회원가입</a>
+<a href="#">로그인</a>
+<a href="#">회원가입</a>
 </div>
-
-</div>
-
-<nav class="menu">
-
-<a href="#"><img src="도서관 안내.png">도서관 안내</a>
-<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
-<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
-<a href="#"><img src="공지사항.png">공지사항</a>
-
-</nav>
 
 </header>
 
-<section class="banner">
+<nav class="menu">
 
-<div class="banner-title">
+<a href="#">도서관 안내</a>
+<a href="#">이달의 선정도서</a>
+<a href="#">당첨자 목록</a>
+<a href="#">공지사항</a>
+
+</nav>
+
+<!-- 배너 -->
+
+<section class="banner-section">
+
+<div class="banner-box">
+
+<img src="배너이미지.png">
+
+<div class="banner-text">
 다온 작은도서관 홈페이지에 오신걸 환영합니다
+</div>
+
 </div>
 
 </section>
 
-<section class="cards-section">
+<!-- 카드 -->
 
-<div class="cards-title">
-메뉴별 안내
-</div>
-
-<div class="cards">
+<section class="cards">
 
 <div class="card">
-<img src="도서관 안내.png">
 <h3>도서관 안내</h3>
 <p>다온 작은도서관 이용 방법을 확인할 수 있습니다.</p>
 </div>
 
 <div class="card">
-<img src="이달의 선정도서.png">
 <h3>이달의 선정도서</h3>
 <p>이번 달 월간독서퀴즈 선정 도서를 확인할 수 있습니다.</p>
 </div>
 
 <div class="card">
-<img src="당첨자 목록.png">
 <h3>당첨자 목록</h3>
 <p>월간독서퀴즈 당첨자를 확인할 수 있습니다.</p>
 </div>
 
 <div class="card">
-<img src="공지사항.png">
 <h3>공지사항</h3>
 <p>월간독서퀴즈의 새로운 소식을 확인할 수 있습니다.</p>
-</div>
-
 </div>
 
 </section>
 
 <footer>
 
-<div class="footer">
-
-<div class="footer-left">
-<button class="privacy-btn">개인정보처리방침</button>
-</div>
-
-<div class="footer-center">
-다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
-</div>
-
-<div class="footer-right">
+다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하1층 커뮤니티센터 내  
 © 2026 Daon Library
-</div>
-
-</div>
 
 </footer>
 
