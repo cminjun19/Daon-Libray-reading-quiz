@@ -104,10 +104,16 @@ width:20px;
 /* 배너 */
 
 .banner{
-background:linear-gradient(135deg,#5f72ff,#9b59b6);
+background:
+linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+url("배너이미지.png");
+
+background-size:cover;
+background-position:center;
+
 color:white;
 text-align:center;
-padding:120px 20px;
+padding:140px 20px;
 }
 
 .banner-title{
@@ -218,7 +224,7 @@ document.addEventListener("contextmenu",function(e){
 e.preventDefault();
 });
 
-/* 복사 및 저장 단축키 차단 */
+/* 복사 및 저장 차단 */
 document.addEventListener("keydown",function(e){
 
 if(e.ctrlKey && e.key==="c") e.preventDefault();
@@ -323,7 +329,7 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 </div>
 
 <div class="footer-center">
-다온 작은도서관  |  울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
+다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
 </div>
 
 <div class="footer-right">
