@@ -9,7 +9,7 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#f2f2f2;
+background:#f3f3f3;
 }
 
 /* 헤더 */
@@ -32,6 +32,7 @@ font-weight:bold;
 margin-left:15px;
 text-decoration:none;
 color:#333;
+font-weight:bold;
 }
 
 /* 메뉴 */
@@ -53,16 +54,16 @@ font-weight:bold;
 /* 배너 영역 */
 
 .banner-section{
-padding:30px 0;
+padding:40px 0;
 display:flex;
 justify-content:center;
 }
 
-/* 배너 박스 */
+/* 배너 박스 (크기 줄임) */
 
 .banner-box{
 
-width:1200px;
+width:900px;
 
 border-radius:20px;
 
@@ -70,7 +71,7 @@ overflow:hidden;
 
 position:relative;
 
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
 
 }
 
@@ -79,6 +80,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 .banner-box img{
 
 width:100%;
+
+height:auto;
 
 display:block;
 
@@ -98,11 +101,11 @@ transform:translate(-50%,-50%);
 
 color:white;
 
-font-size:38px;
+font-size:36px;
 
 font-weight:bold;
 
-text-shadow:0 2px 10px rgba(0,0,0,0.4);
+text-shadow:0 2px 10px rgba(0,0,0,0.5);
 
 text-align:center;
 
@@ -112,17 +115,19 @@ text-align:center;
 
 .cards{
 
-max-width:1200px;
+max-width:900px;
 
 margin:40px auto;
 
 display:grid;
 
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(2,1fr);
 
 gap:25px;
 
 }
+
+/* 카드 */
 
 .card{
 
@@ -135,6 +140,16 @@ border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 
 text-align:center;
+
+transition:0.2s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
 
 }
 
@@ -151,6 +166,8 @@ color:#666;
 font-size:14px;
 
 }
+
+/* footer */
 
 footer{
 
@@ -176,7 +193,9 @@ font-size:14px;
 
 <header>
 
-<div class="logo">다온 작은도서관</div>
+<div class="logo">
+다온 작은도서관
+</div>
 
 <div class="auth">
 <a href="#">로그인</a>
@@ -203,14 +222,14 @@ font-size:14px;
 <img src="배너이미지.png">
 
 <div class="banner-text">
-다온 작은도서관 홈페이지에 오신걸 환영합니다
+다온 작은도서관 홈페이지에 오신것을 환영합니다
 </div>
 
 </div>
 
 </section>
 
-<!-- 카드 -->
+<!-- 카드 메뉴 -->
 
 <section class="cards">
 
@@ -239,6 +258,7 @@ font-size:14px;
 <footer>
 
 다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하1층 커뮤니티센터 내  
+<br>
 © 2026 Daon Library
 
 </footer>
