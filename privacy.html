@@ -7,71 +7,246 @@
 <style>
 
 body{
-font-family:Arial, sans-serif;
 margin:0;
+font-family:Arial, sans-serif;
 background:#f5f7fb;
+user-select:none;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:60px 20px;
+img{
+-webkit-user-drag:none;
+user-drag:none;
+-webkit-touch-callout:none;
+}
+
+/* 헤더 */
+
+header{
 background:white;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
-h1{
-text-align:center;
-margin-bottom:40px;
+.top-bar{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+align-items:center;
+padding:16px 50px;
 }
 
-h2{
-margin-top:30px;
-}
-
-p{
-line-height:1.8;
-color:#444;
-}
-
-.back{
-text-align:center;
-margin-top:40px;
-}
-
-.back a{
+.library a{
+display:flex;
+align-items:center;
 text-decoration:none;
-background:#5f72ff;
+color:#000;
+font-size:32px;
+font-weight:bold;
+}
+
+.library img{
+width:38px;
+margin-right:10px;
+}
+
+.site-title{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+}
+
+.auth{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+}
+
+.auth a{
+text-decoration:none;
+color:#000;
+font-size:14px;
+font-weight:bold;
+display:flex;
+align-items:center;
+gap:6px;
+margin-left:18px;
+}
+
+.auth img{
+width:16px;
+}
+
+/* 메뉴 */
+
+.menu{
+background:#f1f3f5;
+display:flex;
+justify-content:space-around;
+padding:16px 0;
+border-top:1px solid #e0e0e0;
+border-bottom:1px solid #e0e0e0;
+}
+
+.menu a{
+color:#000;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.menu img{
+width:20px;
+}
+
+/* 배너 */
+
+.banner{
+background:linear-gradient(135deg,#5f72ff,#9b59b6);
 color:white;
-padding:12px 25px;
-border-radius:6px;
+text-align:center;
+padding:80px 20px;
+}
+
+.banner-title{
+font-size:36px;
+font-weight:bold;
+}
+
+/* 내용 */
+
+.content{
+max-width:900px;
+margin:40px auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+line-height:1.8;
+}
+
+.content h2{
+margin-top:25px;
+}
+
+/* Footer */
+
+footer{
+background:#222;
+color:#ddd;
+padding:18px 40px;
+border-top:1px solid #444;
+font-size:14px;
+}
+
+.footer{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.footer-left{
+margin-left:10px;
+}
+
+.footer-center{
+flex:1;
+text-align:center;
+}
+
+.footer-right{
+margin-right:10px;
+}
+
+.privacy-btn{
+color:#bbb;
+font-size:14px;
+text-decoration:none;
+cursor:pointer;
 }
 
 </style>
+
+<script>
+
+/* 우클릭 금지 */
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
+
+/* 복사 및 저장 차단 */
+document.addEventListener("keydown",function(e){
+
+if(e.ctrlKey && e.key==="c") e.preventDefault();
+if(e.ctrlKey && e.key==="s") e.preventDefault();
+if(e.ctrlKey && e.key==="u") e.preventDefault();
+
+});
+
+</script>
 
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<h1>개인정보처리방침</h1>
+<div class="top-bar">
+
+<div class="library">
+<a href="index.html">
+<img src="아파트 도서관 로고.1.1.png">
+다온 작은도서관
+</a>
+</div>
+
+<div class="site-title">
+월간독서퀴즈
+</div>
+
+<div class="auth">
+<a href="#"><img src="로그인.png">로그인</a>
+<a href="#"><img src="회원가입.png">회원가입</a>
+</div>
+
+</div>
+
+<nav class="menu">
+
+<a href="#"><img src="도서관 안내.png">도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
+<a href="#"><img src="공지사항.png">공지사항</a>
+
+</nav>
+
+</header>
+
+<section class="banner">
+
+<div class="banner-title">
+개인정보처리방침
+</div>
+
+</section>
+
+<section class="content">
 
 <p>
-다온 작은도서관은 이용자의 개인정보를 중요하게 생각하며 「개인정보 보호법」을 준수하고 있습니다.
+다온 작은도서관은 이용자의 개인정보를 중요하게 생각하며 관련 법령을 준수하고 있습니다.
 </p>
 
 <h2>1. 수집하는 개인정보</h2>
 <p>
-월간독서퀴즈 참여 시 이름, 연락처 등의 최소한의 정보를 수집할 수 있습니다.
+월간독서퀴즈 참여 시 이름 등 최소한의 정보를 수집할 수 있습니다.
 </p>
 
 <h2>2. 개인정보 이용 목적</h2>
 <p>
-수집된 개인정보는 월간독서퀴즈 참여 확인 및 당첨자 안내를 위해 사용됩니다.
+수집된 정보는 독서퀴즈 운영 및 당첨자 안내를 위해 사용됩니다.
 </p>
 
-<h2>3. 개인정보 보관 기간</h2>
+<h2>3. 보관 기간</h2>
 <p>
 개인정보는 퀴즈 운영 기간 동안 보관되며 이후 안전하게 삭제됩니다.
 </p>
@@ -81,11 +256,27 @@ border-radius:6px;
 다온 작은도서관은 개인정보 보호를 위해 필요한 관리적, 기술적 조치를 취하고 있습니다.
 </p>
 
-<div class="back">
-<a href="index.html">홈으로 돌아가기</a>
+</section>
+
+<footer>
+
+<div class="footer">
+
+<div class="footer-left">
+<a href="privacy.html" class="privacy-btn">개인정보처리방침</a>
+</div>
+
+<div class="footer-center">
+다온 작은도서관  |  울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
+</div>
+
+<div class="footer-right">
+© 2026 Daon Library
 </div>
 
 </div>
+
+</footer>
 
 </body>
 </html>
