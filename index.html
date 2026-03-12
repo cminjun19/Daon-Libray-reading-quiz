@@ -13,7 +13,7 @@ background:#f5f7fb;
 user-select:none;
 }
 
-/* 이미지 보호 */
+/* 이미지 드래그 방지 */
 
 img{
 -webkit-user-drag:none;
@@ -198,15 +198,10 @@ margin-right:10px;
 /* 개인정보 버튼 */
 
 .privacy-btn{
-background:none;
-border:none;
 color:#bbb;
 font-size:14px;
-cursor:pointer;
-}
-
-.privacy-btn:hover{
 text-decoration:none;
+cursor:pointer;
 }
 
 </style>
@@ -218,7 +213,7 @@ document.addEventListener("contextmenu",function(e){
 e.preventDefault();
 });
 
-/* 복사 및 저장 단축키 차단 */
+/* 복사 및 저장 차단 */
 document.addEventListener("keydown",function(e){
 
 if(e.ctrlKey && e.key==="c") e.preventDefault();
@@ -319,7 +314,7 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 <div class="footer">
 
 <div class="footer-left">
-<button class="privacy-btn">개인정보처리방침</button>
+<a href="privacy.html" class="privacy-btn">개인정보처리방침</a>
 </div>
 
 <div class="footer-center">
