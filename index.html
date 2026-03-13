@@ -9,108 +9,161 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#f5f6fa;
+background:#f5f7fb;
+user-select:none;
+}
+
+/* 이미지 보호 */
+
+img{
+-webkit-user-drag:none;
+user-drag:none;
+-webkit-touch-callout:none;
 }
 
 /* 헤더 */
 
 header{
 background:white;
-padding:20px 40px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.top-bar{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+align-items:center;
+padding:16px 50px;
+}
+
+.library a{
 display:flex;
 align-items:center;
-justify-content:space-between;
-border-bottom:1px solid #ddd;
-}
-
-.logo-area{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.logo-area img{
-height:40px;
-}
-
-.site-name{
-font-size:28px;
-font-weight:bold;
-color:#222;
 text-decoration:none;
-}
-
-.quiz-title{
-font-size:22px;
+color:#000;
+font-size:32px;
 font-weight:bold;
 }
 
-.login-area{
+.library img{
+width:38px;
+margin-right:10px;
+}
+
+.site-title{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+}
+
+.auth{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+}
+
+.auth a{
+text-decoration:none;
+color:#000;
+font-size:14px;
+font-weight:bold;
+display:flex;
+align-items:center;
+gap:6px;
+margin-left:18px;
+}
+
+.auth img{
+width:16px;
+}
+
+/* 메뉴 */
+
+.menu{
+background:#f1f3f5;
+display:flex;
+justify-content:space-around;
+padding:16px 0;
+border-top:1px solid #e0e0e0;
+border-bottom:1px solid #e0e0e0;
+}
+
+.menu a{
+color:#000;
+text-decoration:none;
+font-weight:bold;
 font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
 }
 
-.login-area a{
-text-decoration:none;
-color:black;
-margin-left:10px;
+.menu img{
+width:20px;
 }
 
-/* 메인 배너 */
+/* 배너 */
 
 .banner{
-background:linear-gradient(135deg,#4facfe,#00f2fe);
+background:linear-gradient(135deg,#5f72ff,#9b59b6);
 color:white;
 text-align:center;
-padding:60px 20px;
+padding:120px 20px;
 }
 
-.banner h1{
-font-size:32px;
-margin-bottom:15px;
+.banner-title{
+font-size:40px;
+font-weight:bold;
+margin-bottom:12px;
 }
 
-.banner p{
+.banner-text{
 font-size:30px;
 }
 
-/* 메뉴 안내 */
+/* 카드 */
 
-.menu-title{
+.cards-section{
 text-align:center;
+padding-top:40px;
+}
+
+.cards-title{
 font-size:24px;
 font-weight:bold;
-margin-top:40px;
+margin-bottom:30px;
 }
 
-.menu-area{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:40px;
-flex-wrap:wrap;
+.cards{
+max-width:1100px;
+margin:0 auto 70px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:0 20px;
 }
 
-.menu-card{
+.card{
 background:white;
-width:220px;
-padding:25px;
+padding:30px;
 border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
 text-align:center;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+transition:0.25s;
 }
 
-.menu-card img{
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
+
+.card img{
 width:40px;
 margin-bottom:10px;
 }
 
-.menu-card h3{
-margin:10px 0;
-}
-
-.menu-card p{
+.card p{
+color:#666;
 font-size:14px;
-color:#555;
 }
 
 /* Footer */
@@ -119,70 +172,139 @@ footer{
 background:#222;
 color:#ddd;
 padding:18px 40px;
-border-top:2px solid #444;
+border-top:1px solid #444;
 font-size:14px;
+}
+
+.footer{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.footer-left{
+margin-left:10px;
+}
+
+.footer-center{
+flex:1;
 text-align:center;
 }
 
-</style>
-</head>
+.footer-right{
+margin-right:10px;
+}
 
+/* 개인정보 버튼 */
+
+.privacy-btn{
+background:none;
+border:none;
+color:#bbb;
+font-size:14px;
+cursor:pointer;
+}
+
+.privacy-btn:hover{
+text-decoration:none;
+}
+
+</style>
+
+<script>
+
+/* 우클릭 금지 */
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
+
+/* 복사 및 저장 단축키 차단 */
+document.addEventListener("keydown",function(e){
+
+if(e.ctrlKey && e.key==="c") e.preventDefault();
+if(e.ctrlKey && e.key==="s") e.preventDefault();
+if(e.ctrlKey && e.key==="u") e.preventDefault();
+
+});
+
+</script>
+
+</head>
 
 <body>
 
 <header>
 
-<div class="logo-area">
+<div class="top-bar">
+
+<div class="library">
+<a href="index.html">
 <img src="아파트 도서관 로고.1.1.png">
-<a href="index.html" class="site-name">다온 작은도서관</a>
+다온 작은도서관
+</a>
 </div>
 
-<div class="quiz-title">
+<div class="site-title">
 월간독서퀴즈
 </div>
 
-<div class="login-area">
-<a href="#">로그인</a>
-<a href="#">회원가입</a>
+<div class="auth">
+<a href="#"><img src="로그인.png">로그인</a>
+<a href="#"><img src="회원가입.png">회원가입</a>
 </div>
+
+</div>
+
+<nav class="menu">
+
+<a href="#"><img src="도서관 안내.png">도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
+<a href="#"><img src="공지사항.png">공지사항</a>
+
+</nav>
 
 </header>
 
+<section class="banner">
 
-<div class="banner">
-
-<h1>다온 작은도서관 월간독서퀴즈 홈페이지에 오신것을 환영합니다.</h1>
-<p>책을 읽고 퀴즈에 참여해보세요</p>
-
+<div class="banner-title">
+다온 작은도서관 월간독서퀴즈 홈페이지에 오신것을 환영합니다.
 </div>
 
+<div class="banner-text">
+책을 읽고 퀴즈에 참여해보세요
+</div>
 
-<div class="menu-title">
+</section>
+
+<section class="cards-section">
+
+<div class="cards-title">
 메뉴별 안내
 </div>
 
+<div class="cards">
 
-<div class="menu-area">
-
-<div class="menu-card">
+<div class="card">
 <img src="도서관 안내.png">
 <h3>도서관 안내</h3>
 <p>다온 작은도서관 이용 방법을 확인할 수 있습니다.</p>
 </div>
 
-<div class="menu-card">
+<div class="card">
 <img src="이달의 선정도서.png">
 <h3>이달의 선정도서</h3>
 <p>이번 달 월간독서퀴즈 선정 도서를 확인할 수 있습니다.</p>
 </div>
 
-<div class="menu-card">
+<div class="card">
 <img src="당첨자 목록.png">
 <h3>당첨자 목록</h3>
 <p>월간독서퀴즈 당첨자를 확인할 수 있습니다.</p>
 </div>
 
-<div class="menu-card">
+<div class="card">
 <img src="공지사항.png">
 <h3>공지사항</h3>
 <p>월간독서퀴즈의 새로운 소식을 확인할 수 있습니다.</p>
@@ -190,13 +312,27 @@ text-align:center;
 
 </div>
 
+</section>
 
 <footer>
 
-다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내 | © 2026 Daon Library
+<div class="footer">
+
+<div class="footer-left">
+<button class="privacy-btn">개인정보처리방침</button>
+</div>
+
+<div class="footer-center">
+다온 작은도서관  |  울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
+</div>
+
+<div class="footer-right">
+© 2026 Daon Library
+</div>
+
+</div>
 
 </footer>
-
 
 </body>
 </html>
