@@ -135,11 +135,18 @@ margin-bottom:14px;
 }
 
 .email-box input{
-flex:1;
 padding:12px;
 border:1px solid #ddd;
 border-radius:6px;
 font-size:14px;
+}
+
+.email-id{
+flex:1;
+}
+
+.email-domain{
+flex:1;
 }
 
 .email-box select{
@@ -149,14 +156,21 @@ border-radius:6px;
 font-size:14px;
 }
 
-.login-area input[type=password]{
+/* 비밀번호 */
+
+.password-box{
+margin-bottom:14px;
+}
+
+.password-box input{
 width:100%;
 padding:12px;
-margin-bottom:14px;
 border:1px solid #ddd;
 border-radius:6px;
 font-size:14px;
 }
+
+/* 버튼 */
 
 .login-btn{
 width:100%;
@@ -223,6 +237,27 @@ text-align:right;
 }
 
 </style>
+
+<script>
+
+function domainSelect(select){
+
+const domain = document.getElementById("emailDomain");
+
+if(select.value === ""){
+domain.value="";
+domain.disabled=false;
+domain.focus();
+}
+else{
+domain.value=select.value;
+domain.disabled=true;
+}
+
+}
+
+</script>
+
 </head>
 
 <body>
@@ -250,34 +285,47 @@ text-align:right;
 </div>
 
 <nav class="menu">
+
 <a href="#"><img src="도서관 안내.png">도서관 안내</a>
 <a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
+
 </nav>
 
 </header>
 
 <section class="banner">
-<div class="banner-title">로그인</div>
+
+<div class="banner-title">
+로그인
+</div>
+
 </section>
 
 <section class="login-area">
 
-<!-- 이메일 입력 -->
 <div class="email-box">
-<input type="text" placeholder="이메일 아이디">
+
+<input class="email-id" type="text" placeholder="example">
+
 <span>@</span>
-<select>
-<option>직접 입력</option>
-<option>naver.com</option>
-<option>gmail.com</option>
-<option>daum.net</option>
-<option>kakao.com</option>
+
+<input id="emailDomain" class="email-domain" type="text" placeholder="">
+
+<select onchange="domainSelect(this)">
+<option value="">직접입력</option>
+<option value="naver.com">naver.com</option>
+<option value="gmail.com">gmail.com</option>
+<option value="daum.net">daum.net</option>
+<option value="kakao.com">kakao.com</option>
 </select>
+
 </div>
 
+<div class="password-box">
 <input type="password" placeholder="비밀번호">
+</div>
 
 <button class="login-btn">로그인</button>
 
