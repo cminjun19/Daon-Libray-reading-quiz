@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.signup-box{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+width:320px;
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#5f72ff;
+border:none;
+color:white;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4c5ee0;
+}
+
+.login{
+margin-top:15px;
+font-size:14px;
+}
+
+.login a{
+text-decoration:none;
+color:#5f72ff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="signup-box">
+
+<h2>회원가입</h2>
+
+<input type="email" id="email" placeholder="이메일">
+
+<input type="password" id="password" placeholder="비밀번호">
+
+<input type="password" id="password2" placeholder="비밀번호 확인">
+
+<button onclick="signup()">회원가입</button>
+
+<div class="login">
+이미 계정이 있나요? <a href="login.html">로그인</a>
+</div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBKnK-cqevbXUwHhwvLitEJe-IQOGL6MF8",
+authDomain: "daon-libray-reading-quiz.firebaseapp.com",
+projectId: "daon-libray-reading-quiz",
+storageBucket: "daon-libray-reading-quiz.firebasestorage.app",
+messagingSenderId: "65027461102",
+appId: "1:65027461102:web:04bc718ff8916cb12808ff"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.signup = function(){
+
+const email=document.getElementById("email").value;
+const password=document.getElementById("password").value;
+const password2=document.getElementById("password2").value;
+
+if(password!==password2){
+alert("비밀번호가 일치하지 않습니다.");
+return;
+}
+
+createUserWithEmailAndPassword(auth,email,password)
+.then(()=>{
+alert("회원가입 성공!");
+window.location.href="login.html";
+})
+.catch((error)=>{
+alert("회원가입 실패: "+error.message);
+});
+
+}
+
+</script>
+
+</body>
+</html>
