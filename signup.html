@@ -99,95 +99,60 @@ gap:8px;
 width:20px;
 }
 
-/* 회원가입 배너 */
+/* 배너 */
 
 .banner{
 background:linear-gradient(135deg,#5f72ff,#9b59b6);
-padding:120px 20px;
-display:flex;
-justify-content:center;
+color:white;
+text-align:center;
+padding:80px 20px;
 }
 
-.signup-box{
+.banner-title{
+font-size:36px;
+font-weight:bold;
+}
+
+/* 회원가입 영역 */
+
+.signup-area{
+max-width:520px;
+margin:60px auto;
 background:white;
-width:360px;
-padding:30px;
+padding:40px;
 border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-.signup-box h2{
-margin-top:0;
-}
-
-.signup-box input{
+.signup-area input{
 width:100%;
-padding:10px;
-margin-bottom:12px;
+padding:12px;
+margin-bottom:14px;
 border:1px solid #ddd;
 border-radius:6px;
+font-size:14px;
 }
 
 .signup-btn{
 width:100%;
-padding:10px;
+padding:12px;
 background:#5f72ff;
 color:white;
 border:none;
 border-radius:6px;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
 }
 
 .login-link{
-margin-top:12px;
+margin-top:15px;
 font-size:14px;
 }
 
 .login-link a{
 color:#5f72ff;
 text-decoration:none;
-}
-
-/* 카드 */
-
-.cards-section{
-text-align:center;
-padding-top:40px;
-}
-
-.cards-title{
-font-size:24px;
-font-weight:bold;
-margin-bottom:30px;
-}
-
-.cards{
-max-width:1100px;
-margin:0 auto 70px auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:0 20px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-text-align:center;
-box-shadow:0 6px 15px rgba(0,0,0,0.08);
-}
-
-.card img{
-width:40px;
-margin-bottom:10px;
-}
-
-.card p{
-color:#666;
-font-size:14px;
 }
 
 /* Footer */
@@ -262,21 +227,19 @@ text-align:right;
 </div>
 
 <nav class="menu">
-
 <a href="#"><img src="도서관 안내.png">도서관 안내</a>
 <a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
-
 </nav>
 
 </header>
 
 <section class="banner">
+<div class="banner-title">회원가입</div>
+</section>
 
-<div class="signup-box">
-
-<h2>회원가입</h2>
+<section class="signup-area">
 
 <input type="text" placeholder="이름">
 
@@ -290,44 +253,6 @@ text-align:right;
 
 <div class="login-link">
 이미 계정이 있으신가요? <a href="login.html">로그인</a>
-</div>
-
-</div>
-
-</section>
-
-<section class="cards-section">
-
-<div class="cards-title">
-메뉴별 안내
-</div>
-
-<div class="cards">
-
-<div class="card">
-<img src="도서관 안내.png">
-<h3>도서관 안내</h3>
-<p>다온 작은도서관 이용 방법을 확인할 수 있습니다.</p>
-</div>
-
-<div class="card">
-<img src="이달의 선정도서.png">
-<h3>이달의 선정도서</h3>
-<p>이번 달 월간독서퀴즈 선정 도서를 확인할 수 있습니다.</p>
-</div>
-
-<div class="card">
-<img src="당첨자 목록.png">
-<h3>당첨자 목록</h3>
-<p>월간독서퀴즈 당첨자를 확인할 수 있습니다.</p>
-</div>
-
-<div class="card">
-<img src="공지사항.png">
-<h3>공지사항</h3>
-<p>월간독서퀴즈의 새로운 소식을 확인할 수 있습니다.</p>
-</div>
-
 </div>
 
 </section>
