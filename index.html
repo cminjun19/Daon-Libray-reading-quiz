@@ -175,15 +175,22 @@ border-top:1px solid #444;
 font-size:14px;
 }
 
+/* grid 구조 */
+
 .footer{
-display:flex;
+display:grid;
+grid-template-columns:1fr 2fr 1fr;
 align-items:center;
-justify-content:space-between;
 }
 
-/* 도서관 로고 박스 */
+/* 왼쪽 로고 */
 
 .footer-logo{
+display:flex;
+justify-content:flex-start;
+}
+
+.logo-box{
 background:white;
 border-radius:8px;
 width:48px;
@@ -194,23 +201,20 @@ align-items:center;
 justify-content:center;
 }
 
-/* 로고 이미지 */
-
-.footer-logo img{
+.logo-box img{
 width:34px;
 }
 
-/* 가운데 */
+/* 가운데 주소 */
 
 .footer-center{
-flex:1;
 text-align:center;
 }
 
-/* 오른쪽 */
+/* 오른쪽 저작권 */
 
 .footer-right{
-margin-right:10px;
+text-align:right;
 }
 
 </style>
@@ -321,7 +325,9 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 <div class="footer">
 
 <div class="footer-logo">
+<div class="logo-box">
 <img src="아파트 도서관 로고.1.1.png">
+</div>
 </div>
 
 <div class="footer-center">
