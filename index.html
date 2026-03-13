@@ -13,7 +13,7 @@ background:#f5f7fb;
 user-select:none;
 }
 
-/* 이미지 보호 */
+/* 이미지 드래그 방지 */
 img{
 -webkit-user-drag:none;
 user-drag:none;
@@ -190,7 +190,7 @@ border-radius:8px;
 }
 
 .footer-logo img{
-width:24px;
+width:36px;
 display:block;
 }
 
@@ -211,12 +211,10 @@ margin-right:10px;
 
 <script>
 
-/* 우클릭 금지 */
 document.addEventListener("contextmenu",function(e){
 e.preventDefault();
 });
 
-/* 단축키 차단 */
 document.addEventListener("keydown",function(e){
 
 if(e.ctrlKey && e.key==="c") e.preventDefault();
