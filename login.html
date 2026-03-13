@@ -116,7 +116,7 @@ font-weight:bold;
 /* 로그인 영역 */
 
 .login-area{
-max-width:500px;
+max-width:520px;
 margin:60px auto;
 background:white;
 padding:40px;
@@ -125,7 +125,31 @@ box-shadow:0 6px 20px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-.login-area input{
+/* 이메일 입력 */
+
+.email-box{
+display:flex;
+align-items:center;
+gap:8px;
+margin-bottom:14px;
+}
+
+.email-box input{
+flex:1;
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+}
+
+.email-box select{
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+}
+
+.login-area input[type=password]{
 width:100%;
 padding:12px;
 margin-bottom:14px;
@@ -240,7 +264,18 @@ text-align:right;
 
 <section class="login-area">
 
-<input type="email" placeholder="이메일">
+<!-- 이메일 입력 -->
+<div class="email-box">
+<input type="text" placeholder="이메일 아이디">
+<span>@</span>
+<select>
+<option>직접 입력</option>
+<option>naver.com</option>
+<option>gmail.com</option>
+<option>daum.net</option>
+<option>kakao.com</option>
+</select>
+</div>
 
 <input type="password" placeholder="비밀번호">
 
