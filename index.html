@@ -14,7 +14,6 @@ user-select:none;
 }
 
 /* 이미지 보호 */
-
 img{
 -webkit-user-drag:none;
 user-drag:none;
@@ -182,10 +181,21 @@ align-items:center;
 justify-content:space-between;
 }
 
+/* 왼쪽 로고 */
+
+.footer-logo img{
+width:28px;
+opacity:0.9;
+}
+
+/* 가운데 */
+
 .footer-center{
 flex:1;
 text-align:center;
 }
+
+/* 오른쪽 */
 
 .footer-right{
 margin-right:10px;
@@ -299,6 +309,10 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 <footer>
 
 <div class="footer">
+
+<div class="footer-logo">
+<img src="아파트 도서관 로고.1.1.png">
+</div>
 
 <div class="footer-center">
 다온 작은도서관  |  울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
