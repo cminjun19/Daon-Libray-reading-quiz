@@ -74,7 +74,7 @@ margin-left:18px;
 width:16px;
 }
 
-/* 메뉴 */
+/* 메뉴 버튼 */
 
 .menu{
 background:#f1f3f5;
@@ -85,8 +85,9 @@ border-top:1px solid #e0e0e0;
 border-bottom:1px solid #e0e0e0;
 }
 
-.menu div{
+.menu a{
 color:#000;
+text-decoration:none;
 font-weight:bold;
 font-size:16px;
 display:flex;
@@ -252,10 +253,10 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 
 <nav class="menu">
 
-<div><img src="도서관 안내.png">도서관 안내</div>
-<div><img src="이달의 선정도서.png">이달의 선정도서</div>
-<div><img src="당첨자 목록.png">당첨자 목록</div>
-<div><img src="공지사항.png">공지사항</div>
+<a href="#"><img src="도서관 안내.png">도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
+<a href="#"><img src="공지사항.png">공지사항</a>
 
 </nav>
 
