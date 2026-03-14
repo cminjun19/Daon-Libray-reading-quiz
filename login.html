@@ -8,15 +8,8 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#f5f7fb;
-user-select:none;
-}
-
-img{
--webkit-user-drag:none;
-user-drag:none;
--webkit-touch-callout:none;
 }
 
 header{
@@ -54,7 +47,6 @@ font-weight:bold;
 .auth{
 display:flex;
 justify-content:flex-end;
-align-items:center;
 }
 
 .auth a{
@@ -71,6 +63,8 @@ margin-left:18px;
 .auth img{
 width:16px;
 }
+
+/* 메뉴 */
 
 .menu{
 background:#f1f3f5;
@@ -94,6 +88,8 @@ gap:8px;
 .menu img{
 width:20px;
 }
+
+/* 로그인 */
 
 .login-section{
 max-width:900px;
@@ -132,11 +128,24 @@ flex:1;
 padding:12px;
 border:1px solid #ccc;
 border-radius:6px;
-font-size:14px;
 }
 
-.password-toggle{
+.password-box{
+display:flex;
+align-items:center;
+width:100%;
+}
+
+.password-box input{
+flex:1;
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.password-box button{
 margin-left:8px;
+padding:8px 10px;
 cursor:pointer;
 }
 
@@ -153,11 +162,12 @@ border-radius:8px;
 cursor:pointer;
 }
 
+/* Footer */
+
 footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
-border-top:1px solid #444;
 font-size:14px;
 margin-top:60px;
 }
@@ -182,7 +192,7 @@ text-align:right;
 
 function togglePassword(){
 
-const pw=document.getElementById("password");
+const pw = document.getElementById("password");
 
 if(pw.type==="password"){
 pw.type="text";
@@ -191,8 +201,6 @@ pw.type="password";
 }
 
 }
-
-document.addEventListener("contextmenu",e=>e.preventDefault());
 
 </script>
 
@@ -223,12 +231,10 @@ document.addEventListener("contextmenu",e=>e.preventDefault());
 </div>
 
 <nav class="menu">
-
 <a href="#"><img src="도서관 안내.png">도서관 안내</a>
 <a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
-
 </nav>
 
 </header>
@@ -250,8 +256,12 @@ document.addEventListener("contextmenu",e=>e.preventDefault());
 
 <div class="input-box">
 <img src="로그인.png">
+
+<div class="password-box">
 <input type="password" id="password" placeholder="비밀번호">
-<span class="password-toggle" onclick="togglePassword()">👁</span>
+<button onclick="togglePassword()">👁</button>
+</div>
+
 </div>
 
 <button class="login-btn">로그인</button>
