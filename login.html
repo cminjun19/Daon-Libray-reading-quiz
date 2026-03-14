@@ -8,7 +8,7 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#f5f7fb;
 user-select:none;
 }
@@ -16,7 +16,6 @@ user-select:none;
 img{
 -webkit-user-drag:none;
 user-drag:none;
--webkit-touch-callout:none;
 }
 
 /* 헤더 */
@@ -56,7 +55,6 @@ font-weight:bold;
 .auth{
 display:flex;
 justify-content:flex-end;
-align-items:center;
 }
 
 .auth a{
@@ -64,14 +62,7 @@ text-decoration:none;
 color:black;
 font-size:14px;
 font-weight:bold;
-display:flex;
-align-items:center;
-gap:6px;
 margin-left:18px;
-}
-
-.auth img{
-width:16px;
 }
 
 /* 메뉴 */
@@ -85,165 +76,95 @@ border-top:1px solid #e0e0e0;
 border-bottom:1px solid #e0e0e0;
 }
 
-.menu a{
-color:#000;
-text-decoration:none;
-font-weight:bold;
-font-size:16px;
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.menu img{
-width:20px;
-}
-
-/* 로그인 영역 */
-
-.login-section{
-max-width:1000px;
-margin:60px auto;
-background:white;
-border-radius:12px;
-padding:40px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-/* 상단 탭 */
-
-.login-tabs{
-display:flex;
-gap:10px;
-margin-bottom:40px;
-}
-
-.login-tabs a{
-flex:1;
-text-align:center;
-padding:14px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-background:#e9ecef;
-color:#555;
-}
-
-.login-tabs .active{
-background:#16a085;
-color:white;
-}
-
-/* 로그인 콘텐츠 */
+/* 로그인 */
 
 .login-box{
-display:flex;
-align-items:center;
-gap:40px;
-}
-
-/* 왼쪽 이미지 */
-
-.login-image{
-flex:1;
+max-width:500px;
+margin:80px auto;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 text-align:center;
-}
-
-.login-image img{
-width:200px;
-}
-
-/* 오른쪽 입력 */
-
-.login-form{
-flex:1;
 }
 
 .login-title{
-font-size:22px;
+font-size:24px;
 font-weight:bold;
-margin-bottom:10px;
+margin-bottom:30px;
 }
 
-.login-desc{
-font-size:14px;
-color:#666;
-margin-bottom:25px;
-}
-
-.input-box{
-display:flex;
-align-items:center;
-margin-bottom:15px;
-}
-
-.input-box img{
-width:20px;
-margin-right:10px;
-}
-
-.input-box input{
-flex:1;
-padding:12px;
-border:1px solid #ccc;
-border-radius:6px;
-font-size:14px;
-}
-
-/* 로그인 버튼 */
-
-.login-btn{
-margin-top:10px;
+.input{
 width:100%;
 padding:14px;
-background:#16a085;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.login-btn{
+width:100%;
+padding:14px;
+background:#5f72ff;
 border:none;
 color:white;
 font-size:16px;
-font-weight:bold;
 border-radius:8px;
 cursor:pointer;
 }
 
-.login-btn:hover{
-background:#138d75;
+.find-btn{
+margin-top:15px;
+background:none;
+border:none;
+color:#555;
+cursor:pointer;
 }
 
-/* 안내 박스 */
+/* footer */
 
-.info-box{
-margin-top:40px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.info{
-background:#f8f9fa;
-padding:20px;
-border-radius:10px;
+footer{
+background:#222;
+color:#ddd;
+padding:10px 40px;
+border-top:1px solid #444;
 font-size:14px;
 }
 
-.info h3{
-margin-top:0;
-font-size:16px;
+.footer{
+display:grid;
+grid-template-columns:1fr 2fr 1fr;
+align-items:center;
+}
+
+.footer-logo{
+display:flex;
+justify-content:flex-start;
+}
+
+.logo-box{
+background:white;
+border-radius:10px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-box img{
+width:36px;
+}
+
+.footer-center{
+text-align:center;
+}
+
+.footer-right{
+text-align:right;
 }
 
 </style>
-
-<script>
-
-document.addEventListener("contextmenu",e=>e.preventDefault());
-
-document.addEventListener("keydown",function(e){
-if(e.ctrlKey && e.key==="c") e.preventDefault();
-if(e.ctrlKey && e.key==="s") e.preventDefault();
-if(e.ctrlKey && e.key==="u") e.preventDefault();
-});
-
-</script>
-
 </head>
 
 <body>
@@ -264,80 +185,62 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 </div>
 
 <div class="auth">
-<a href="login.html"><img src="로그인.png">로그인</a>
-<a href="signup.html"><img src="회원가입.png">회원가입</a>
+<a href="login.html">로그인</a>
+<a href="signup.html">회원가입</a>
 </div>
 
 </div>
 
 <nav class="menu">
-
-<a href="#"><img src="도서관 안내.png">도서관 안내</a>
-<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
-<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
-<a href="#"><img src="공지사항.png">공지사항</a>
-
+<a>도서관 안내</a>
+<a>이달의 선정도서</a>
+<a>당첨자 목록</a>
+<a>공지사항</a>
 </nav>
 
 </header>
 
-<section class="login-section">
-
-<div class="login-tabs">
-<a class="active">로그인</a>
-<a href="signup.html">회원가입</a>
-<a>아이디/비밀번호 찾기</a>
-</div>
-
-<div class="login-box">
-
-<div class="login-image">
-<img src="로그인안내.png">
-</div>
-
-<div class="login-form">
+<section class="login-box">
 
 <div class="login-title">
-다온 작은도서관에 오신 것을 환영합니다
+다온 작은도서관 월간독서퀴즈 홈페이지에 오신 것을 환영합니다
 </div>
 
-<div class="login-desc">
-로그인을 하시면 더 많은 도서관 서비스를 이용할 수 있습니다.
-</div>
+<input class="input" placeholder="아이디(이메일)">
 
-<div class="input-box">
-<img src="회원가입.png">
-<input type="text" placeholder="아이디 또는 이메일">
-</div>
+<input class="input" type="password" placeholder="비밀번호">
 
-<div class="input-box">
-<img src="로그인.png">
-<input type="password" placeholder="비밀번호">
-</div>
+<button class="login-btn">
+로그인
+</button>
 
-<button class="login-btn">로그인</button>
-
-</div>
-
-</div>
-
-<div class="info-box">
-
-<div class="info">
-<h3>아이디 / 비밀번호 찾기</h3>
-아이디나 비밀번호가 기억나지 않으신가요?<br>
-도서관 관리자에게 문의하시기 바랍니다.
-</div>
-
-<div class="info">
-<h3>로그인 안내</h3>
-가입하신 아이디와 비밀번호로 로그인 하시면 됩니다.<br>
-도서관 회원으로 가입하시면 다양한 서비스를 이용할 수 있습니다.
-</div>
-
-</div>
+<button class="find-btn">
+아이디 / 비밀번호 찾기
+</button>
 
 </section>
+
+<footer>
+
+<div class="footer">
+
+<div class="footer-logo">
+<div class="logo-box">
+<img src="아파트 도서관 로고.1.1.png">
+</div>
+</div>
+
+<div class="footer-center">
+다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
+</div>
+
+<div class="footer-right">
+© 2026 Daon Library
+</div>
+
+</div>
+
+</footer>
 
 </body>
 </html>
