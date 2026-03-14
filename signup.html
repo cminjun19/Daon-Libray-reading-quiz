@@ -102,15 +102,13 @@ width:20px;
 /* 회원가입 영역 */
 
 .signup-section{
-max-width:1000px;
+max-width:900px;
 margin:60px auto;
 background:white;
 border-radius:12px;
 padding:40px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
-
-/* 상단 탭 */
 
 .signup-tabs{
 display:flex;
@@ -134,56 +132,50 @@ background:#16a085;
 color:white;
 }
 
-/* 폼 */
+/* 입력폼 */
 
-.signup-form{
-max-width:500px;
-margin:0 auto;
-}
-
-.input-box{
+.form-row{
 display:flex;
 align-items:center;
 margin-bottom:18px;
 }
 
-.input-box img{
-width:20px;
-margin-right:10px;
+.form-label{
+width:120px;
+font-weight:bold;
 }
 
-.input-box input{
+.form-input{
 flex:1;
-padding:12px;
+}
+
+.form-input input,
+.form-input select{
+padding:10px;
 border:1px solid #ccc;
 border-radius:6px;
 font-size:14px;
 }
 
-/* 이메일 */
-
 .email-box{
 display:flex;
-gap:8px;
+align-items:center;
+gap:6px;
 }
 
-.email-box input{
-flex:1;
-padding:12px;
-border:1px solid #ccc;
-border-radius:6px;
+.phone-box{
+display:flex;
+align-items:center;
+gap:6px;
 }
 
-.email-box select{
-padding:12px;
-border:1px solid #ccc;
-border-radius:6px;
+.dong-box{
+display:flex;
+gap:10px;
 }
-
-/* 버튼 */
 
 .signup-btn{
-margin-top:20px;
+margin-top:25px;
 width:100%;
 padding:14px;
 background:#16a085;
@@ -199,27 +191,64 @@ cursor:pointer;
 background:#138d75;
 }
 
-/* 안내 */
+/* Footer */
 
-.signup-info{
-margin-top:40px;
-background:#f8f9fa;
-padding:20px;
-border-radius:10px;
+footer{
+background:#222;
+color:#ddd;
+padding:10px 40px;
+border-top:1px solid #444;
 font-size:14px;
+margin-top:60px;
+}
+
+.footer{
+display:grid;
+grid-template-columns:1fr 2fr 1fr;
+align-items:center;
+}
+
+.footer-logo{
+display:flex;
+justify-content:flex-start;
+}
+
+.logo-box{
+background:white;
+border-radius:10px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-box img{
+width:36px;
+}
+
+.footer-center{
 text-align:center;
+}
+
+.footer-right{
+text-align:right;
 }
 
 </style>
 
 <script>
 
-document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
 
 document.addEventListener("keydown",function(e){
+
 if(e.ctrlKey && e.key==="c") e.preventDefault();
 if(e.ctrlKey && e.key==="s") e.preventDefault();
 if(e.ctrlKey && e.key==="u") e.preventDefault();
+
 });
 
 </script>
@@ -269,60 +298,103 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 <a>아이디/비밀번호 찾기</a>
 </div>
 
-<div class="signup-form">
+<!-- 이메일 -->
 
-<div class="input-box">
-<img src="회원가입.png">
-<input type="text" placeholder="아이디">
-</div>
+<div class="form-row">
+<div class="form-label">이메일</div>
 
-<div class="input-box">
-<img src="로그인.png">
-<input type="password" placeholder="비밀번호">
-</div>
-
-<div class="input-box">
-<img src="로그인.png">
-<input type="password" placeholder="비밀번호 확인">
-</div>
-
-<div class="input-box">
-<img src="회원가입.png">
-<input type="text" placeholder="이름">
-</div>
-
-<div class="input-box">
-
-<div class="email-box">
-
-<input type="text" placeholder="example">
-
+<div class="form-input email-box">
+<input type="text">
 <span>@</span>
-
-<input type="text" placeholder="직접입력">
-
+<input type="text">
 <select>
+<option>예: 직접입력</option>
 <option>naver.com</option>
 <option>gmail.com</option>
 <option>daum.net</option>
-<option>직접입력</option>
 </select>
+</div>
+</div>
 
+<!-- 비밀번호 -->
+
+<div class="form-row">
+<div class="form-label">비밀번호</div>
+<div class="form-input">
+<input type="password">
+</div>
+</div>
+
+<!-- 비밀번호 확인 -->
+
+<div class="form-row">
+<div class="form-label">비밀번호 확인</div>
+<div class="form-input">
+<input type="password">
+</div>
+</div>
+
+<!-- 이름 -->
+
+<div class="form-row">
+<div class="form-label">이름</div>
+<div class="form-input">
+<input type="text">
+</div>
+</div>
+
+<!-- 동/호수 -->
+
+<div class="form-row">
+<div class="form-label">동/호수</div>
+
+<div class="form-input dong-box">
+<input type="text" placeholder="000동">
+<input type="text" placeholder="0000호">
 </div>
 
 </div>
 
-<button class="signup-btn">
-회원가입
-</button>
+<!-- 휴대폰 -->
+
+<div class="form-row">
+<div class="form-label">휴대폰</div>
+
+<div class="form-input phone-box">
+<input type="text" value="010" style="width:70px">
+<span>-</span>
+<input type="text" style="width:100px">
+<span>-</span>
+<input type="text" style="width:100px">
+</div>
 
 </div>
 
-<div class="signup-info">
-회원가입 후 로그인하여 월간독서퀴즈에 참여하실 수 있습니다.
-</div>
+<button class="signup-btn">회원가입</button>
 
 </section>
+
+<footer>
+
+<div class="footer">
+
+<div class="footer-logo">
+<div class="logo-box">
+<img src="아파트 도서관 로고.1.1.png">
+</div>
+</div>
+
+<div class="footer-center">
+다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
+</div>
+
+<div class="footer-right">
+© 2026 Daon Library
+</div>
+
+</div>
+
+</footer>
 
 </body>
 </html>
