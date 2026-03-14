@@ -13,12 +13,6 @@ background:#f5f7fb;
 user-select:none;
 }
 
-img{
--webkit-user-drag:none;
-user-drag:none;
--webkit-touch-callout:none;
-}
-
 /* 헤더 */
 
 header{
@@ -105,39 +99,47 @@ width:20px;
 background:linear-gradient(135deg,#5f72ff,#9b59b6);
 color:white;
 text-align:center;
-padding:70px 20px;
+padding:80px 20px;
 }
 
 .banner-title{
-font-size:34px;
+font-size:36px;
 font-weight:bold;
 }
 
-/* 로그인 영역 */
+/* 로그인 카드 */
 
 .login-area{
-max-width:420px;
+max-width:480px;
 margin:60px auto;
 background:white;
 padding:40px;
-border-radius:14px;
-box-shadow:0 10px 30px rgba(0,0,0,0.12);
-text-align:center;
+border-radius:10px;
+border:1px solid #e4e4e4;
 }
 
-/* 입력창 */
+/* 라벨 */
+
+.form-label{
+font-weight:bold;
+font-size:14px;
+margin-bottom:6px;
+display:block;
+}
+
+/* 이메일 */
 
 .email-box{
 display:flex;
 align-items:center;
 gap:8px;
-margin-bottom:16px;
+margin-bottom:20px;
 }
 
 .email-box input{
 padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
+border:1px solid #ccc;
+border-radius:6px;
 font-size:14px;
 }
 
@@ -151,53 +153,56 @@ flex:1;
 
 .email-box select{
 padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
-font-size:14px;
+border:1px solid #ccc;
+border-radius:6px;
 }
 
 /* 비밀번호 */
 
-.password-box input{
+.password-wrap{
+position:relative;
+margin-bottom:20px;
+}
+
+.password-wrap input{
 width:100%;
 padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
+border:1px solid #ccc;
+border-radius:6px;
 font-size:14px;
-margin-bottom:16px;
 }
 
-/* 포커스 효과 */
-
-input:focus, select:focus{
-outline:none;
-border-color:#5f72ff;
-box-shadow:0 0 5px rgba(95,114,255,0.4);
+.password-toggle{
+position:absolute;
+right:10px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+font-size:16px;
 }
 
-/* 로그인 버튼 */
+/* 버튼 */
 
 .login-btn{
 width:100%;
 padding:14px;
-background:linear-gradient(135deg,#5f72ff,#6c5ce7);
+background:#5f72ff;
 color:white;
 border:none;
-border-radius:8px;
+border-radius:6px;
 font-weight:bold;
 font-size:15px;
 cursor:pointer;
-transition:0.2s;
 }
 
 .login-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 5px 12px rgba(0,0,0,0.15);
+background:#4e60e0;
 }
 
-/* 회원가입 링크 */
+/* 링크 */
 
 .signup-link{
+text-align:center;
 margin-top:18px;
 font-size:14px;
 }
@@ -257,16 +262,29 @@ text-align:right;
 
 function domainSelect(select){
 
-const domain = document.getElementById("emailDomain");
+const domain=document.getElementById("emailDomain");
 
-if(select.value === ""){
+if(select.value===""){
 domain.value="";
 domain.disabled=false;
 domain.focus();
-}
-else{
+}else{
 domain.value=select.value;
 domain.disabled=true;
+}
+
+}
+
+/* 비밀번호 보기 */
+
+function togglePassword(){
+
+const pw=document.getElementById("password");
+
+if(pw.type==="password"){
+pw.type="text";
+}else{
+pw.type="password";
 }
 
 }
@@ -311,14 +329,12 @@ domain.disabled=true;
 </header>
 
 <section class="banner">
-
-<div class="banner-title">
-로그인
-</div>
-
+<div class="banner-title">로그인</div>
 </section>
 
 <section class="login-area">
+
+<label class="form-label">이메일</label>
 
 <div class="email-box">
 
@@ -326,7 +342,7 @@ domain.disabled=true;
 
 <span>@</span>
 
-<input id="emailDomain" class="email-domain" type="text" placeholder="">
+<input id="emailDomain" class="email-domain" type="text">
 
 <select onchange="domainSelect(this)">
 <option value="">직접입력</option>
@@ -338,8 +354,14 @@ domain.disabled=true;
 
 </div>
 
-<div class="password-box">
-<input type="password" placeholder="비밀번호">
+<label class="form-label">비밀번호</label>
+
+<div class="password-wrap">
+
+<input id="password" type="password" placeholder="비밀번호">
+
+<span class="password-toggle" onclick="togglePassword()">👁</span>
+
 </div>
 
 <button class="login-btn">로그인</button>
