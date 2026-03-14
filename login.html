@@ -105,39 +105,39 @@ width:20px;
 background:linear-gradient(135deg,#5f72ff,#9b59b6);
 color:white;
 text-align:center;
-padding:80px 20px;
+padding:70px 20px;
 }
 
 .banner-title{
-font-size:36px;
+font-size:34px;
 font-weight:bold;
 }
 
 /* 로그인 영역 */
 
 .login-area{
-max-width:520px;
+max-width:420px;
 margin:60px auto;
 background:white;
 padding:40px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.1);
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.12);
 text-align:center;
 }
 
-/* 이메일 입력 */
+/* 입력창 */
 
 .email-box{
 display:flex;
 align-items:center;
 gap:8px;
-margin-bottom:14px;
+margin-bottom:16px;
 }
 
 .email-box input{
 padding:12px;
 border:1px solid #ddd;
-border-radius:6px;
+border-radius:8px;
 font-size:14px;
 }
 
@@ -152,45 +152,60 @@ flex:1;
 .email-box select{
 padding:12px;
 border:1px solid #ddd;
-border-radius:6px;
+border-radius:8px;
 font-size:14px;
 }
 
 /* 비밀번호 */
 
-.password-box{
-margin-bottom:14px;
-}
-
 .password-box input{
 width:100%;
 padding:12px;
 border:1px solid #ddd;
-border-radius:6px;
+border-radius:8px;
 font-size:14px;
+margin-bottom:16px;
 }
 
-/* 버튼 */
+/* 포커스 효과 */
+
+input:focus, select:focus{
+outline:none;
+border-color:#5f72ff;
+box-shadow:0 0 5px rgba(95,114,255,0.4);
+}
+
+/* 로그인 버튼 */
 
 .login-btn{
 width:100%;
-padding:12px;
-background:#5f72ff;
+padding:14px;
+background:linear-gradient(135deg,#5f72ff,#6c5ce7);
 color:white;
 border:none;
-border-radius:6px;
+border-radius:8px;
 font-weight:bold;
+font-size:15px;
 cursor:pointer;
+transition:0.2s;
 }
 
+.login-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* 회원가입 링크 */
+
 .signup-link{
-margin-top:15px;
+margin-top:18px;
 font-size:14px;
 }
 
 .signup-link a{
 color:#5f72ff;
 text-decoration:none;
+font-weight:bold;
 }
 
 /* Footer */
