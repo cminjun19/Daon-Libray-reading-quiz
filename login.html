@@ -8,7 +8,7 @@
 
 body{
 margin:0;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 background:#f5f7fb;
 user-select:none;
 }
@@ -16,6 +16,7 @@ user-select:none;
 img{
 -webkit-user-drag:none;
 user-drag:none;
+-webkit-touch-callout:none;
 }
 
 /* 헤더 */
@@ -55,6 +56,7 @@ font-weight:bold;
 .auth{
 display:flex;
 justify-content:flex-end;
+align-items:center;
 }
 
 .auth a{
@@ -62,7 +64,14 @@ text-decoration:none;
 color:black;
 font-size:14px;
 font-weight:bold;
+display:flex;
+align-items:center;
+gap:6px;
 margin-left:18px;
+}
+
+.auth img{
+width:16px;
 }
 
 /* 메뉴 */
@@ -76,52 +85,95 @@ border-top:1px solid #e0e0e0;
 border-bottom:1px solid #e0e0e0;
 }
 
+.menu a{
+color:#000;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.menu img{
+width:20px;
+}
+
 /* 로그인 */
 
-.login-box{
-max-width:500px;
-margin:80px auto;
+.login-section{
+max-width:900px;
+margin:70px auto;
 background:white;
 padding:40px;
 border-radius:12px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.login-box{
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+.login-image{
+flex:1;
 text-align:center;
 }
 
-.login-title{
-font-size:24px;
-font-weight:bold;
-margin-bottom:30px;
+.login-image img{
+width:200px;
 }
 
-.input{
-width:100%;
-padding:14px;
+.login-form{
+flex:1;
+}
+
+.login-title{
+font-size:22px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.input-box{
 margin-bottom:15px;
+}
+
+.input-box input{
+width:100%;
+padding:12px;
 border:1px solid #ccc;
 border-radius:6px;
+font-size:14px;
 }
 
 .login-btn{
+margin-top:10px;
 width:100%;
 padding:14px;
-background:#5f72ff;
+background:#16a085;
 border:none;
 color:white;
 font-size:16px;
+font-weight:bold;
 border-radius:8px;
 cursor:pointer;
 }
 
+.login-btn:hover{
+background:#138d75;
+}
+
 .find-btn{
-margin-top:15px;
+margin-top:12px;
 background:none;
 border:none;
 color:#555;
 cursor:pointer;
+font-size:14px;
 }
 
-/* footer */
+/* Footer */
 
 footer{
 background:#222;
@@ -165,6 +217,7 @@ text-align:right;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -192,31 +245,43 @@ text-align:right;
 </div>
 
 <nav class="menu">
-<a>도서관 안내</a>
-<a>이달의 선정도서</a>
-<a>당첨자 목록</a>
-<a>공지사항</a>
+<a><img src="도서관 안내.png">도서관 안내</a>
+<a><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a><img src="당첨자 목록.png">당첨자 목록</a>
+<a><img src="공지사항.png">공지사항</a>
 </nav>
 
 </header>
 
-<section class="login-box">
+<section class="login-section">
+
+<div class="login-box">
+
+<div class="login-image">
+<img src="로그인안내.png">
+</div>
+
+<div class="login-form">
 
 <div class="login-title">
 다온 작은도서관 월간독서퀴즈 홈페이지에 오신 것을 환영합니다
 </div>
 
-<input class="input" placeholder="아이디(이메일)">
+<div class="input-box">
+<input type="text" placeholder="아이디(이메일)">
+</div>
 
-<input class="input" type="password" placeholder="비밀번호">
+<div class="input-box">
+<input type="password" placeholder="비밀번호">
+</div>
 
-<button class="login-btn">
-로그인
-</button>
+<button class="login-btn">로그인</button>
 
-<button class="find-btn">
-아이디 / 비밀번호 찾기
-</button>
+<button class="find-btn">아이디 / 비밀번호 찾기</button>
+
+</div>
+
+</div>
 
 </section>
 
