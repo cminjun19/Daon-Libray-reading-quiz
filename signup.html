@@ -8,29 +8,31 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#f5f7fb;
 }
 
 .signup-section{
-max-width:600px;
-margin:70px auto;
+max-width:900px;
+margin:60px auto;
 background:white;
-padding:40px;
 border-radius:12px;
+padding:40px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+text-align:center;
 }
 
 .form-row{
 display:flex;
+justify-content:center;
 align-items:center;
 margin-bottom:18px;
-justify-content:center;
 }
 
 .form-label{
 width:120px;
 font-weight:bold;
+text-align:left;
 }
 
 .form-input input,
@@ -38,18 +40,15 @@ font-weight:bold;
 padding:10px;
 border:1px solid #ccc;
 border-radius:6px;
-font-size:14px;
 }
 
 .email-box{
 display:flex;
-align-items:center;
 gap:6px;
 }
 
 .phone-box{
 display:flex;
-align-items:center;
 gap:6px;
 }
 
@@ -67,7 +66,6 @@ cursor:pointer;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -81,14 +79,15 @@ cursor:pointer;
 <input type="text">
 <span>@</span>
 <input type="text">
+
 <select>
 <option>직접입력</option>
 <option>naver.com</option>
 <option>gmail.com</option>
 <option>daum.net</option>
 </select>
-</div>
 
+</div>
 </div>
 
 <div class="form-row">
@@ -113,11 +112,11 @@ cursor:pointer;
 </div>
 
 <div class="form-row">
-<div class="form-label">동 / 호수</div>
+<div class="form-label">동/호수</div>
 
 <div class="form-input">
-<input type="text" placeholder="000">동
-<input type="text" placeholder="0000">호
+<input type="text"> 동
+<input type="text"> 호
 </div>
 
 </div>
@@ -126,11 +125,11 @@ cursor:pointer;
 <div class="form-label">휴대폰</div>
 
 <div class="form-input phone-box">
-<input type="text" value="010" readonly style="width:70px">
+<input type="text" value="010" readonly>
 <span>-</span>
-<input type="text" style="width:90px">
+<input type="text">
 <span>-</span>
-<input type="text" style="width:90px">
+<input type="text">
 </div>
 
 </div>
