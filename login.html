@@ -2,15 +2,24 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>로그인 | 다온 작은도서관</title>
+<title>회원가입 | 다온 작은도서관</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 background:#f5f7fb;
+user-select:none;
 }
+
+img{
+-webkit-user-drag:none;
+user-drag:none;
+-webkit-touch-callout:none;
+}
+
+/* 헤더 */
 
 header{
 background:white;
@@ -47,6 +56,7 @@ font-weight:bold;
 .auth{
 display:flex;
 justify-content:flex-end;
+align-items:center;
 }
 
 .auth a{
@@ -89,9 +99,9 @@ gap:8px;
 width:20px;
 }
 
-/* 로그인 */
+/* 회원가입 영역 */
 
-.login-section{
+.signup-section{
 max-width:900px;
 margin:60px auto;
 background:white;
@@ -100,57 +110,72 @@ padding:40px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.login-title{
-font-size:22px;
+.signup-tabs{
+display:flex;
+gap:10px;
+margin-bottom:40px;
+}
+
+.signup-tabs a{
+flex:1;
+text-align:center;
+padding:14px;
+border-radius:8px;
+text-decoration:none;
 font-weight:bold;
-margin-bottom:10px;
+background:#e9ecef;
+color:#555;
 }
 
-.login-desc{
+.signup-tabs .active{
+background:#16a085;
+color:white;
+}
+
+/* 입력폼 */
+
+.form-row{
+display:flex;
+align-items:center;
+margin-bottom:18px;
+}
+
+.form-label{
+width:120px;
+font-weight:bold;
+}
+
+.form-input{
+flex:1;
+}
+
+.form-input input,
+.form-input select{
+padding:10px;
+border:1px solid #ccc;
+border-radius:6px;
 font-size:14px;
-color:#666;
-margin-bottom:25px;
 }
 
-.input-box{
+.email-box{
 display:flex;
 align-items:center;
-margin-bottom:15px;
+gap:6px;
 }
 
-.input-box img{
-width:20px;
-margin-right:10px;
-}
-
-.input-box input{
-flex:1;
-padding:12px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-.password-box{
+.phone-box{
 display:flex;
 align-items:center;
-width:100%;
+gap:6px;
 }
 
-.password-box input{
-flex:1;
-padding:12px;
-border:1px solid #ccc;
-border-radius:6px;
+.dong-box{
+display:flex;
+gap:10px;
 }
 
-.password-box button{
-margin-left:8px;
-padding:8px 10px;
-cursor:pointer;
-}
-
-.login-btn{
-margin-top:10px;
+.signup-btn{
+margin-top:25px;
 width:100%;
 padding:14px;
 background:#16a085;
@@ -162,12 +187,17 @@ border-radius:8px;
 cursor:pointer;
 }
 
+.signup-btn:hover{
+background:#138d75;
+}
+
 /* Footer */
 
 footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
+border-top:1px solid #444;
 font-size:14px;
 margin-top:60px;
 }
@@ -176,6 +206,25 @@ margin-top:60px;
 display:grid;
 grid-template-columns:1fr 2fr 1fr;
 align-items:center;
+}
+
+.footer-logo{
+display:flex;
+justify-content:flex-start;
+}
+
+.logo-box{
+background:white;
+border-radius:10px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-box img{
+width:36px;
 }
 
 .footer-center{
@@ -190,17 +239,17 @@ text-align:right;
 
 <script>
 
-function togglePassword(){
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
 
-const pw = document.getElementById("password");
+document.addEventListener("keydown",function(e){
 
-if(pw.type==="password"){
-pw.type="text";
-}else{
-pw.type="password";
-}
+if(e.ctrlKey && e.key==="c") e.preventDefault();
+if(e.ctrlKey && e.key==="s") e.preventDefault();
+if(e.ctrlKey && e.key==="u") e.preventDefault();
 
-}
+});
 
 </script>
 
@@ -231,40 +280,97 @@ pw.type="password";
 </div>
 
 <nav class="menu">
+
 <a href="#"><img src="도서관 안내.png">도서관 안내</a>
 <a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
+
 </nav>
 
 </header>
 
-<section class="login-section">
+<section class="signup-section">
 
-<div class="login-title">
-다온 작은도서관 월간독서퀴즈 홈페이지에 오신 것을 환영합니다
+<div class="signup-tabs">
+<a href="login.html">로그인</a>
+<a class="active">회원가입</a>
+<a>아이디/비밀번호 찾기</a>
 </div>
 
-<div class="login-desc">
-관리자 권한 사용자에 한하여 접근 및 로그인이 가능합니다.
+<!-- 이메일 -->
+
+<div class="form-row">
+<div class="form-label">이메일</div>
+
+<div class="form-input email-box">
+<input type="text">
+<span>@</span>
+<input type="text">
+<select>
+<option>예: 직접입력</option>
+<option>naver.com</option>
+<option>gmail.com</option>
+<option>daum.net</option>
+</select>
+</div>
 </div>
 
-<div class="input-box">
-<img src="회원가입.png">
-<input type="text" placeholder="아이디(이메일)">
+<!-- 비밀번호 -->
+
+<div class="form-row">
+<div class="form-label">비밀번호</div>
+<div class="form-input">
+<input type="password">
+</div>
 </div>
 
-<div class="input-box">
-<img src="로그인.png">
+<!-- 비밀번호 확인 -->
 
-<div class="password-box">
-<input type="password" id="password" placeholder="비밀번호">
-<button onclick="togglePassword()">👁</button>
+<div class="form-row">
+<div class="form-label">비밀번호 확인</div>
+<div class="form-input">
+<input type="password">
+</div>
+</div>
+
+<!-- 이름 -->
+
+<div class="form-row">
+<div class="form-label">이름</div>
+<div class="form-input">
+<input type="text">
+</div>
+</div>
+
+<!-- 동/호수 -->
+
+<div class="form-row">
+<div class="form-label">동/호수</div>
+
+<div class="form-input dong-box">
+<input type="text" placeholder="000동">
+<input type="text" placeholder="0000호">
 </div>
 
 </div>
 
-<button class="login-btn">로그인</button>
+<!-- 휴대폰 -->
+
+<div class="form-row">
+<div class="form-label">휴대폰</div>
+
+<div class="form-input phone-box">
+<input type="text" value="010" style="width:70px">
+<span>-</span>
+<input type="text" style="width:100px">
+<span>-</span>
+<input type="text" style="width:100px">
+</div>
+
+</div>
+
+<button class="signup-btn">회원가입</button>
 
 </section>
 
@@ -272,7 +378,11 @@ pw.type="password";
 
 <div class="footer">
 
-<div></div>
+<div class="footer-logo">
+<div class="logo-box">
+<img src="아파트 도서관 로고.1.1.png">
+</div>
+</div>
 
 <div class="footer-center">
 다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
