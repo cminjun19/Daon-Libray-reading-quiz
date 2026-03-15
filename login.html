@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>회원가입 | 다온 작은도서관</title>
+<title>로그인 | 다온 작은도서관</title>
 
 <style>
 
@@ -99,10 +99,10 @@ gap:8px;
 width:20px;
 }
 
-/* 회원가입 영역 */
+/* 로그인 영역 */
 
-.signup-section{
-max-width:900px;
+.login-section{
+max-width:1000px;
 margin:60px auto;
 background:white;
 border-radius:12px;
@@ -110,13 +110,13 @@ padding:40px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.signup-tabs{
+.login-tabs{
 display:flex;
 gap:10px;
 margin-bottom:40px;
 }
 
-.signup-tabs a{
+.login-tabs a{
 flex:1;
 text-align:center;
 padding:14px;
@@ -127,55 +127,63 @@ background:#e9ecef;
 color:#555;
 }
 
-.signup-tabs .active{
+.login-tabs .active{
 background:#16a085;
 color:white;
 }
 
-/* 입력폼 */
-
-.form-row{
+.login-box{
 display:flex;
 align-items:center;
-margin-bottom:18px;
+gap:40px;
 }
 
-.form-label{
-width:120px;
-font-weight:bold;
+.login-image{
+flex:1;
+text-align:center;
 }
 
-.form-input{
+.login-image img{
+width:200px;
+}
+
+.login-form{
 flex:1;
 }
 
-.form-input input,
-.form-input select{
-padding:10px;
+.login-title{
+font-size:22px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.login-desc{
+font-size:14px;
+color:#666;
+margin-bottom:25px;
+}
+
+.input-box{
+display:flex;
+align-items:center;
+margin-bottom:15px;
+}
+
+.input-box img{
+width:20px;
+margin-right:10px;
+}
+
+.input-box input{
+flex:1;
+padding:12px;
 border:1px solid #ccc;
 border-radius:6px;
 font-size:14px;
 }
 
-.email-box{
-display:flex;
-align-items:center;
-gap:6px;
-}
-
-.phone-box{
-display:flex;
-align-items:center;
-gap:6px;
-}
-
-.dong-box{
-display:flex;
-gap:10px;
-}
-
-.signup-btn{
-margin-top:25px;
+.login-btn{
+margin-top:10px;
 width:100%;
 padding:14px;
 background:#16a085;
@@ -187,7 +195,7 @@ border-radius:8px;
 cursor:pointer;
 }
 
-.signup-btn:hover{
+.login-btn:hover{
 background:#138d75;
 }
 
@@ -199,7 +207,6 @@ color:#ddd;
 padding:10px 40px;
 border-top:1px solid #444;
 font-size:14px;
-margin-top:60px;
 }
 
 .footer{
@@ -239,16 +246,12 @@ text-align:right;
 
 <script>
 
-document.addEventListener("contextmenu",function(e){
-e.preventDefault();
-});
+document.addEventListener("contextmenu",e=>e.preventDefault());
 
 document.addEventListener("keydown",function(e){
-
 if(e.ctrlKey && e.key==="c") e.preventDefault();
 if(e.ctrlKey && e.key==="s") e.preventDefault();
 if(e.ctrlKey && e.key==="u") e.preventDefault();
-
 });
 
 </script>
@@ -290,87 +293,45 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 
 </header>
 
-<section class="signup-section">
+<section class="login-section">
 
-<div class="signup-tabs">
-<a href="login.html">로그인</a>
-<a class="active">회원가입</a>
+<div class="login-tabs">
+<a class="active">로그인</a>
+<a href="signup.html">회원가입</a>
 <a>아이디/비밀번호 찾기</a>
 </div>
 
-<!-- 이메일 -->
+<div class="login-box">
 
-<div class="form-row">
-<div class="form-label">이메일</div>
-
-<div class="form-input email-box">
-<input type="text">
-<span>@</span>
-<input type="text">
-<select>
-<option>예: 직접입력</option>
-<option>naver.com</option>
-<option>gmail.com</option>
-<option>daum.net</option>
-</select>
-</div>
+<div class="login-image">
+<img src="로그인안내.png">
 </div>
 
-<!-- 비밀번호 -->
+<div class="login-form">
 
-<div class="form-row">
-<div class="form-label">비밀번호</div>
-<div class="form-input">
-<input type="password">
-</div>
+<div class="login-title">
+다온 작은도서관 월간독서퀴즈 홈페이지에 오신 것을 환영합니다
 </div>
 
-<!-- 비밀번호 확인 -->
-
-<div class="form-row">
-<div class="form-label">비밀번호 확인</div>
-<div class="form-input">
-<input type="password">
-</div>
+<div class="login-desc">
+로그인을 하시면 더 많은 도서관 서비스를 이용할 수 있습니다.
 </div>
 
-<!-- 이름 -->
-
-<div class="form-row">
-<div class="form-label">이름</div>
-<div class="form-input">
-<input type="text">
-</div>
+<div class="input-box">
+<img src="회원가입.png">
+<input type="text" placeholder="아이디(이메일)">
 </div>
 
-<!-- 동/호수 -->
+<div class="input-box">
+<img src="로그인.png">
+<input type="password" placeholder="비밀번호">
+</div>
 
-<div class="form-row">
-<div class="form-label">동/호수</div>
+<button class="login-btn">로그인</button>
 
-<div class="form-input dong-box">
-<input type="text" placeholder="000동">
-<input type="text" placeholder="0000호">
 </div>
 
 </div>
-
-<!-- 휴대폰 -->
-
-<div class="form-row">
-<div class="form-label">휴대폰</div>
-
-<div class="form-input phone-box">
-<input type="text" value="010" style="width:70px">
-<span>-</span>
-<input type="text" style="width:100px">
-<span>-</span>
-<input type="text" style="width:100px">
-</div>
-
-</div>
-
-<button class="signup-btn">회원가입</button>
 
 </section>
 
