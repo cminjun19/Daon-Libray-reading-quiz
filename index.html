@@ -9,58 +9,56 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f5f7fb;
+background:#f6f7fb;
 }
+
+/* 헤더 */
 
 header{
 background:white;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
+border-bottom:1px solid #e5e5e5;
 }
 
-.top-bar{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
+.top{
+display:flex;
+justify-content:space-between;
 align-items:center;
-padding:16px 50px;
+padding:18px 60px;
 }
 
-.library{
+.logo{
 display:flex;
 align-items:center;
-font-size:32px;
+font-size:30px;
 font-weight:bold;
 }
 
-.library img{
+.logo img{
 width:40px;
 margin-right:10px;
 }
 
-.site-title{
-text-align:center;
+.title{
 font-size:20px;
 font-weight:bold;
 }
 
-.auth{
-display:flex;
-justify-content:flex-end;
-gap:20px;
-}
-
 .auth a{
+margin-left:20px;
 text-decoration:none;
 color:black;
 font-weight:bold;
 }
 
+/* 메뉴 */
+
 .menu{
-background:#f1f3f5;
 display:flex;
 justify-content:space-around;
 padding:16px 0;
-border-top:1px solid #e0e0e0;
-border-bottom:1px solid #e0e0e0;
+background:#f1f3f5;
+border-top:1px solid #ddd;
+border-bottom:1px solid #ddd;
 }
 
 .menu a{
@@ -69,36 +67,70 @@ color:black;
 font-weight:bold;
 }
 
+/* 배너 */
+
 .banner{
-height:300px;
-background:linear-gradient(135deg,#16a085,#2ecc71);
+height:320px;
 display:flex;
-align-items:center;
 justify-content:center;
-color:white;
-font-size:32px;
+align-items:center;
+font-size:34px;
 font-weight:bold;
+color:white;
+background:linear-gradient(135deg,#17a589,#2ecc71);
 }
+
+/* 메뉴 안내 카드 */
+
+.menu-guide{
+max-width:1100px;
+margin:70px auto;
+display:flex;
+justify-content:space-between;
+}
+
+.guide-card{
+width:23%;
+background:white;
+padding:30px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+transition:0.2s;
+cursor:pointer;
+}
+
+.guide-card:hover{
+transform:translateY(-5px);
+}
+
+.guide-card img{
+width:42px;
+margin-bottom:12px;
+}
+
+.guide-title{
+font-weight:bold;
+font-size:17px;
+}
+
+/* footer */
 
 footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
-font-size:14px;
 }
 
 .footer{
-display:grid;
-grid-template-columns:1fr 2fr 1fr;
+display:flex;
+justify-content:space-between;
 align-items:center;
 }
 
 .footer-center{
 text-align:center;
-}
-
-.footer-right{
-text-align:right;
+flex:1;
 }
 
 </style>
@@ -108,20 +140,20 @@ text-align:right;
 
 <header>
 
-<div class="top-bar">
+<div class="top">
 
-<div class="library">
+<div class="logo">
 <img src="아파트 도서관 로고.1.1.png">
 다온 작은도서관
 </div>
 
-<div class="site-title">
+<div class="title">
 월간독서퀴즈
 </div>
 
 <div class="auth">
 <a href="login.html">로그인</a>
-<a href="#" onclick="return false;">회원가입</a>
+<a href="#">회원가입</a>
 </div>
 
 </div>
@@ -139,6 +171,30 @@ text-align:right;
 다온 작은도서관 월간독서퀴즈
 </section>
 
+<section class="menu-guide">
+
+<div class="guide-card">
+<img src="도서관 안내.png">
+<div class="guide-title">도서관 안내</div>
+</div>
+
+<div class="guide-card">
+<img src="이달의 선정도서.png">
+<div class="guide-title">이달의 선정도서</div>
+</div>
+
+<div class="guide-card">
+<img src="당첨자 목록.png">
+<div class="guide-title">당첨자 목록</div>
+</div>
+
+<div class="guide-card">
+<img src="공지사항.png">
+<div class="guide-title">공지사항</div>
+</div>
+
+</section>
+
 <footer>
 
 <div class="footer">
@@ -151,7 +207,7 @@ text-align:right;
 다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
 </div>
 
-<div class="footer-right">
+<div>
 © 2026 Daon Library
 </div>
 
