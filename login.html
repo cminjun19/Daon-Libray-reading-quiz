@@ -144,7 +144,7 @@ text-align:center;
 }
 
 .login-image img{
-width:200px;
+width:320px;
 }
 
 .login-form{
@@ -164,18 +164,11 @@ margin-bottom:25px;
 }
 
 .input-box{
-display:flex;
-align-items:center;
 margin-bottom:15px;
 }
 
-.input-box img{
-width:20px;
-margin-right:10px;
-}
-
 .input-box input{
-flex:1;
+width:100%;
 padding:12px;
 border:1px solid #ccc;
 border-radius:6px;
@@ -186,9 +179,6 @@ font-size:14px;
 
 .password-box{
 position:relative;
-display:flex;
-align-items:center;
-width:100%;
 }
 
 .password-box input{
@@ -196,13 +186,14 @@ width:100%;
 padding:12px;
 border:1px solid #ccc;
 border-radius:6px;
-font-size:14px;
 padding-right:40px;
 }
 
 .toggle-password{
 position:absolute;
 right:10px;
+top:50%;
+transform:translateY(-50%);
 cursor:pointer;
 font-size:16px;
 }
@@ -334,7 +325,7 @@ pw.type = pw.type === "password" ? "text" : "password";
 <div class="login-box">
 
 <div class="login-image">
-<img src="로그인안내.png">
+<img src="보안.png">
 </div>
 
 <div class="login-form">
@@ -348,12 +339,10 @@ pw.type = pw.type === "password" ? "text" : "password";
 </div>
 
 <div class="input-box">
-<img src="보안.png">
 <input type="text" placeholder="아이디(이메일)">
 </div>
 
 <div class="input-box">
-<img src="보안.png">
 <div class="password-box">
 <input type="password" id="password" placeholder="비밀번호">
 <span class="toggle-password" onclick="togglePassword()">👁</span>
