@@ -182,7 +182,7 @@ border-radius:6px;
 font-size:14px;
 }
 
-/* 비밀번호 보기 버튼 */
+/* 비밀번호 보기 */
 
 .password-box{
 position:relative;
@@ -279,16 +279,9 @@ if(e.ctrlKey && e.key==="s") e.preventDefault();
 if(e.ctrlKey && e.key==="u") e.preventDefault();
 });
 
-/* 비밀번호 보기 기능 */
-
 function togglePassword(){
-const pw = document.getElementById("password");
-
-if(pw.type === "password"){
-pw.type = "text";
-}else{
-pw.type = "password";
-}
+const pw=document.getElementById("password");
+pw.type = pw.type === "password" ? "text" : "password";
 }
 
 </script>
@@ -355,18 +348,16 @@ pw.type = "password";
 </div>
 
 <div class="input-box">
-<img src="회원가입.png">
+<img src="보안.png">
 <input type="text" placeholder="아이디(이메일)">
 </div>
 
 <div class="input-box">
-<img src="로그인.png">
-
+<img src="보안.png">
 <div class="password-box">
 <input type="password" id="password" placeholder="비밀번호">
 <span class="toggle-password" onclick="togglePassword()">👁</span>
 </div>
-
 </div>
 
 <button class="login-btn">로그인</button>
