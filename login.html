@@ -182,6 +182,31 @@ border-radius:6px;
 font-size:14px;
 }
 
+/* 비밀번호 보기 버튼 */
+
+.password-box{
+position:relative;
+display:flex;
+align-items:center;
+width:100%;
+}
+
+.password-box input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:14px;
+padding-right:40px;
+}
+
+.toggle-password{
+position:absolute;
+right:10px;
+cursor:pointer;
+font-size:16px;
+}
+
 .login-btn{
 margin-top:10px;
 width:100%;
@@ -254,6 +279,18 @@ if(e.ctrlKey && e.key==="s") e.preventDefault();
 if(e.ctrlKey && e.key==="u") e.preventDefault();
 });
 
+/* 비밀번호 보기 기능 */
+
+function togglePassword(){
+const pw = document.getElementById("password");
+
+if(pw.type === "password"){
+pw.type = "text";
+}else{
+pw.type = "password";
+}
+}
+
 </script>
 
 </head>
@@ -324,7 +361,12 @@ if(e.ctrlKey && e.key==="u") e.preventDefault();
 
 <div class="input-box">
 <img src="로그인.png">
-<input type="password" placeholder="비밀번호">
+
+<div class="password-box">
+<input type="password" id="password" placeholder="비밀번호">
+<span class="toggle-password" onclick="togglePassword()">👁</span>
+</div>
+
 </div>
 
 <button class="login-btn">로그인</button>
