@@ -12,7 +12,7 @@ box-sizing:border-box;
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#f5f7fb;
 }
 
@@ -33,10 +33,10 @@ padding:16px 50px;
 .library a{
 display:flex;
 align-items:center;
+text-decoration:none;
+color:#000;
 font-size:32px;
 font-weight:bold;
-text-decoration:none;
-color:black;
 }
 
 .library img{
@@ -53,13 +53,22 @@ font-weight:bold;
 .auth{
 display:flex;
 justify-content:flex-end;
-gap:20px;
+align-items:center;
 }
 
 .auth a{
 text-decoration:none;
 color:black;
+font-size:14px;
 font-weight:bold;
+display:flex;
+align-items:center;
+gap:6px;
+margin-left:18px;
+}
+
+.auth img{
+width:16px;
 }
 
 /* 메뉴 */
@@ -74,12 +83,16 @@ border-bottom:1px solid #e0e0e0;
 }
 
 .menu a{
+color:#000;
 text-decoration:none;
-color:black;
 font-weight:bold;
+font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
 }
 
-/* 로그인 */
+/* 로그인 영역 */
 
 .login-section{
 max-width:1000px;
@@ -182,12 +195,14 @@ border-radius:8px;
 cursor:pointer;
 }
 
-/* footer */
+/* Footer */
 
 footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
+border-top:1px solid #444;
+font-size:14px;
 }
 
 .footer{
@@ -235,17 +250,19 @@ pw.type = pw.type === "password" ? "text" : "password";
 </div>
 
 <div class="auth">
-<a href="login.html">로그인</a>
-<a href="#" onclick="return false;">회원가입</a>
+<a href="login.html"><img src="로그인.png">로그인</a>
+<a href="#" onclick="return false;"><img src="회원가입.png">회원가입</a>
 </div>
 
 </div>
 
 <nav class="menu">
-<a href="#">도서관 안내</a>
-<a href="#">이달의 선정도서</a>
-<a href="#">당첨자 목록</a>
-<a href="#">공지사항</a>
+
+<a href="#"><img src="도서관 안내.png">도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
+<a href="#"><img src="공지사항.png">공지사항</a>
+
 </nav>
 
 </header>
