@@ -71,7 +71,7 @@ margin-left:18px;
 width:16px;
 }
 
-/* 메뉴 버튼 (홈 화면과 동일하게 수정됨) */
+/* 메뉴 */
 
 .menu{
 background:#f1f3f5;
@@ -199,7 +199,7 @@ border-radius:8px;
 cursor:pointer;
 }
 
-/* Footer */
+/* Footer (홈 화면과 완전히 동일) */
 
 footer{
 background:#222;
@@ -213,6 +213,25 @@ font-size:14px;
 display:grid;
 grid-template-columns:1fr 2fr 1fr;
 align-items:center;
+}
+
+.footer-logo{
+display:flex;
+justify-content:flex-start;
+}
+
+.logo-box{
+background:white;
+border-radius:10px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-box img{
+width:36px;
 }
 
 .footer-center{
@@ -318,8 +337,10 @@ pw.type = pw.type === "password" ? "text" : "password";
 
 <div class="footer">
 
-<div>
-<img src="아파트 도서관 로고.1.1.png" width="40">
+<div class="footer-logo">
+<div class="logo-box">
+<img src="아파트 도서관 로고.1.1.png">
+</div>
 </div>
 
 <div class="footer-center">
