@@ -120,7 +120,64 @@ font-size:16px;
 }
 
 .content h2{
-margin-top:40px;
+margin-top:50px;
+}
+
+/* 운영시간 표 */
+
+.time-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.time-table th{
+background:#16a085;
+color:white;
+padding:12px;
+}
+
+.time-table td{
+border:1px solid #ddd;
+padding:12px;
+text-align:center;
+}
+
+.time-table tr:nth-child(even){
+background:#f9f9f9;
+}
+
+/* 대출 안내 박스 */
+
+.loan-box{
+background:#f0f8ff;
+border-left:6px solid #16a085;
+padding:20px;
+margin-top:20px;
+border-radius:6px;
+}
+
+/* 시설 카드 */
+
+.facility-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.facility-card{
+background:white;
+padding:25px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+font-weight:bold;
+transition:0.2s;
+}
+
+.facility-card:hover{
+transform:translateY(-5px);
 }
 
 /* Footer */
@@ -211,6 +268,7 @@ text-align:right;
 <section class="content">
 
 <h2>1️⃣ 도서관 소개</h2>
+
 <p>
 우리 아파트 <b>"다온 작은도서관"</b>은 주민들의 독서 생활과 문화 활동을 지원하기 위해 운영되는 공간입니다.<br>
 어린이부터 성인까지 누구나 편안하게 책을 읽고 학습할 수 있는 환경을 제공하며,
@@ -218,23 +276,46 @@ text-align:right;
 </p>
 
 <h2>2️⃣ 이용 대상</h2>
-<p>
-아파트 입주민
-</p>
+
+<p>아파트 입주민</p>
 
 <h2>3️⃣ 운영 시간 (26년 03월 기준)</h2>
 
-<p>
-1) 화요일 : 14:00 ~ 16:00 / 19:00 ~ 21:00<br>
-2) 수요일 : 14:00 ~ 17:00 / 20:00 ~ 21:00<br>
-3) 목요일 : 14:00 ~ 18:00 / 19:00 ~ 21:00<br>
-4) 금요일 : 14:00 ~ 16:00 / 19:00 ~ 21:00<br>
-5) 휴관일 : 월요일 / 토요일 / 일요일 / 공휴일
-</p>
+<table class="time-table">
 
-<p>
-※ 운영시간은 상황에 따라 변경될 수 있습니다.
-</p>
+<tr>
+<th>요일</th>
+<th>운영시간</th>
+</tr>
+
+<tr>
+<td>화요일</td>
+<td>14:00 ~ 16:00 / 19:00 ~ 21:00</td>
+</tr>
+
+<tr>
+<td>수요일</td>
+<td>14:00 ~ 17:00 / 20:00 ~ 21:00</td>
+</tr>
+
+<tr>
+<td>목요일</td>
+<td>14:00 ~ 18:00 / 19:00 ~ 21:00</td>
+</tr>
+
+<tr>
+<td>금요일</td>
+<td>14:00 ~ 16:00 / 19:00 ~ 21:00</td>
+</tr>
+
+<tr>
+<td>휴관일</td>
+<td>월요일 / 토요일 / 일요일 / 공휴일</td>
+</tr>
+
+</table>
+
+<p>※ 운영시간은 상황에 따라 변경될 수 있습니다.</p>
 
 <h2>4️⃣ 이용 규칙</h2>
 
@@ -247,6 +328,8 @@ text-align:right;
 
 <h2>5️⃣ 도서 대출 안내</h2>
 
+<div class="loan-box">
+
 <p>
 1) 대출 권수 : 1인 최대 3권<br>
 2) 대출 기간 : 7일<br>
@@ -257,17 +340,19 @@ text-align:right;
 ※ 연체 시 일정 기간 대출이 제한될 수 있습니다.
 </p>
 
+</div>
+
 <h2>6️⃣ 시설 안내</h2>
 
-<p>
-도서관에는 다음과 같은 공간이 마련되어 있습니다.
-</p>
+<div class="facility-grid">
 
-<p>
-1) 도서실<br>
-2) 독서실<br>
-3) 세미나실
-</p>
+<div class="facility-card">📚 도서실</div>
+
+<div class="facility-card">📖 독서실</div>
+
+<div class="facility-card">🧑‍🏫 세미나실</div>
+
+</div>
 
 </section>
 
