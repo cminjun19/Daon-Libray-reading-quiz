@@ -6,9 +6,7 @@
 
 <style>
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
 margin:0;
@@ -78,6 +76,13 @@ text-decoration:none;
 color:black;
 font-weight:bold;
 font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.menu img{
+width:20px;
 }
 
 /* 로그인 영역 */
@@ -119,14 +124,10 @@ align-items:center;
 gap:40px;
 }
 
-/* 로그인 이미지 */
-
 .login-image img{
 width:420px;
 border-radius:30px;
 }
-
-/* 로그인 폼 */
 
 .login-form{
 flex:1;
@@ -155,8 +156,6 @@ border:1px solid #ccc;
 border-radius:6px;
 }
 
-/* 비밀번호 */
-
 .password-box{
 position:relative;
 }
@@ -173,8 +172,6 @@ transform:translateY(-50%);
 cursor:pointer;
 }
 
-/* 로그인 버튼 */
-
 .login-btn{
 width:100%;
 padding:14px;
@@ -187,7 +184,7 @@ border-radius:8px;
 cursor:pointer;
 }
 
-/* Footer */
+/* footer */
 
 footer{
 background:#222;
@@ -222,23 +219,16 @@ justify-content:center;
 width:36px;
 }
 
-.footer-center{
-text-align:center;
-}
-
-.footer-right{
-text-align:right;
-}
+.footer-center{text-align:center;}
+.footer-right{text-align:right;}
 
 </style>
 
 <script>
-
 function togglePassword(){
 const pw=document.getElementById("password");
 pw.type = pw.type === "password" ? "text" : "password";
 }
-
 </script>
 
 </head>
@@ -261,17 +251,19 @@ pw.type = pw.type === "password" ? "text" : "password";
 </div>
 
 <div class="auth">
-<a href="login.html">로그인</a>
+<a href="login.html">🔒 로그인</a>
 <a href="#" onclick="return false;">회원가입</a>
 </div>
 
 </div>
 
 <nav class="menu">
-<a href="library.html">도서관 안내</a>
-<a href="#">이달의 선정도서</a>
-<a href="#">당첨자 목록</a>
-<a href="#">공지사항</a>
+
+<a href="library.html"><img src="도서관 안내.png">📖 도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">📚 이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">🏆 당첨자 목록</a>
+<a href="#"><img src="공지사항.png">📢 공지사항</a>
+
 </nav>
 
 </header>
@@ -301,7 +293,7 @@ pw.type = pw.type === "password" ? "text" : "password";
 </div>
 
 <div class="input-box">
-<input type="email" id="email" placeholder="아이디(이메일)">
+<input type="email" placeholder="아이디(이메일)">
 </div>
 
 <div class="input-box">
@@ -311,7 +303,7 @@ pw.type = pw.type === "password" ? "text" : "password";
 </div>
 </div>
 
-<button class="login-btn" onclick="login()">로그인</button>
+<button class="login-btn">로그인</button>
 
 </div>
 
@@ -340,48 +332,6 @@ pw.type = pw.type === "password" ? "text" : "password";
 </div>
 
 </footer>
-
-
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig = {
-apiKey: "AIzaSyBKnK-cqevbXUwHhwvLitEJe-IQOGL6MF8",
-authDomain: "daon-libray-reading-quiz.firebaseapp.com",
-projectId: "daon-libray-reading-quiz",
-storageBucket: "daon-libray-reading-quiz.firebasestorage.app",
-messagingSenderId: "65027461102",
-appId: "1:65027461102:web:04bc718ff8916cb12808ff"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-window.login = function(){
-
-const email=document.getElementById("email").value;
-const password=document.getElementById("password").value;
-
-signInWithEmailAndPassword(auth,email,password)
-
-.then((userCredential)=>{
-
-alert("관리자 로그인 성공");
-window.location.href="admin.html";
-
-})
-
-.catch((error)=>{
-
-alert("아이디 또는 비밀번호가 틀렸습니다.");
-
-});
-
-}
-
-</script>
 
 </body>
 </html>
