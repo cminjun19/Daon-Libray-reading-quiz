@@ -49,13 +49,22 @@ font-weight:bold;
 .auth{
 display:flex;
 justify-content:flex-end;
-gap:20px;
+align-items:center;
 }
 
 .auth a{
 text-decoration:none;
 color:black;
+font-size:14px;
 font-weight:bold;
+display:flex;
+align-items:center;
+gap:6px;
+margin-left:18px;
+}
+
+.auth img{
+width:16px;
 }
 
 /* 메뉴 */
@@ -70,8 +79,8 @@ border-bottom:1px solid #e0e0e0;
 }
 
 .menu a{
+color:#000;
 text-decoration:none;
-color:black;
 font-weight:bold;
 font-size:16px;
 display:flex;
@@ -83,7 +92,7 @@ gap:8px;
 width:20px;
 }
 
-/* 페이지 배너 */
+/* 배너 */
 
 .banner{
 background:linear-gradient(135deg,#5f72ff,#9b59b6);
@@ -94,6 +103,7 @@ padding:100px 20px;
 
 .banner h1{
 font-size:36px;
+margin:0;
 }
 
 /* 안내 내용 */
@@ -172,34 +182,32 @@ text-align:right;
 </div>
 
 <div class="auth">
-<a href="login.html">🔒 로그인</a>
-<a href="#" onclick="return false;">회원가입</a>
+<a href="login.html"><img src="로그인.png">로그인</a>
+<a href="#" onclick="return false;"><img src="회원가입.png">회원가입</a>
 </div>
 
 </div>
 
 <nav class="menu">
 
-<a href="library.html"><img src="도서관 안내.png">📖 도서관 안내</a>
-<a href="#"><img src="이달의 선정도서.png">📚 이달의 선정도서</a>
-<a href="#"><img src="당첨자 목록.png">🏆 당첨자 목록</a>
-<a href="#"><img src="공지사항.png">📢 공지사항</a>
+<a href="library.html"><img src="도서관 안내.png">도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
+<a href="#"><img src="공지사항.png">공지사항</a>
 
 </nav>
 
 </header>
 
 <section class="banner">
-<h1>📖 도서관 안내</h1>
+<h1>도서관 안내</h1>
 </section>
 
 <section class="content">
 
 <h2>다온 작은도서관 소개</h2>
 <p>
-다온 작은도서관은 지역 주민을 위한 열린 문화 공간으로
-독서 활동과 다양한 문화 프로그램을 통해 지역 사회의 독서 문화를
-활성화하고 있습니다.
+다온 작은도서관은 지역 주민을 위한 열린 문화 공간으로 다양한 독서 활동과 프로그램을 통해 지역 사회의 독서 문화를 활성화하고 있습니다.
 </p>
 
 <br>
