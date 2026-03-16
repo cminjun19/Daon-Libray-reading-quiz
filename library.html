@@ -195,12 +195,19 @@ footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
+border-top:1px solid #444;
+font-size:14px;
 }
 
 .footer{
 display:grid;
 grid-template-columns:1fr 2fr 1fr;
 align-items:center;
+}
+
+.footer-logo{
+display:flex;
+justify-content:flex-start;
 }
 
 .logo-box{
@@ -253,12 +260,10 @@ text-align:right;
 </div>
 
 <nav class="menu">
-
 <a href="library.html"><img src="도서관 안내.png">도서관 안내</a>
 <a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
-
 </nav>
 
 </header>
@@ -271,72 +276,95 @@ text-align:right;
 
 <div class="section-card">
 <h2>도서관 소개</h2>
-
 <ul class="info-list">
 <li>우리 아파트 "다온 작은도서관"은 주민들의 독서 생활과 문화 활동을 지원하기 위해 운영되는 공간입니다.</li>
 <li>어린이부터 성인까지 누구나 편안하게 책을 읽고 학습할 수 있는 환경을 제공합니다.</li>
 <li>다양한 도서와 프로그램을 통해 주민들의 지식과 소통의 공간이 되고자 합니다.</li>
 </ul>
-
 </div>
 
 <div class="section-card">
 <h2>이용 대상</h2>
-
 <ul class="info-list">
 <li>아파트 입주민 누구나 이용 가능합니다.</li>
 </ul>
-
 </div>
 
 <div class="section-card">
 <h2>운영 시간 (26년 03월 기준)</h2>
 
 <table class="time-table">
-
 <tr>
 <th>요일</th>
 <th>운영시간</th>
 </tr>
-
 <tr>
 <td>화요일</td>
 <td>14:00 ~ 16:00 / 19:00 ~ 21:00</td>
 </tr>
-
 <tr>
 <td>수요일</td>
 <td>14:00 ~ 17:00 / 20:00 ~ 21:00</td>
 </tr>
-
 <tr>
 <td>목요일</td>
 <td>14:00 ~ 18:00 / 19:00 ~ 21:00</td>
 </tr>
-
 <tr>
 <td>금요일</td>
 <td>14:00 ~ 16:00 / 19:00 ~ 21:00</td>
 </tr>
-
 <tr>
 <td>휴관일</td>
 <td>월요일 / 토요일 / 일요일 / 공휴일</td>
 </tr>
-
 </table>
 
 </div>
 
 <div class="section-card">
 <h2>도서 대출 안내</h2>
-
 <ul class="info-list">
 <li>대출 권수 : 1인 최대 3권</li>
 <li>대출 기간 : 14일</li>
 <li>대출 연장 : 1회 7일 연장 가능</li>
 <li>연체 시 일정 기간 대출이 제한될 수 있습니다.</li>
 </ul>
+</div>
+
+<div class="section-card">
+<h2>시설 안내</h2>
+
+<div class="facility-grid">
+
+<div class="facility-card">
+<h3>도서실</h3>
+<p>다양한 도서를 자유롭게 열람할 수 있는 공간입니다.</p>
+</div>
+
+<div class="facility-card">
+<h3>독서실</h3>
+<p>조용한 환경에서 학습과 독서를 할 수 있습니다.</p>
+</div>
+
+<div class="facility-card">
+<h3>세미나실</h3>
+<p>독서 모임 및 소규모 프로그램이 진행됩니다.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section-card">
+<h2>도서관 위치</h2>
+
+<p>울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내</p>
+
+<div class="map-box">
+<iframe src="https://maps.google.com/maps?q=울산광역시%20울주군%20청량읍%20덕하1로%2055&z=15&output=embed"
+width="100%" height="350"></iframe>
+</div>
 
 </div>
 
@@ -346,8 +374,10 @@ text-align:right;
 
 <div class="footer">
 
+<div class="footer-logo">
 <div class="logo-box">
 <img src="아파트 도서관 로고.1.1.png">
+</div>
 </div>
 
 <div class="footer-center">
