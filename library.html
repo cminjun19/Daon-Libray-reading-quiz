@@ -74,63 +74,41 @@ text-decoration:none;
 color:black;
 font-weight:bold;
 font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
 }
 
-/* 안내 배너 */
+.menu img{
+width:20px;
+}
 
-.page-banner{
+/* 페이지 배너 */
+
+.banner{
 background:linear-gradient(135deg,#5f72ff,#9b59b6);
 color:white;
 text-align:center;
-padding:80px 20px;
+padding:100px 20px;
 }
 
-.page-banner h1{
+.banner h1{
 font-size:36px;
-margin-bottom:10px;
-}
-
-.page-banner p{
-font-size:20px;
 }
 
 /* 안내 내용 */
 
-.library-info{
+.content{
 max-width:1000px;
 margin:60px auto;
 background:white;
 padding:40px;
 border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-.info-title{
-font-size:26px;
-font-weight:bold;
-margin-bottom:20px;
-}
-
-.info-box{
-margin-bottom:25px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 line-height:1.8;
-font-size:16px;
 }
 
-/* 이용시간 */
-
-.time-table{
-margin-top:20px;
-}
-
-.time-row{
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px solid #eee;
-}
-
-/* footer */
+/* Footer */
 
 footer{
 background:#222;
@@ -174,7 +152,6 @@ text-align:right;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -195,7 +172,7 @@ text-align:right;
 </div>
 
 <div class="auth">
-<a href="login.html">로그인</a>
+<a href="login.html">🔒 로그인</a>
 <a href="#" onclick="return false;">회원가입</a>
 </div>
 
@@ -203,63 +180,45 @@ text-align:right;
 
 <nav class="menu">
 
-<a href="library.html">도서관 안내</a>
-<a href="#">이달의 선정도서</a>
-<a href="#">당첨자 목록</a>
-<a href="#">공지사항</a>
+<a href="library.html"><img src="도서관 안내.png">📖 도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">📚 이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">🏆 당첨자 목록</a>
+<a href="#"><img src="공지사항.png">📢 공지사항</a>
 
 </nav>
 
 </header>
 
-<section class="page-banner">
-
-<h1>도서관 안내</h1>
-<p>다온 작은도서관 이용 정보를 확인하세요</p>
-
+<section class="banner">
+<h1>📖 도서관 안내</h1>
 </section>
 
-<section class="library-info">
+<section class="content">
 
-<div class="info-title">
-다온 작은도서관 소개
-</div>
+<h2>다온 작은도서관 소개</h2>
+<p>
+다온 작은도서관은 지역 주민을 위한 열린 문화 공간으로
+독서 활동과 다양한 문화 프로그램을 통해 지역 사회의 독서 문화를
+활성화하고 있습니다.
+</p>
 
-<div class="info-box">
-다온 작은도서관은 지역 주민을 위한 열린 문화 공간으로 다양한 독서 활동과 프로그램을 통해 지역 사회의 독서 문화를 활성화하고 있습니다.
-</div>
+<br>
 
-<div class="info-title">
-위치
-</div>
-
-<div class="info-box">
-울산광역시 울주군 청량읍 덕하1로 55  
+<h2>위치</h2>
+<p>
+울산광역시 울주군 청량읍 덕하1로 55<br>
 지하 1층 커뮤니티센터 내
-</div>
+</p>
 
-<div class="info-title">
-이용시간
-</div>
+<br>
 
-<div class="time-table">
+<h2>이용시간</h2>
 
-<div class="time-row">
-<span>평일</span>
-<span>09:00 ~ 18:00</span>
-</div>
-
-<div class="time-row">
-<span>토요일</span>
-<span>09:00 ~ 13:00</span>
-</div>
-
-<div class="time-row">
-<span>일요일 / 공휴일</span>
-<span>휴관</span>
-</div>
-
-</div>
+<p>
+평일 : 09:00 ~ 18:00<br>
+토요일 : 09:00 ~ 13:00<br>
+일요일 / 공휴일 : 휴관
+</p>
 
 </section>
 
