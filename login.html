@@ -80,7 +80,7 @@ font-weight:bold;
 font-size:16px;
 }
 
-/* 로그인 */
+/* 로그인 영역 */
 
 .login-section{
 max-width:1000px;
@@ -119,10 +119,14 @@ align-items:center;
 gap:40px;
 }
 
+/* 로그인 이미지 */
+
 .login-image img{
 width:420px;
 border-radius:30px;
 }
+
+/* 로그인 폼 */
 
 .login-form{
 flex:1;
@@ -183,7 +187,7 @@ border-radius:8px;
 cursor:pointer;
 }
 
-/* footer */
+/* Footer */
 
 footer{
 background:#222;
@@ -264,7 +268,7 @@ pw.type = pw.type === "password" ? "text" : "password";
 </div>
 
 <nav class="menu">
-<a href="#">도서관 안내</a>
+<a href="library.html">도서관 안내</a>
 <a href="#">이달의 선정도서</a>
 <a href="#">당첨자 목록</a>
 <a href="#">공지사항</a>
@@ -275,7 +279,7 @@ pw.type = pw.type === "password" ? "text" : "password";
 <section class="login-section">
 
 <div class="login-tabs">
-<a class="active">로그인</a>
+<a class="active">🔒 로그인</a>
 <a href="#" onclick="return false;">회원가입</a>
 <a href="#" onclick="return false;">아이디/비밀번호 찾기</a>
 </div>
@@ -337,8 +341,6 @@ pw.type = pw.type === "password" ? "text" : "password";
 
 </footer>
 
-
-<!-- Firebase 로그인 -->
 
 <script type="module">
 
