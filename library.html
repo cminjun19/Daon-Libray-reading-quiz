@@ -123,7 +123,20 @@ border-left:6px solid #16a085;
 padding-left:10px;
 }
 
-/* 이용 대상 강조 */
+/* 도서관 소개 업그레이드 */
+
+.intro-box{
+background:#f9fafc;
+padding:20px;
+border-radius:10px;
+line-height:1.8;
+}
+
+.intro-box strong{
+font-size:16px;
+}
+
+/* 이용 대상 */
 
 .highlight{
 background:#ecfdf5;
@@ -164,6 +177,26 @@ font-size:14px;
 color:#e74c3c;
 font-weight:bold;
 }
+
+/* 대출 안내 카드 */
+
+.rent-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.rent-card{
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.rent1{background:#ecfdf5;}
+.rent2{background:#f0f9ff;}
+.rent3{background:#fff7ed;}
+.rent4{background:#fef2f2;}
 
 /* 시설 */
 
@@ -251,14 +284,25 @@ width:36px;
 
 <section class="content">
 
+<!-- 도서관 소개 -->
+
 <div class="card">
 <h2>도서관 소개</h2>
-<p>
-우리 아파트 "다온 작은도서관"은 주민들의 독서 생활과 문화 활동을 지원하기 위해 운영되는 공간입니다.<br><br>
+
+<div class="intro-box">
+<p><strong>
+우리 아파트 "다온 작은도서관"은 주민들의 독서 생활과 문화 활동을 지원하기 위해 운영되는 공간입니다.
+</strong></p>
+
+<p style="margin-top:15px;">
 어린이부터 성인까지 누구나 편안하게 책을 읽고 학습할 수 있는 환경을 제공하며,
 다양한 도서와 프로그램을 통해 주민들의 지식과 소통의 공간이 되고자 합니다.
 </p>
 </div>
+
+</div>
+
+<!-- 이용 대상 -->
 
 <div class="card">
 <h2>이용 대상</h2>
@@ -266,6 +310,8 @@ width:36px;
 아파트 입주민 누구나 이용 가능합니다.
 </div>
 </div>
+
+<!-- 운영시간 -->
 
 <div class="card">
 <h2>운영 시간</h2>
@@ -300,14 +346,38 @@ width:36px;
 
 </div>
 
+<!-- 도서 대출 안내 -->
+
 <div class="card">
 <h2>도서 대출 안내</h2>
-<ul>
-<li>대출 권수 : 1인 최대 3권</li>
-<li>대출 기간 : 14일</li>
-<li>대출 연장 : 1회 7일</li>
-</ul>
+
+<div class="rent-grid">
+
+<div class="rent-card rent1">
+<h3>📚 대출 권수</h3>
+<p>1인 최대 3권</p>
 </div>
+
+<div class="rent-card rent2">
+<h3>⏱ 대출 기간</h3>
+<p>14일</p>
+</div>
+
+<div class="rent-card rent3">
+<h3>🔄 연장</h3>
+<p>1회 7일 가능</p>
+</div>
+
+<div class="rent-card rent4">
+<h3>⚠️ 유의사항</h3>
+<p>연체 시 대출 제한</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- 시설 -->
 
 <div class="card">
 <h2>시설 안내</h2>
