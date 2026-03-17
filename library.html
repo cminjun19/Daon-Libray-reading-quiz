@@ -12,7 +12,7 @@ font-family:Arial, sans-serif;
 background:#f5f7fb;
 }
 
-/* 헤더 */
+/* 헤더 동일 */
 
 header{
 background:white;
@@ -67,7 +67,7 @@ margin-left:18px;
 width:16px;
 }
 
-/* 메뉴 */
+/* 메뉴 동일 */
 
 .menu{
 background:#f1f3f5;
@@ -103,7 +103,6 @@ padding:100px 20px;
 
 .banner h1{
 font-size:36px;
-margin:0;
 }
 
 /* 콘텐츠 */
@@ -116,10 +115,15 @@ margin:60px auto;
 .section-card{
 background:white;
 padding:35px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 margin-bottom:30px;
-line-height:1.8;
+transition:0.3s;
+}
+
+.section-card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
 .section-card h2{
@@ -129,40 +133,39 @@ border-left:5px solid #16a085;
 padding-left:10px;
 }
 
-/* 리스트 */
-
 .info-list{
 padding-left:20px;
 line-height:2;
 }
 
-/* 운영시간 */
+/* 🔥 운영시간 업그레이드 */
 
 .time-box{
-background:#f9fafc;
+background:linear-gradient(135deg,#ecfdf5,#f0f9ff);
 border-radius:12px;
 padding:25px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-margin-top:20px;
 text-align:center;
+margin-top:20px;
+}
+
+.status{
+font-size:14px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.open{
+color:#27ae60;
+}
+
+.close{
+color:#e74c3c;
 }
 
 .time-main{
-font-size:16px;
+font-size:15px;
 font-weight:bold;
-color:#16a085;
 line-height:2;
-}
-
-.time-sub{
-margin-top:10px;
-font-size:14px;
-color:#666;
-}
-
-.time-sub span{
-color:#e74c3c;
-font-weight:bold;
 }
 
 /* 시설 */
@@ -179,40 +182,31 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.2s;
 }
 
-.facility-card h3{
-margin:0 0 8px 0;
+.facility-card:hover{
+transform:scale(1.03);
 }
-
-/* 지도 */
 
 .map-box{
 margin-top:20px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* footer */
+/* footer 동일 */
 
 footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
-border-top:1px solid #444;
-font-size:14px;
 }
 
 .footer{
 display:grid;
 grid-template-columns:1fr 2fr 1fr;
 align-items:center;
-}
-
-.footer-logo{
-display:flex;
-justify-content:flex-start;
 }
 
 .logo-box{
@@ -229,21 +223,55 @@ justify-content:center;
 width:36px;
 }
 
-.footer-center{
-text-align:center;
-}
-
-.footer-right{
-text-align:right;
-}
+.footer-center{text-align:center;}
+.footer-right{text-align:right;}
 
 </style>
+
+<script>
+
+/* 🔥 운영중 표시 기능 */
+
+function checkOpen(){
+
+const now = new Date();
+const day = now.getDay(); // 0=일
+const hour = now.getHours();
+
+let open = false;
+
+if(day>=2 && day<=5){ // 화~금
+
+if(
+(hour>=14 && hour<18) ||
+(hour>=19 && hour<21)
+){
+open = true;
+}
+
+}
+
+const status = document.getElementById("status");
+
+if(open){
+status.innerText="● 현재 운영중입니다";
+status.className="status open";
+}else{
+status.innerText="● 현재 운영시간이 아닙니다";
+status.className="status close";
+}
+
+}
+
+window.onload = checkOpen;
+
+</script>
+
 </head>
 
 <body>
 
 <header>
-
 <div class="top-bar">
 
 <div class="library">
@@ -253,9 +281,7 @@ text-align:right;
 </a>
 </div>
 
-<div class="site-title">
-월간독서퀴즈
-</div>
+<div class="site-title">월간독서퀴즈</div>
 
 <div class="auth">
 <a href="login.html"><img src="로그인.png">로그인</a>
@@ -270,7 +296,6 @@ text-align:right;
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
 </nav>
-
 </header>
 
 <section class="banner">
@@ -296,9 +321,11 @@ text-align:right;
 </div>
 
 <div class="section-card">
-<h2>운영 시간 (26년 03월 기준)</h2>
+<h2>운영 시간</h2>
 
 <div class="time-box">
+
+<div id="status" class="status"></div>
 
 <div class="time-main">
 화요일 : 14:00 ~ 16:00 / 19:00 ~ 21:00<br>
@@ -307,8 +334,8 @@ text-align:right;
 금요일 : 14:00 ~ 16:00 / 19:00 ~ 21:00
 </div>
 
-<div class="time-sub">
-휴관일 : <span>월요일 / 토요일 / 일요일 / 공휴일</span>
+<div style="margin-top:10px; font-size:14px;">
+휴관일 : <span style="color:#e74c3c; font-weight:bold;">월요일 / 토요일 / 일요일 / 공휴일</span>
 </div>
 
 </div>
@@ -351,7 +378,6 @@ text-align:right;
 
 <div class="section-card">
 <h2>도서관 위치</h2>
-
 <p>울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내</p>
 
 <div class="map-box">
@@ -367,10 +393,8 @@ width="100%" height="350"></iframe>
 
 <div class="footer">
 
-<div class="footer-logo">
 <div class="logo-box">
 <img src="아파트 도서관 로고.1.1.png">
-</div>
 </div>
 
 <div class="footer-center">
