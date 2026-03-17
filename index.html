@@ -10,6 +10,11 @@ body{
 margin:0;
 font-family:Arial, sans-serif;
 background:#f5f7fb;
+user-select:none;
+}
+
+img{
+-webkit-user-drag:none;
 }
 
 /* 헤더 */
@@ -104,10 +109,57 @@ padding:120px 20px;
 .banner-title{
 font-size:40px;
 font-weight:bold;
+margin-bottom:12px;
 }
 
 .banner-text{
-font-size:28px;
+font-size:30px;
+}
+
+/* 카드 */
+
+.cards-section{
+text-align:center;
+padding-top:40px;
+}
+
+.cards-title{
+font-size:24px;
+font-weight:bold;
+margin-bottom:30px;
+}
+
+.cards{
+max-width:1100px;
+margin:0 auto 70px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:0 20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
+
+.card img{
+width:40px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#666;
+font-size:14px;
 }
 
 /* footer */
@@ -116,6 +168,8 @@ footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
+border-top:1px solid #444;
+font-size:14px;
 }
 
 .footer{
@@ -183,8 +237,48 @@ text-align:right;
 </header>
 
 <section class="banner">
-<div class="banner-title">다온 작은도서관 월간독서퀴즈</div>
-<div class="banner-text">책을 읽고 퀴즈에 참여해보세요</div>
+<div class="banner-title">
+다온 작은도서관 월간독서퀴즈 홈페이지에 오신것을 환영합니다.
+</div>
+<div class="banner-text">
+책을 읽고 퀴즈에 참여해보세요
+</div>
+</section>
+
+<section class="cards-section">
+
+<div class="cards-title">
+메뉴별 안내
+</div>
+
+<div class="cards">
+
+<div class="card">
+<img src="도서관 안내.png">
+<h3>도서관 안내</h3>
+<p>이용 방법 확인</p>
+</div>
+
+<div class="card">
+<img src="이달의 선정도서.png">
+<h3>이달의 선정도서</h3>
+<p>선정 도서 확인</p>
+</div>
+
+<div class="card">
+<img src="당첨자 목록.png">
+<h3>당첨자 목록</h3>
+<p>당첨자 확인</p>
+</div>
+
+<div class="card">
+<img src="공지사항.png">
+<h3>공지사항</h3>
+<p>새로운 소식 확인</p>
+</div>
+
+</div>
+
 </section>
 
 <footer>
