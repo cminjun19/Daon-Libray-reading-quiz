@@ -1,4 +1,4 @@
-/* 공통 기본 */
+/* 기본 */
 
 body{
 margin:0;
@@ -86,6 +86,85 @@ gap:8px;
 
 .menu img{
 width:20px;
+}
+
+/* 로그인 화면 */
+
+.login-section{
+max-width:1000px;
+margin:60px auto;
+background:white;
+border-radius:12px;
+padding:40px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.login-box{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+.login-image img{
+width:380px;
+border-radius:20px;
+}
+
+.login-form{
+flex:1;
+}
+
+.input-box{
+margin-bottom:18px;
+}
+
+.input-box input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.password-box{
+position:relative;
+}
+
+.password-box input{
+padding-right:40px;
+}
+
+.toggle-password{
+position:absolute;
+right:10px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+}
+
+.login-btn{
+width:100%;
+padding:14px;
+background:#16a085;
+border:none;
+color:white;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* 도서관 안내 */
+
+.content{
+max-width:1000px;
+margin:50px auto;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+margin-bottom:20px;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
 }
 
 /* footer */
