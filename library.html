@@ -5,11 +5,14 @@
 <title>도서관 안내 | 다온 작은도서관</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial, sans-serif;
 background:#f4f6fb;
 }
+
+/* 헤더 */
 
 header{
 background:white;
@@ -28,7 +31,7 @@ display:flex;
 align-items:center;
 text-decoration:none;
 color:#000;
-font-size:30px;
+font-size:32px; /* 🔥 수정 */
 font-weight:bold;
 }
 
@@ -39,6 +42,7 @@ margin-right:10px;
 
 .site-title{
 text-align:center;
+font-size:20px; /* 🔥 수정 */
 font-weight:bold;
 }
 
@@ -61,16 +65,19 @@ gap:6px;
 width:16px;
 }
 
+/* 메뉴 */
+
 .menu{
 background:#f1f3f5;
 display:flex;
 justify-content:space-around;
-padding:14px 0;
+padding:16px 0;
 }
 
 .menu a{
 text-decoration:none;
 font-weight:bold;
+font-size:16px; /* 🔥 수정 */
 display:flex;
 align-items:center;
 gap:6px;
@@ -80,6 +87,8 @@ color:black;
 .menu img{
 width:18px;
 }
+
+/* 배너 */
 
 .banner{
 background:linear-gradient(135deg,#5f72ff,#9b59b6);
@@ -93,10 +102,14 @@ margin:0;
 font-size:34px;
 }
 
+/* 콘텐츠 */
+
 .content{
 max-width:1100px;
 margin:50px auto;
 }
+
+/* 카드 */
 
 .card{
 background:white;
@@ -112,12 +125,16 @@ border-left:6px solid #16a085;
 padding-left:10px;
 }
 
+/* 도서관 소개 */
+
 .intro-box{
 background:#f9fafc;
 padding:20px;
 border-radius:10px;
 line-height:1.8;
 }
+
+/* 이용 대상 */
 
 .highlight{
 background:#ecfdf5;
@@ -127,6 +144,8 @@ font-weight:bold;
 text-align:center;
 color:#16a085;
 }
+
+/* 운영시간 */
 
 .time-grid{
 display:grid;
@@ -157,6 +176,8 @@ color:#e74c3c;
 font-weight:bold;
 }
 
+/* 대출 안내 */
+
 .rent-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -175,6 +196,8 @@ text-align:center;
 .rent3{background:#fff7ed;}
 .rent4{background:#fef2f2;}
 
+/* 시설 */
+
 .facility{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -187,6 +210,8 @@ background:#f9fafc;
 padding:20px;
 border-radius:10px;
 }
+
+/* footer */
 
 footer{
 background:#222;
@@ -216,13 +241,16 @@ width:36px;
 
 .footer-center{text-align:center;}
 .footer-right{text-align:right;}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="top-bar">
+
 <div class="library">
 <a href="index.html">
 <img src="아파트 도서관 로고.1.1.png">
@@ -230,12 +258,15 @@ width:36px;
 </a>
 </div>
 
-<div class="site-title">월간독서퀴즈</div>
+<div class="site-title">
+월간독서퀴즈
+</div>
 
 <div class="auth">
 <a href="login.html"><img src="로그인.png">로그인</a>
 <a href="#" onclick="return false;"><img src="회원가입.png">회원가입</a>
 </div>
+
 </div>
 
 <nav class="menu">
@@ -244,6 +275,7 @@ width:36px;
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
 </nav>
+
 </header>
 
 <section class="banner">
@@ -285,6 +317,7 @@ width:36px;
 <div class="closed">
 휴관일 : 월요일 / 토요일 / 일요일 / 공휴일
 </div>
+
 </div>
 
 <div class="card">
@@ -313,6 +346,7 @@ width:36px;
 </section>
 
 <footer>
+
 <div class="footer">
 
 <div class="logo-box">
@@ -328,6 +362,7 @@ width:36px;
 </div>
 
 </div>
+
 </footer>
 
 </body>
