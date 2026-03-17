@@ -5,14 +5,11 @@
 <title>도서관 안내 | 다온 작은도서관</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial, sans-serif;
 background:#f4f6fb;
 }
-
-/* 헤더 */
 
 header{
 background:white;
@@ -64,8 +61,6 @@ gap:6px;
 width:16px;
 }
 
-/* 메뉴 */
-
 .menu{
 background:#f1f3f5;
 display:flex;
@@ -86,8 +81,6 @@ color:black;
 width:18px;
 }
 
-/* 배너 */
-
 .banner{
 background:linear-gradient(135deg,#5f72ff,#9b59b6);
 color:white;
@@ -100,14 +93,10 @@ margin:0;
 font-size:34px;
 }
 
-/* 콘텐츠 */
-
 .content{
 max-width:1100px;
 margin:50px auto;
 }
-
-/* 카드 */
 
 .card{
 background:white;
@@ -123,16 +112,12 @@ border-left:6px solid #16a085;
 padding-left:10px;
 }
 
-/* 도서관 소개 */
-
 .intro-box{
 background:#f9fafc;
 padding:20px;
 border-radius:10px;
 line-height:1.8;
 }
-
-/* 이용 대상 */
 
 .highlight{
 background:#ecfdf5;
@@ -142,8 +127,6 @@ font-weight:bold;
 text-align:center;
 color:#16a085;
 }
-
-/* 운영시간 */
 
 .time-grid{
 display:grid;
@@ -174,8 +157,6 @@ color:#e74c3c;
 font-weight:bold;
 }
 
-/* 대출 안내 */
-
 .rent-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -194,8 +175,6 @@ text-align:center;
 .rent3{background:#fff7ed;}
 .rent4{background:#fef2f2;}
 
-/* 시설 */
-
 .facility{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -208,8 +187,6 @@ background:#f9fafc;
 padding:20px;
 border-radius:10px;
 }
-
-/* footer */
 
 footer{
 background:#222;
@@ -239,16 +216,13 @@ width:36px;
 
 .footer-center{text-align:center;}
 .footer-right{text-align:right;}
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="top-bar">
-
 <div class="library">
 <a href="index.html">
 <img src="아파트 도서관 로고.1.1.png">
@@ -262,7 +236,6 @@ width:36px;
 <a href="login.html"><img src="로그인.png">로그인</a>
 <a href="#" onclick="return false;"><img src="회원가입.png">회원가입</a>
 </div>
-
 </div>
 
 <nav class="menu">
@@ -271,7 +244,6 @@ width:36px;
 <a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
 <a href="#"><img src="공지사항.png">공지사항</a>
 </nav>
-
 </header>
 
 <section class="banner">
@@ -280,27 +252,18 @@ width:36px;
 
 <section class="content">
 
-<!-- 도서관 소개 -->
-
 <div class="card">
 <h2>도서관 소개</h2>
-
 <div class="intro-box">
-
 <p>
 우리 아파트 "다온 작은도서관"은 주민들의 독서 생활과 문화 활동을 지원하기 위해 운영되는 공간입니다.
 </p>
-
 <p style="margin-top:15px;">
 어린이부터 성인까지 누구나 편안하게 책을 읽고 학습할 수 있는 환경을 제공하며,
 다양한 도서와 프로그램을 통해 주민들의 지식과 소통의 공간이 되고자 합니다.
 </p>
-
 </div>
-
 </div>
-
-<!-- 이용 대상 -->
 
 <div class="card">
 <h2>이용 대상</h2>
@@ -309,94 +272,40 @@ width:36px;
 </div>
 </div>
 
-<!-- 운영시간 -->
-
 <div class="card">
 <h2>운영 시간</h2>
 
 <div class="time-grid">
-
-<div class="time-card">
-<div class="day">화요일</div>
-14:00 ~ 16:00<br>19:00 ~ 21:00
-</div>
-
-<div class="time-card">
-<div class="day">수요일</div>
-14:00 ~ 17:00<br>20:00 ~ 21:00
-</div>
-
-<div class="time-card">
-<div class="day">목요일</div>
-14:00 ~ 18:00<br>19:00 ~ 21:00
-</div>
-
-<div class="time-card">
-<div class="day">금요일</div>
-14:00 ~ 16:00<br>19:00 ~ 21:00
-</div>
-
+<div class="time-card"><div class="day">화요일</div>14:00 ~ 16:00<br>19:00 ~ 21:00</div>
+<div class="time-card"><div class="day">수요일</div>14:00 ~ 17:00<br>20:00 ~ 21:00</div>
+<div class="time-card"><div class="day">목요일</div>14:00 ~ 18:00<br>19:00 ~ 21:00</div>
+<div class="time-card"><div class="day">금요일</div>14:00 ~ 16:00<br>19:00 ~ 21:00</div>
 </div>
 
 <div class="closed">
 휴관일 : 월요일 / 토요일 / 일요일 / 공휴일
 </div>
-
 </div>
-
-<!-- 도서 대출 안내 -->
 
 <div class="card">
 <h2>도서 대출 안내</h2>
 
 <div class="rent-grid">
-
-<div class="rent-card rent1">
-<h3>📚 대출 권수</h3>
-<p>1인 최대 3권</p>
-</div>
-
-<div class="rent-card rent2">
-<h3>⏱ 대출 기간</h3>
-<p>14일</p>
-</div>
-
-<div class="rent-card rent3">
-<h3>🔄 연장</h3>
-<p>1회 7일 가능</p>
-</div>
-
-<div class="rent-card rent4">
-<h3>⚠️ 유의사항</h3>
-<p>연체 시 대출 제한</p>
+<div class="rent-card rent1"><h3>📚 대출 권수</h3><p>1인 최대 3권</p></div>
+<div class="rent-card rent2"><h3>⏱ 대출 기간</h3><p>14일</p></div>
+<div class="rent-card rent3"><h3>🔄 연장</h3><p>1회 7일 가능</p></div>
+<div class="rent-card rent4"><h3>⚠️ 유의사항</h3><p>연체 시 대출 제한</p></div>
 </div>
 
 </div>
-
-</div>
-
-<!-- 시설 -->
 
 <div class="card">
 <h2>시설 안내</h2>
 
 <div class="facility">
-
-<div class="fac-box">
-<h3>도서실</h3>
-<p>자유롭게 도서를 열람할 수 있습니다.</p>
-</div>
-
-<div class="fac-box">
-<h3>독서실</h3>
-<p>조용한 학습 공간입니다.</p>
-</div>
-
-<div class="fac-box">
-<h3>세미나실</h3>
-<p>소규모 프로그램이 진행됩니다.</p>
-</div>
-
+<div class="fac-box"><h3>도서실</h3><p>자유롭게 도서를 열람할 수 있습니다.</p></div>
+<div class="fac-box"><h3>독서실</h3><p>조용한 학습 공간입니다.</p></div>
+<div class="fac-box"><h3>세미나실</h3><p>소규모 프로그램이 진행됩니다.</p></div>
 </div>
 
 </div>
@@ -404,7 +313,6 @@ width:36px;
 </section>
 
 <footer>
-
 <div class="footer">
 
 <div class="logo-box">
@@ -412,7 +320,7 @@ width:36px;
 </div>
 
 <div class="footer-center">
-다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55
+다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
 </div>
 
 <div class="footer-right">
@@ -420,7 +328,6 @@ width:36px;
 </div>
 
 </div>
-
 </footer>
 
 </body>
