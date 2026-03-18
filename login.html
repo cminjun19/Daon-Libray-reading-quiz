@@ -31,22 +31,27 @@ function loginUser(){
 
       let msg = "";
 
-      switch(error.code){
-        case "auth/user-not-found":
-        case "auth/invalid-email":
-          msg = "존재하지 않는 아이디입니다.";
-          break;
+      // 아이디 틀림 / 형식 틀림
+      if(
+        error.code === "auth/user-not-found" ||
+        error.code === "auth/invalid-email"
+      ){
+        msg = "아이디가 틀렸습니다.";
+      }
 
-        case "auth/wrong-password":
-          msg = "비밀번호가 틀렸습니다.";
-          break;
+      // 비밀번호 틀림
+      else if(error.code === "auth/wrong-password"){
+        msg = "비밀번호가 틀렸습니다.";
+      }
 
-        case "auth/too-many-requests":
-          msg = "로그인을 너무 많이 시도했습니다. 잠시 후 다시 시도해주세요.";
-          break;
+      // 너무 많이 시도
+      else if(error.code === "auth/too-many-requests"){
+        msg = "로그인을 너무 많이 시도했습니다. 잠시 후 다시 시도해주세요.";
+      }
 
-        default:
-          msg = "로그인 실패";
+      // 기타 (아이디+비밀번호 모두 틀림 포함)
+      else{
+        msg = "로그인 실패";
       }
 
       alert(msg);
