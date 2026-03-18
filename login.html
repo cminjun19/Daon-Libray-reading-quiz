@@ -17,44 +17,43 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// 로그인 함수
+// ✅ 로그인 (아이디/비밀번호 정확 구분)
 function loginUser(){
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-      alert("로그인 성공!");
-      location.href = "admin.html";
+  firebase.auth().fetchSignInMethodsForEmail(email)
+    .then((methods) => {
+
+      // ❌ 아이디 없음
+      if(methods.length === 0){
+        alert("아이디가 틀렸습니다.");
+        return;
+      }
+
+      // 🔐 로그인 시도
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("로그인 성공!");
+          location.href = "admin.html";
+        })
+        .catch((error) => {
+
+          if(error.code === "auth/wrong-password"){
+            alert("비밀번호가 틀렸습니다.");
+          }
+          else if(error.code === "auth/too-many-requests"){
+            alert("로그인을 너무 많이 시도했습니다. 잠시 후 다시 시도해주세요.");
+          }
+          else{
+            alert("로그인 실패");
+          }
+
+        });
+
     })
-    .catch((error) => {
-
-      let msg = "";
-
-      // 아이디 틀림 / 형식 틀림
-      if(
-        error.code === "auth/user-not-found" ||
-        error.code === "auth/invalid-email"
-      ){
-        msg = "아이디가 틀렸습니다.";
-      }
-
-      // 비밀번호 틀림
-      else if(error.code === "auth/wrong-password"){
-        msg = "비밀번호가 틀렸습니다.";
-      }
-
-      // 너무 많이 시도
-      else if(error.code === "auth/too-many-requests"){
-        msg = "로그인을 너무 많이 시도했습니다. 잠시 후 다시 시도해주세요.";
-      }
-
-      // 기타 (아이디+비밀번호 모두 틀림 포함)
-      else{
-        msg = "로그인 실패";
-      }
-
-      alert(msg);
+    .catch(() => {
+      alert("아이디가 틀렸습니다.");
     });
 }
 
