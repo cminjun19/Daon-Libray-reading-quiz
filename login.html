@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>로그인 | 다온 작은도서관</title>
 
-<!-- Firebase 안정 버전 -->
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 
@@ -34,25 +34,22 @@ function loginUser(){
 
 // 비밀번호 보기
 function togglePassword(){
-  const pw=document.getElementById("password");
+  const pw = document.getElementById("password");
   pw.type = pw.type === "password" ? "text" : "password";
 }
 </script>
 
 <style>
 
-/* 🔥 너 원래 UI 그대로 유지 */
-
 *{box-sizing:border-box;}
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#f5f7fb;
 }
 
 /* 헤더 */
-
 header{
 background:white;
 box-shadow:0 2px 8px rgba(0,0,0,0.08);
@@ -88,17 +85,25 @@ font-weight:bold;
 .auth{
 display:flex;
 justify-content:flex-end;
-gap:20px;
+align-items:center;
 }
 
 .auth a{
 text-decoration:none;
 color:black;
+font-size:14px;
 font-weight:bold;
+display:flex;
+align-items:center;
+gap:6px;
+margin-left:18px;
+}
+
+.auth img{
+width:16px;
 }
 
 /* 메뉴 */
-
 .menu{
 background:#f1f3f5;
 display:flex;
@@ -109,13 +114,20 @@ border-bottom:1px solid #e0e0e0;
 }
 
 .menu a{
+color:#000;
 text-decoration:none;
-color:black;
 font-weight:bold;
+font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.menu img{
+width:20px;
 }
 
 /* 로그인 */
-
 .login-section{
 max-width:1000px;
 margin:60px auto;
@@ -186,7 +198,6 @@ border-radius:6px;
 }
 
 /* 비밀번호 */
-
 .password-box{
 position:relative;
 }
@@ -203,8 +214,7 @@ transform:translateY(-50%);
 cursor:pointer;
 }
 
-/* 로그인 버튼 */
-
+/* 버튼 */
 .login-btn{
 width:100%;
 padding:14px;
@@ -218,17 +228,32 @@ cursor:pointer;
 }
 
 /* footer */
-
 footer{
 background:#222;
 color:#ddd;
 padding:10px 40px;
+border-top:1px solid #444;
+font-size:14px;
 }
 
 .footer{
 display:grid;
 grid-template-columns:1fr 2fr 1fr;
 align-items:center;
+}
+
+.logo-box{
+background:white;
+border-radius:10px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-box img{
+width:36px;
 }
 
 .footer-center{
@@ -261,17 +286,17 @@ text-align:right;
 </div>
 
 <div class="auth">
-<a href="login.html">로그인</a>
-<a href="#" onclick="return false;">회원가입</a>
+<a href="login.html"><img src="로그인.png">로그인</a>
+<a href="#" onclick="return false;"><img src="회원가입.png">회원가입</a>
 </div>
 
 </div>
 
 <nav class="menu">
-<a href="library.html">도서관 안내</a>
-<a href="#">이달의 선정도서</a>
-<a href="#">당첨자 목록</a>
-<a href="#">공지사항</a>
+<a href="library.html"><img src="도서관 안내.png">도서관 안내</a>
+<a href="#"><img src="이달의 선정도서.png">이달의 선정도서</a>
+<a href="#"><img src="당첨자 목록.png">당첨자 목록</a>
+<a href="#"><img src="공지사항.png">공지사항</a>
 </nav>
 
 </header>
@@ -323,8 +348,8 @@ text-align:right;
 
 <div class="footer">
 
-<div>
-<img src="아파트 도서관 로고.1.1.png" width="40">
+<div class="logo-box">
+<img src="아파트 도서관 로고.1.1.png">
 </div>
 
 <div class="footer-center">
