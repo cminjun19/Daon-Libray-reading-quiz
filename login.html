@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// 로그인
+// 로그인 함수
 function loginUser(){
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -37,6 +37,13 @@ function togglePassword(){
   const pw = document.getElementById("password");
   pw.type = pw.type === "password" ? "text" : "password";
 }
+
+// 🔥 엔터키 로그인
+document.addEventListener("keydown", function(e){
+  if(e.key === "Enter"){
+    loginUser();
+  }
+});
 </script>
 
 <style>
