@@ -28,7 +28,28 @@ function loginUser(){
       location.href = "admin.html";
     })
     .catch((error) => {
-      alert("로그인 실패: " + error.message);
+
+      let msg = "";
+
+      switch(error.code){
+        case "auth/user-not-found":
+        case "auth/invalid-email":
+          msg = "존재하지 않는 아이디입니다.";
+          break;
+
+        case "auth/wrong-password":
+          msg = "비밀번호가 틀렸습니다.";
+          break;
+
+        case "auth/too-many-requests":
+          msg = "로그인을 너무 많이 시도했습니다. 잠시 후 다시 시도해주세요.";
+          break;
+
+        default:
+          msg = "로그인 실패";
+      }
+
+      alert(msg);
     });
 }
 
@@ -38,7 +59,7 @@ function togglePassword(){
   pw.type = pw.type === "password" ? "text" : "password";
 }
 
-// 🔥 엔터키 로그인
+// 엔터키 로그인
 document.addEventListener("keydown", function(e){
   if(e.key === "Enter"){
     loginUser();
