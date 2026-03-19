@@ -17,43 +17,19 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// ✅ 로그인 (아이디/비밀번호 정확 구분)
+// 로그인 함수
 function loginUser(){
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  firebase.auth().fetchSignInMethodsForEmail(email)
-    .then((methods) => {
-
-      // ❌ 아이디 없음
-      if(methods.length === 0){
-        alert("아이디가 틀렸습니다.");
-        return;
-      }
-
-      // 🔐 로그인 시도
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() => {
-          alert("로그인 성공!");
-          location.href = "admin.html";
-        })
-        .catch((error) => {
-
-          if(error.code === "auth/wrong-password"){
-            alert("비밀번호가 틀렸습니다.");
-          }
-          else if(error.code === "auth/too-many-requests"){
-            alert("로그인을 너무 많이 시도했습니다. 잠시 후 다시 시도해주세요.");
-          }
-          else{
-            alert("로그인 실패");
-          }
-
-        });
-
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      alert("로그인 성공!");
+      location.href = "admin.html";
     })
     .catch(() => {
-      alert("아이디가 틀렸습니다.");
+      // 🔥 모든 실패는 하나로 통합
+      alert("아이디 또는 비밀번호가 틀렸습니다.");
     });
 }
 
