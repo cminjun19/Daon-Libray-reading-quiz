@@ -2,27 +2,170 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>도서관 안내</title>
-
-<link rel="stylesheet" href="style.css">
+<title>도서관 안내 | 다온 작은도서관</title>
 
 <style>
 
-.content{
-max-width:1000px;
-margin:50px auto;
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f5f7fb;
 }
 
-.card{
+/* 헤더 */
+header{
 background:white;
-padding:30px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.top-bar{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+align-items:center;
+padding:16px 50px;
+}
+
+.library a{
+display:flex;
+align-items:center;
+text-decoration:none;
+color:#000;
+font-size:32px;
+font-weight:bold;
+}
+
+.library img{
+width:40px;
+margin-right:10px;
+}
+
+.site-title{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+}
+
+.auth{
+display:flex;
+justify-content:flex-end;
+}
+
+.auth a{
+text-decoration:none;
+color:black;
+font-size:14px;
+font-weight:bold;
+margin-left:18px;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.auth img{
+width:16px;
+}
+
+/* 메뉴 */
+.menu{
+background:#f1f3f5;
+display:flex;
+justify-content:space-around;
+padding:16px 0;
+}
+
+.menu a{
+text-decoration:none;
+color:black;
+font-weight:bold;
+font-size:16px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.menu img{
+width:20px;
+}
+
+/* 본문 */
+.container{
+max-width:1000px;
+margin:50px auto;
+background:white;
+padding:40px;
 border-radius:12px;
-margin-bottom:20px;
-box-shadow:0 6px 15px rgba(0,0,0,0.08);
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+h2{
+margin-bottom:30px;
+}
+
+/* 리스트 */
+.info-list{
+list-style:none;
+padding:0;
+}
+
+.info-list li{
+margin-bottom:30px;
+padding-bottom:20px;
+border-bottom:1px solid #eee;
+}
+
+.info-list h3{
+margin-bottom:10px;
+color:#16a085;
+}
+
+/* 운영시간 카드 */
+.time-box{
+background:#f8f9fa;
+padding:20px;
+border-radius:10px;
+margin-top:10px;
+font-size:15px;
+line-height:1.6;
+}
+
+/* footer */
+footer{
+background:#222;
+color:#ddd;
+padding:10px 40px;
+margin-top:50px;
+font-size:14px;
+}
+
+.footer{
+display:grid;
+grid-template-columns:1fr 2fr 1fr;
+align-items:center;
+}
+
+.logo-box{
+background:white;
+border-radius:10px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-box img{
+width:36px;
+}
+
+.footer-center{
+text-align:center;
+}
+
+.footer-right{
+text-align:right;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -44,7 +187,7 @@ box-shadow:0 6px 15px rgba(0,0,0,0.08);
 
 <div class="auth">
 <a href="login.html"><img src="로그인.png">로그인</a>
-<a href="#" onclick="return false;"><img src="회원가입.png">회원가입</a>
+<a href="#"><img src="회원가입.png">회원가입</a>
 </div>
 
 </div>
@@ -58,22 +201,56 @@ box-shadow:0 6px 15px rgba(0,0,0,0.08);
 
 </header>
 
-<section class="content">
+<div class="container">
 
-<div class="card">
-<h2>도서관 소개</h2>
+<h2>도서관 안내</h2>
+
+<ul class="info-list">
+
+<li>
+<h3>도서관 소개</h3>
 <p>
 우리 아파트 "다온 작은도서관"은 주민들의 독서 생활과 문화 활동을 지원하기 위해 운영되는 공간입니다.<br><br>
-어린이부터 성인까지 누구나 편안하게 책을 읽고 학습할 수 있는 환경을 제공합니다.
+어린이부터 성인까지 누구나 편안하게 책을 읽고 학습할 수 있는 환경을 제공하며, 다양한 도서와 프로그램을 통해 주민들의 지식과 소통의 공간이 되고자 합니다.
 </p>
-</div>
+</li>
 
-<div class="card">
-<h2>이용 대상</h2>
-<p>아파트 입주민 누구나 이용 가능합니다.</p>
-</div>
+<li>
+<h3>이용 대상</h3>
+<p>
+아파트 입주민 누구나 이용 가능합니다.
+</p>
+</li>
 
-</section>
+<li>
+<h3>도서 대출 안내</h3>
+<p>
+대출 권수 : 1인 3권<br>
+대출 기간 : 14일<br>
+연체 시 대출이 제한될 수 있습니다.
+</p>
+</li>
+
+<li>
+<h3>시설 안내</h3>
+<p>
+열람 공간 : 자유롭게 독서 가능<br>
+세미나실 : 소규모 프로그램이 진행됩니다.
+</p>
+</li>
+
+<li>
+<h3>운영 시간</h3>
+<div class="time-box">
+운영일 : 월요일 ~ 금요일 / 09:00 ~ 18:00<br>
+휴관일 : 주말 및 공휴일<br><br>
+● 현재 운영중입니다
+</div>
+</li>
+
+</ul>
+
+</div>
 
 <footer>
 
