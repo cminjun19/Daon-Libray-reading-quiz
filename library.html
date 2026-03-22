@@ -34,13 +34,17 @@ font-size:30px;
 font-weight:bold;
 }
 
-.library img{width:40px;margin-right:10px;}
+.library img{
+width:40px;
+margin-right:10px;
+}
 
 .site-title{
 text-align:center;
 font-weight:bold;
 }
 
+/* 🔥 여기 수정됨 */
 .auth{
 display:flex;
 justify-content:flex-end;
@@ -50,13 +54,15 @@ justify-content:flex-end;
 margin-left:15px;
 text-decoration:none;
 color:black;
-font-weight:bold;
+font-weight:normal; /* ✔ 두꺼운 글씨 제거 */
 display:flex;
 align-items:center;
 gap:5px;
 }
 
-.auth img{width:16px;}
+.auth img{
+width:16px;
+}
 
 /* 메뉴 */
 .menu{
@@ -75,7 +81,9 @@ gap:6px;
 align-items:center;
 }
 
-.menu img{width:18px;}
+.menu img{
+width:18px;
+}
 
 /* 본문 */
 .container{
@@ -167,10 +175,17 @@ align-items:center;
 justify-content:center;
 }
 
-.logo-box img{width:36px;}
+.logo-box img{
+width:36px;
+}
 
-.footer-center{text-align:center;}
-.footer-right{text-align:right;}
+.footer-center{
+text-align:center;
+}
+
+.footer-right{
+text-align:right;
+}
 
 </style>
 </head>
@@ -180,18 +195,23 @@ justify-content:center;
 <header>
 
 <div class="top-bar">
+
 <div class="library">
 <a href="index.html">
-<img src="아파트 도서관 로고.1.1.png">다온 작은도서관
+<img src="아파트 도서관 로고.1.1.png">
+다온 작은도서관
 </a>
 </div>
 
-<div class="site-title">월간독서퀴즈</div>
+<div class="site-title">
+월간독서퀴즈
+</div>
 
 <div class="auth">
 <a href="login.html"><img src="로그인.png">로그인</a>
 <a href="#"><img src="회원가입.png">회원가입</a>
 </div>
+
 </div>
 
 <nav class="menu">
