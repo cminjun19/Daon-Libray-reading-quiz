@@ -175,8 +175,24 @@ th{
 background:#d6cde3;
 }
 
+/* 시간 */
 .time{
 background:#e0f2ec;
+}
+
+/* 상태 */
+.on{
+color:#16a085;
+font-size:20px;
+}
+
+.off{
+color:#bbb;
+}
+
+.closed{
+background:#eee;
+font-weight:bold;
 }
 
 /* footer */
@@ -300,7 +316,7 @@ text-align:right;
 </div>
 </div>
 
-<!-- 운영시간 (재구성된 표) -->
+<!-- 운영시간 -->
 <div class="card">
 <h3>⏰ 운영 시간 (3월 기준)</h3>
 
@@ -315,54 +331,59 @@ text-align:right;
 
 <tr>
 <td class="time">10:00 ~ 14:00</td>
-<td colspan="4">휴관</td>
+<td colspan="4" class="closed">휴관</td>
 </tr>
 
 <tr>
 <td class="time">14:00 ~ 16:00</td>
-<td>운영</td>
-<td>운영</td>
-<td>운영</td>
-<td>부분 운영<br><span style="color:red;">(1, 3주)</span></td>
+<td class="on">●</td>
+<td class="on">●</td>
+<td class="on">●</td>
+<td class="on">●<br><small>(1,3주)</small></td>
 </tr>
 
 <tr>
 <td class="time">16:00 ~ 17:00</td>
-<td>미운영</td>
-<td>운영</td>
-<td>운영</td>
-<td>미운영</td>
+<td class="off">-</td>
+<td class="on">●</td>
+<td class="on">●</td>
+<td class="off">-</td>
 </tr>
 
 <tr>
 <td class="time">17:00 ~ 18:00</td>
-<td>미운영</td>
-<td>미운영</td>
-<td>운영</td>
-<td>미운영</td>
+<td class="off">-</td>
+<td class="off">-</td>
+<td class="on">●</td>
+<td class="off">-</td>
 </tr>
 
 <tr>
 <td class="time">18:00 ~ 19:00</td>
-<td colspan="4">전체 미운영</td>
+<td colspan="4" class="off">미운영</td>
 </tr>
 
 <tr>
 <td class="time">19:00 ~ 20:00</td>
-<td>운영</td>
-<td>미운영</td>
-<td>운영</td>
-<td>운영</td>
+<td class="on">●</td>
+<td class="off">-</td>
+<td class="on">●</td>
+<td class="on">●</td>
 </tr>
 
 <tr>
 <td class="time">20:00 ~ 21:00</td>
-<td>운영</td>
-<td>운영</td>
-<td>운영</td>
-<td>운영</td>
+<td class="on">●</td>
+<td class="on">●</td>
+<td class="on">●</td>
+<td class="on">●</td>
 </tr>
 </table>
+
+<div style="margin-top:15px; font-size:14px;">
+<span style="color:#16a085;">● 운영</span> &nbsp;&nbsp;
+<span style="color:#999;">- 미운영</span>
+</div>
 
 <div style="margin-top:20px;">
 <strong>휴관일</strong><br>
