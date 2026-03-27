@@ -157,42 +157,68 @@ font-size:24px;
 margin-bottom:8px;
 }
 
-/* 표 */
-table{
+/* ===== 운영시간 업그레이드 ===== */
+
+.schedule{
 width:100%;
-border-collapse:collapse;
-margin-top:15px;
+border-collapse:separate;
+border-spacing:0 8px;
 }
 
-th, td{
-border:1px solid #ccc;
-padding:12px;
+.schedule th{
+background:#16a085;
+color:white;
+padding:10px;
+border-radius:6px;
+}
+
+.schedule td{
 text-align:center;
-font-weight:bold;
+padding:10px;
+background:#fff;
 }
 
-th{
-background:#d6cde3;
-}
-
-/* 시간 */
 .time{
-background:#e0f2ec;
+font-weight:bold;
+background:#eef7f5 !important;
+border-radius:6px;
 }
 
-/* 상태 */
+/* 상태 뱃지 */
+.badge{
+padding:6px 10px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+display:inline-block;
+}
+
 .on{
+background:#d1f2eb;
 color:#16a085;
-font-size:20px;
 }
 
 .off{
-color:#bbb;
+background:#eee;
+color:#777;
 }
 
 .closed{
-background:#eee;
-font-weight:bold;
+background:#fdecea;
+color:#e74c3c;
+}
+
+.partial{
+background:#fff3cd;
+color:#d68910;
+}
+
+.info-box{
+margin-top:20px;
+background:#f8f9fa;
+padding:15px;
+border-radius:10px;
+line-height:1.8;
 }
 
 /* footer */
@@ -316,81 +342,73 @@ text-align:right;
 </div>
 </div>
 
-<!-- 운영시간 -->
+<!-- 운영시간 (진짜 업그레이드) -->
 <div class="card">
 <h3>⏰ 운영 시간 (3월 기준)</h3>
 
-<table>
+<table class="schedule">
 <tr>
 <th>시간</th>
-<th>화요일</th>
-<th>수요일</th>
-<th>목요일</th>
-<th>금요일</th>
+<th>화</th>
+<th>수</th>
+<th>목</th>
+<th>금</th>
 </tr>
 
 <tr>
-<td class="time">10:00 ~ 14:00</td>
-<td colspan="4" class="closed">휴관</td>
+<td class="time">10:00~14:00</td>
+<td colspan="4"><span class="badge closed">휴관</span></td>
 </tr>
 
 <tr>
-<td class="time">14:00 ~ 16:00</td>
-<td class="on">●</td>
-<td class="on">●</td>
-<td class="on">●</td>
-<td class="on">●<br><small>(1,3주)</small></td>
+<td class="time">14:00~16:00</td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge partial">부분 (1·3주)</span></td>
 </tr>
 
 <tr>
-<td class="time">16:00 ~ 17:00</td>
-<td class="off">-</td>
-<td class="on">●</td>
-<td class="on">●</td>
-<td class="off">-</td>
+<td class="time">16:00~17:00</td>
+<td><span class="badge off">미운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge off">미운영</span></td>
 </tr>
 
 <tr>
-<td class="time">17:00 ~ 18:00</td>
-<td class="off">-</td>
-<td class="off">-</td>
-<td class="on">●</td>
-<td class="off">-</td>
+<td class="time">17:00~18:00</td>
+<td><span class="badge off">미운영</span></td>
+<td><span class="badge off">미운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge off">미운영</span></td>
 </tr>
 
 <tr>
-<td class="time">18:00 ~ 19:00</td>
-<td colspan="4" class="off">미운영</td>
+<td class="time">18:00~19:00</td>
+<td colspan="4"><span class="badge off">전체 미운영</span></td>
 </tr>
 
 <tr>
-<td class="time">19:00 ~ 20:00</td>
-<td class="on">●</td>
-<td class="off">-</td>
-<td class="on">●</td>
-<td class="on">●</td>
+<td class="time">19:00~20:00</td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge off">미운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
 </tr>
 
 <tr>
-<td class="time">20:00 ~ 21:00</td>
-<td class="on">●</td>
-<td class="on">●</td>
-<td class="on">●</td>
-<td class="on">●</td>
+<td class="time">20:00~21:00</td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
 </tr>
 </table>
 
-<div style="margin-top:15px; font-size:14px;">
-<span style="color:#16a085;">● 운영</span> &nbsp;&nbsp;
-<span style="color:#999;">- 미운영</span>
-</div>
-
-<div style="margin-top:20px;">
-<strong>휴관일</strong><br>
-월요일 / 주말 / 공휴일<br><br>
-
-<strong>안내사항</strong><br>
-운영시간은 변경될 수 있습니다
+<div class="info-box">
+<div><strong>🚫 휴관일</strong> : 월요일 / 주말 / 공휴일</div>
+<div><strong>📌 안내</strong> : 운영시간은 변경될 수 있습니다</div>
 </div>
 
 </div>
