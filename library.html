@@ -157,12 +157,15 @@ font-size:24px;
 margin-bottom:8px;
 }
 
-/* ===== 운영시간 업그레이드 ===== */
+/* ===== 운영시간 ===== */
 
 .schedule{
 width:100%;
 border-collapse:separate;
 border-spacing:0 8px;
+border:1.5px solid #bbb;
+border-radius:10px;
+overflow:hidden;
 }
 
 .schedule th{
@@ -170,18 +173,19 @@ background:#16a085;
 color:white;
 padding:10px;
 border-radius:6px;
+border:1px solid #ccc;
 }
 
 .schedule td{
 text-align:center;
 padding:10px;
 background:#fff;
+border:1px solid #ddd;
 }
 
 .time{
 font-weight:bold;
 background:#eef7f5 !important;
-border-radius:6px;
 }
 
 /* 상태 뱃지 */
@@ -291,7 +295,6 @@ text-align:right;
 
 <div class="container">
 
-<!-- 도서관 소개 -->
 <div class="card">
 <h3>📖 도서관 소개</h3>
 <p>
@@ -300,13 +303,11 @@ text-align:right;
 </p>
 </div>
 
-<!-- 이용 대상 -->
 <div class="card">
 <h3>👥 이용 대상</h3>
 <p>아파트 입주민 누구나 이용 가능합니다.</p>
 </div>
 
-<!-- 도서 대출 -->
 <div class="card">
 <h3>📚 도서 대출 안내</h3>
 <div class="loan-box">
@@ -316,7 +317,6 @@ text-align:right;
 </div>
 </div>
 
-<!-- 시설 -->
 <div class="card">
 <h3>🏢 시설 안내</h3>
 <div class="facility">
@@ -342,7 +342,6 @@ text-align:right;
 </div>
 </div>
 
-<!-- 운영시간 (진짜 업그레이드) -->
 <div class="card">
 <h3>⏰ 운영 시간 (3월 기준)</h3>
 
