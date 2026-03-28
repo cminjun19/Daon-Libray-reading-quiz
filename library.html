@@ -157,38 +157,43 @@ font-size:24px;
 margin-bottom:8px;
 }
 
-/* ===== 운영시간 ===== */
+/* ===== 운영시간 (카드형 UI) ===== */
 
 .schedule{
 width:100%;
 border-collapse:separate;
-border-spacing:0 8px;
-border:1.5px solid #bbb;
-border-radius:10px;
-overflow:hidden;
+border-spacing:0 10px;
 }
 
+/* 헤더 */
 .schedule th{
 background:#16a085;
 color:white;
-padding:10px;
-border-radius:6px;
-border:1px solid #ccc;
+padding:12px;
+border:none;
 }
 
+/* 셀 */
 .schedule td{
-text-align:center;
-padding:10px;
+padding:12px;
 background:#fff;
-border:1px solid #ddd;
+border:none;
+text-align:center;
 }
 
+/* 시간 */
 .time{
 font-weight:bold;
 background:#eef7f5 !important;
+border-radius:8px 0 0 8px;
 }
 
-/* 상태 뱃지 */
+/* 행 카드 느낌 */
+.schedule tr{
+box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* 뱃지 */
 .badge{
 padding:6px 10px;
 border-radius:20px;
@@ -346,6 +351,7 @@ text-align:right;
 <h3>⏰ 운영 시간 (3월 기준)</h3>
 
 <table class="schedule">
+
 <tr>
 <th>시간</th>
 <th>화</th>
@@ -403,6 +409,7 @@ text-align:right;
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
 </tr>
+
 </table>
 
 <div class="info-box">
