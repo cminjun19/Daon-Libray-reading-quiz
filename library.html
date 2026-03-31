@@ -145,18 +145,6 @@ text-align:center;
 font-weight:bold;
 }
 
-.fac-box small{
-display:block;
-margin-top:5px;
-font-weight:normal;
-color:#666;
-}
-
-.icon{
-font-size:24px;
-margin-bottom:8px;
-}
-
 /* ===== 운영시간 ===== */
 
 .schedule{
@@ -197,27 +185,12 @@ font-weight:bold;
 display:inline-block;
 }
 
-.on{
-background:#d1f2eb;
-color:#16a085;
-}
+.on{ background:#d1f2eb; color:#16a085; }
+.off{ background:#eee; color:#777; }
+.closed{ background:#fdecea; color:#e74c3c; }
+.partial{ background:#fff3cd; color:#d68910; }
 
-.off{
-background:#eee;
-color:#777;
-}
-
-.closed{
-background:#fdecea;
-color:#e74c3c;
-}
-
-.partial{
-background:#fff3cd;
-color:#d68910;
-}
-
-/* ===== 안내 UI 업그레이드 ===== */
+/* ===== 진짜 업그레이드 (시각 UI) ===== */
 
 .info-grid{
 display:flex;
@@ -227,54 +200,50 @@ margin-top:20px;
 
 .info-card{
 flex:1;
-padding:18px;
-border-radius:12px;
-background:#f8f9fa;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
+padding:20px;
+border-radius:14px;
+background:#ffffff;
+box-shadow:0 6px 15px rgba(0,0,0,0.06);
 }
 
 .info-title{
 font-weight:bold;
+margin-bottom:15px;
+font-size:17px;
+}
+
+/* 태그형 (휴관일) */
+.tag-wrap{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.tag{
+padding:10px 16px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+}
+
+.tag.red{
+background:#fdecea;
+color:#e74c3c;
+}
+
+/* 알림형 (안내) */
+.alert{
+padding:14px;
+border-radius:10px;
+background:#fff3cd;
+font-size:14px;
+font-weight:bold;
 margin-bottom:12px;
-font-size:16px;
 }
 
-/* 리스트 */
-.info-list{
-list-style:none;
-padding:0;
-margin:0;
-}
-
-.info-list li{
-padding:10px 12px;
-margin-bottom:8px;
-background:#fff;
-border-radius:8px;
-font-size:14px;
-box-shadow:0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* 안내 박스 */
-.notice-box{
+.alert.light{
 background:#e8f8f5;
-padding:12px;
-border-radius:8px;
-margin-bottom:10px;
-font-size:14px;
-}
-
-.notice-box.light{
-background:#f4f6f7;
-}
-
-/* 색상 */
-.holiday{
-border-left:5px solid #e74c3c;
-}
-
-.notice{
-border-left:5px solid #16a085;
+color:#16a085;
 }
 
 /* footer */
@@ -373,23 +342,9 @@ text-align:right;
 <h3>🏢 시설 안내</h3>
 <div class="facility">
 
-<div class="fac-box">
-<div class="icon">📖</div>
-열람실
-<small>자유롭게 독서 가능</small>
-</div>
-
-<div class="fac-box">
-<div class="icon">🪑</div>
-독서실
-<small>조용한 학습 공간</small>
-</div>
-
-<div class="fac-box">
-<div class="icon">👨‍👩‍👧</div>
-세미나실
-<small>소규모 프로그램 진행</small>
-</div>
+<div class="fac-box">📖 열람실</div>
+<div class="fac-box">🪑 독서실</div>
+<div class="fac-box">👨‍👩‍👧 세미나실</div>
 
 </div>
 </div>
@@ -398,13 +353,8 @@ text-align:right;
 <h3>⏰ 운영 시간 (3월 기준)</h3>
 
 <table class="schedule">
-
 <tr>
-<th>시간</th>
-<th>화</th>
-<th>수</th>
-<th>목</th>
-<th>금</th>
+<th>시간</th><th>화</th><th>수</th><th>목</th><th>금</th>
 </tr>
 
 <tr>
@@ -417,7 +367,7 @@ text-align:right;
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
-<td><span class="badge partial">부분 (1·3주)</span></td>
+<td><span class="badge partial">부분</span></td>
 </tr>
 
 <tr>
@@ -438,51 +388,33 @@ text-align:right;
 
 <tr>
 <td class="time">18:00~19:00</td>
-<td colspan="4"><span class="badge off">전체 미운영</span></td>
+<td colspan="4"><span class="badge off">미운영</span></td>
 </tr>
 
 <tr>
-<td class="time">19:00~20:00</td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge off">미운영</span></td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge on">운영</span></td>
-</tr>
-
-<tr>
-<td class="time">20:00~21:00</td>
+<td class="time">19:00~21:00</td>
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
 </tr>
-
 </table>
 
 <div class="info-grid">
 
-<div class="info-card holiday">
+<div class="info-card">
 <div class="info-title">🚫 휴관일</div>
-
-<ul class="info-list">
-<li>월요일 정기 휴관</li>
-<li>주말 (토·일) 미운영</li>
-<li>공휴일 전체 휴관</li>
-</ul>
-
+<div class="tag-wrap">
+<span class="tag red">월요일</span>
+<span class="tag red">주말</span>
+<span class="tag red">공휴일</span>
+</div>
 </div>
 
-<div class="info-card notice">
+<div class="info-card">
 <div class="info-title">📌 이용 안내</div>
-
-<div class="notice-box">
-운영시간은 상황에 따라 변경될 수 있습니다.
-</div>
-
-<div class="notice-box light">
-방문 전 운영 여부를 확인해주세요.
-</div>
-
+<div class="alert">⚠️ 운영시간 변동 가능</div>
+<div class="alert light">✔ 방문 전 확인 권장</div>
 </div>
 
 </div>
@@ -499,7 +431,7 @@ text-align:right;
 </div>
 
 <div class="footer-center">
-다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55 지하 1층 커뮤니티센터 내
+다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55
 </div>
 
 <div class="footer-right">
