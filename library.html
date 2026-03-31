@@ -190,7 +190,7 @@ display:inline-block;
 .closed{ background:#fdecea; color:#e74c3c; }
 .partial{ background:#fff3cd; color:#d68910; }
 
-/* ===== 진짜 업그레이드 (시각 UI) ===== */
+/* ===== 안내 UI ===== */
 
 .info-grid{
 display:flex;
@@ -212,26 +212,37 @@ margin-bottom:15px;
 font-size:17px;
 }
 
-/* 태그형 (휴관일) */
-.tag-wrap{
+/* 휴관일 (업그레이드 핵심) */
+.holiday-list{
 display:flex;
-gap:10px;
-flex-wrap:wrap;
+flex-direction:column;
+gap:12px;
 }
 
-.tag{
-padding:10px 16px;
-border-radius:20px;
-font-size:13px;
+.holiday-item{
+display:flex;
+align-items:center;
+gap:12px;
+background:#f8f9fa;
+padding:12px;
+border-radius:10px;
+}
+
+.h-icon{
+font-size:22px;
+}
+
+.h-title{
 font-weight:bold;
+font-size:14px;
 }
 
-.tag.red{
-background:#fdecea;
-color:#e74c3c;
+.h-desc{
+font-size:12px;
+color:#777;
 }
 
-/* 알림형 (안내) */
+/* 안내 */
 .alert{
 padding:14px;
 border-radius:10px;
@@ -341,11 +352,9 @@ text-align:right;
 <div class="card">
 <h3>🏢 시설 안내</h3>
 <div class="facility">
-
 <div class="fac-box">📖 열람실</div>
 <div class="fac-box">🪑 독서실</div>
 <div class="fac-box">👨‍👩‍👧 세미나실</div>
-
 </div>
 </div>
 
@@ -404,11 +413,33 @@ text-align:right;
 
 <div class="info-card">
 <div class="info-title">🚫 휴관일</div>
-<div class="tag-wrap">
-<span class="tag red">월요일</span>
-<span class="tag red">주말</span>
-<span class="tag red">공휴일</span>
+
+<div class="holiday-list">
+<div class="holiday-item">
+<div class="h-icon">📅</div>
+<div>
+<div class="h-title">월요일</div>
+<div class="h-desc">정기 휴관일</div>
 </div>
+</div>
+
+<div class="holiday-item">
+<div class="h-icon">🏠</div>
+<div>
+<div class="h-title">주말</div>
+<div class="h-desc">토·일 미운영</div>
+</div>
+</div>
+
+<div class="holiday-item">
+<div class="h-icon">🎌</div>
+<div>
+<div class="h-title">공휴일</div>
+<div class="h-desc">전체 휴관</div>
+</div>
+</div>
+</div>
+
 </div>
 
 <div class="info-card">
