@@ -110,17 +110,16 @@ color:#16a085;
 }
 
 /* 이용 대상 */
-.user-single{
+.user-grid{
 display:flex;
-justify-content:center;
+gap:20px;
 margin-top:10px;
 }
 
-.user-box.main{
-width:100%;
-max-width:500px;
+.user-box{
+flex:1;
 background:#f8f9fa;
-padding:30px;
+padding:25px;
 border-radius:14px;
 text-align:center;
 box-shadow:0 4px 10px rgba(0,0,0,0.05);
@@ -386,13 +385,23 @@ text-align:right;
 
 <div class="card">
 <h3>👥 이용 대상</h3>
-<div class="user-single">
-<div class="user-box main">
+
+<div class="user-grid">
+
+<div class="user-box">
 <div class="u-icon">🏢</div>
 <div class="u-title">아파트 입주민</div>
 <div class="u-desc">에일린의뜰2차 아파트 입주민 누구나 자유롭게 이용 가능합니다.</div>
 </div>
+
+<div class="user-box">
+<div class="u-icon">📌</div>
+<div class="u-title">이용 방법</div>
+<div class="u-desc">도서관 방문 후 자유롭게 이용 가능합니다.</div>
 </div>
+
+</div>
+
 </div>
 
 <div class="card">
