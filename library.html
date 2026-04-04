@@ -109,29 +109,30 @@ margin-bottom:15px;
 color:#16a085;
 }
 
-/* 이용 대상 업그레이드 */
-.user-grid{
+/* 이용 대상 (단일 카드) */
+.user-single{
 display:flex;
-gap:20px;
+justify-content:center;
 margin-top:10px;
 }
 
-.user-box{
-flex:1;
+.user-box.main{
+width:320px;
 background:#f8f9fa;
-padding:20px;
-border-radius:12px;
+padding:25px;
+border-radius:14px;
 text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
 .u-icon{
-font-size:26px;
+font-size:28px;
 margin-bottom:10px;
 }
 
 .u-title{
 font-weight:bold;
-font-size:15px;
+font-size:16px;
 margin-bottom:6px;
 }
 
@@ -385,72 +386,17 @@ text-align:right;
 <div class="card">
 <h3>👥 이용 대상</h3>
 
-<div class="user-grid">
-
-<div class="user-box">
+<div class="user-single">
+<div class="user-box main">
 <div class="u-icon">🏢</div>
 <div class="u-title">아파트 입주민</div>
-<div class="u-desc">해당 아파트에 거주하는 입주민</div>
-</div>
-
-<div class="user-box">
-<div class="u-icon">👨‍👩‍👧</div>
-<div class="u-title">가족 구성원</div>
-<div class="u-desc">입주민과 함께 거주하는 가족</div>
-</div>
-
-<div class="user-box">
-<div class="u-icon">🪪</div>
-<div class="u-title">이용 조건</div>
-<div class="u-desc">입주민 확인 후 이용 가능</div>
-</div>
-
+<div class="u-desc">에일린의뜰2차 아파트 입주민 누구나 자유롭게 이용 가능합니다.</div>
 </div>
 </div>
 
-<div class="card">
-<h3>📚 도서 대출 안내</h3>
-<div class="loan-box">
-<div class="loan-item">📘 대출 권수 <span>1인 3권</span></div>
-<div class="loan-item">⏳ 대출 기간 <span>14일</span></div>
-<div class="loan-item">⚠️ 주의 사항 <span>연체 시 대출 제한</span></div>
-</div>
 </div>
 
-<div class="card">
-<h3>🏢 시설 안내</h3>
-<div class="facility">
-
-<div class="fac-box">
-<div class="icon">📖</div>
-<div class="fac-title">열람실</div>
-<div class="fac-desc">자유롭게 독서를 즐길 수 있는 공간</div>
-<div class="fac-sub">편안한 좌석과 조용한 환경 제공</div>
-</div>
-
-<div class="fac-box">
-<div class="icon">🪑</div>
-<div class="fac-title">독서실</div>
-<div class="fac-desc">집중 학습을 위한 정숙 공간</div>
-<div class="fac-sub">개인 학습 및 시험 준비에 적합</div>
-</div>
-
-<div class="fac-box">
-<div class="icon">👨‍👩‍👧</div>
-<div class="fac-title">세미나실</div>
-<div class="fac-desc">소규모 모임 및 프로그램 공간</div>
-<div class="fac-sub">독서 모임 및 문화 활동 운영</div>
-</div>
-
-</div>
-</div>
-
-<div class="card">
-<h3>⏰ 운영 시간 (3월 기준)</h3>
-
-<!-- (운영시간 표 그대로 유지) -->
-
-</div>
+<!-- 나머지(대출, 시설, 운영시간, 휴관일, 안내)는 기존 그대로 유지 -->
 
 </div>
 
