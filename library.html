@@ -5,342 +5,81 @@
 <title>도서관 안내 | 다온 작은도서관</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f5f7fb;
-}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;}
+header{background:white;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.top-bar{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:16px 50px;}
+.library a{display:flex;align-items:center;text-decoration:none;color:#000;font-size:32px;font-weight:bold;}
+.library img{width:40px;margin-right:10px;}
+.site-title{text-align:center;font-size:20px;font-weight:bold;}
+.auth{display:flex;justify-content:flex-end;}
+.auth a{display:flex;align-items:center;gap:6px;margin-left:18px;text-decoration:none;color:black;font-size:14px;font-weight:bold;}
+.auth img{width:16px;}
 
-/* 헤더 */
-header{
-background:white;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
+.menu{background:#f1f3f5;display:flex;justify-content:space-around;padding:16px 0;border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;}
+.menu a{display:flex;align-items:center;gap:8px;text-decoration:none;color:#000;font-weight:bold;}
+.menu img{width:20px;}
 
-.top-bar{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-align-items:center;
-padding:16px 50px;
-}
+.container{max-width:1000px;margin:50px auto;}
 
-.library a{
-display:flex;
-align-items:center;
-text-decoration:none;
-color:#000;
-font-size:32px;
-font-weight:bold;
-}
-
-.library img{
-width:40px;
-margin-right:10px;
-}
-
-.site-title{
-text-align:center;
-font-size:20px;
-font-weight:bold;
-}
-
-.auth{
-display:flex;
-justify-content:flex-end;
-align-items:center;
-}
-
-.auth a{
-text-decoration:none;
-color:black;
-font-size:14px;
-font-weight:bold;
-display:flex;
-align-items:center;
-gap:6px;
-margin-left:18px;
-}
-
-.auth img{
-width:16px;
-}
-
-/* 메뉴 */
-.menu{
-background:#f1f3f5;
-display:flex;
-justify-content:space-around;
-padding:16px 0;
-border-top:1px solid #e0e0e0;
-border-bottom:1px solid #e0e0e0;
-}
-
-.menu a{
-color:#000;
-text-decoration:none;
-font-weight:bold;
-font-size:16px;
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.menu img{
-width:20px;
-}
-
-/* 본문 */
-.container{
-max-width:1000px;
-margin:50px auto;
-}
-
-/* 카드 */
-.card{
-background:white;
-border-radius:12px;
-padding:30px;
-margin-bottom:25px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-.card h3{
-margin-bottom:15px;
-color:#16a085;
-}
+.card{background:white;border-radius:12px;padding:30px;margin-bottom:25px;box-shadow:0 8px 20px rgba(0,0,0,0.08);}
+.card h3{margin-bottom:15px;color:#16a085;}
 
 /* 이용 대상 */
-.user-grid{
-display:flex;
-gap:20px;
-margin-top:10px;
-}
-
-.user-box{
-flex:1;
-background:#f8f9fa;
-padding:25px;
-border-radius:14px;
-text-align:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
-
-.u-icon{
-font-size:28px;
-margin-bottom:10px;
-}
-
-.u-title{
-font-weight:bold;
-font-size:16px;
-margin-bottom:6px;
-}
-
-.u-desc{
-font-size:14px;
-color:#555;
-}
+.user-grid{display:flex;gap:20px;margin-top:10px;}
+.user-box{flex:1;background:#f8f9fa;padding:25px;border-radius:14px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.05);}
+.u-icon{font-size:28px;margin-bottom:10px;}
+.u-title{font-weight:bold;margin-bottom:6px;}
+.u-desc{font-size:14px;color:#555;}
 
 /* 대출 */
-.loan-box{
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.loan-item{
-background:#f8f9fa;
-padding:12px;
-border-radius:8px;
-display:flex;
-justify-content:space-between;
-font-weight:bold;
-}
-
-.loan-item span{
-color:#16a085;
-}
+.loan-box{display:flex;flex-direction:column;gap:10px;}
+.loan-item{background:#f8f9fa;padding:12px;border-radius:8px;display:flex;justify-content:space-between;font-weight:bold;}
+.loan-item span{color:#16a085;}
 
 /* 시설 */
-.facility{
-display:flex;
-gap:20px;
-margin-top:10px;
-}
-
-.fac-box{
-flex:1;
-background:#f8f9fa;
-padding:20px;
-border-radius:12px;
-text-align:center;
-}
-
-.icon{
-font-size:26px;
-margin-bottom:10px;
-}
-
-.fac-title{
-font-weight:bold;
-font-size:16px;
-margin-bottom:6px;
-}
-
-.fac-desc{
-font-size:14px;
-margin-bottom:6px;
-}
-
-.fac-sub{
-font-size:12px;
-color:#777;
-}
+.facility{display:flex;gap:20px;margin-top:10px;}
+.fac-box{flex:1;background:#f8f9fa;padding:20px;border-radius:12px;text-align:center;}
+.icon{font-size:26px;margin-bottom:8px;}
+.fac-title{font-weight:bold;margin-bottom:5px;}
+.fac-desc{font-size:14px;margin-bottom:5px;}
+.fac-sub{font-size:12px;color:#777;}
 
 /* 운영시간 */
-.schedule{
-width:100%;
-border-collapse:separate;
-border-spacing:10px 12px;
-}
-
-.schedule th{
-background:#16a085;
-color:white;
-padding:12px;
-border-radius:10px;
-}
-
-.schedule td{
-padding:12px;
-background:#fff;
-border-radius:10px;
-text-align:center;
-}
-
-.time{
-font-weight:bold;
-background:#eef7f5 !important;
-}
-
-.schedule tr{
-box-shadow:0 2px 6px rgba(0,0,0,0.05);
-}
+.schedule{width:100%;border-collapse:separate;border-spacing:10px 12px;}
+.schedule th{background:#16a085;color:white;padding:12px;border-radius:10px;}
+.schedule td{padding:12px;background:white;border-radius:10px;text-align:center;}
+.time{background:#eef7f5;font-weight:bold;}
+.schedule tr{box-shadow:0 2px 6px rgba(0,0,0,0.05);}
 
 /* 상태 */
-.badge{
-padding:6px 10px;
-border-radius:20px;
-font-size:13px;
-font-weight:bold;
-display:inline-block;
-}
+.badge{padding:6px 10px;border-radius:20px;font-size:13px;font-weight:bold;}
+.on{background:#d1f2eb;color:#16a085;}
+.off{background:#eee;color:#777;}
+.closed{background:#fdecea;color:#e74c3c;}
+.partial{background:#fff3cd;color:#d68910;}
 
-.on{ background:#d1f2eb; color:#16a085; }
-.off{ background:#eee; color:#777; }
-.closed{ background:#fdecea; color:#e74c3c; }
-.partial{ background:#fff3cd; color:#d68910; }
+/* 안내 */
+.info-grid{display:flex;gap:20px;margin-top:20px;}
+.info-card{flex:1;padding:20px;border-radius:14px;background:white;box-shadow:0 6px 15px rgba(0,0,0,0.06);}
+.info-title{font-weight:bold;margin-bottom:15px;}
 
-/* 안내 UI */
-.info-grid{
-display:flex;
-gap:20px;
-margin-top:20px;
-}
+.holiday-item{display:flex;gap:12px;background:#f8f9fa;padding:12px;border-radius:10px;margin-bottom:10px;}
+.h-icon{font-size:22px;}
+.h-title{font-weight:bold;}
+.h-desc{font-size:12px;color:#777;}
 
-.info-card{
-flex:1;
-padding:20px;
-border-radius:14px;
-background:#ffffff;
-box-shadow:0 6px 15px rgba(0,0,0,0.06);
-}
-
-.info-title{
-font-weight:bold;
-margin-bottom:15px;
-font-size:17px;
-}
-
-/* 휴관일 */
-.holiday-list{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.holiday-item{
-display:flex;
-align-items:center;
-gap:12px;
-background:#f8f9fa;
-padding:12px;
-border-radius:10px;
-}
-
-.h-icon{
-font-size:22px;
-}
-
-.h-title{
-font-weight:bold;
-font-size:14px;
-}
-
-.h-desc{
-font-size:12px;
-color:#777;
-}
-
-/* 이용 안내 */
-.alert{
-padding:14px;
-border-radius:10px;
-font-size:14px;
-font-weight:bold;
-margin-bottom:12px;
-}
-
-.alert.main{ background:#fff3cd; }
-.alert.sub{ background:#e8f8f5; color:#16a085; }
-.alert.gray{ background:#f4f6f7; color:#555; }
+.alert{padding:14px;border-radius:10px;margin-bottom:10px;font-weight:bold;}
+.alert.main{background:#fff3cd;}
+.alert.sub{background:#e8f8f5;color:#16a085;}
+.alert.gray{background:#f4f6f7;}
 
 /* footer */
-footer{
-background:#222;
-color:#ddd;
-padding:10px 40px;
-margin-top:50px;
-font-size:14px;
-}
-
-.footer{
-display:grid;
-grid-template-columns:1fr 2fr 1fr;
-align-items:center;
-}
-
-.logo-box{
-background:white;
-border-radius:10px;
-width:50px;
-height:50px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.logo-box img{
-width:36px;
-}
-
-.footer-center{
-text-align:center;
-}
-
-.footer-right{
-text-align:right;
-}
+footer{background:#222;color:#ddd;padding:10px 40px;margin-top:50px;}
+.footer{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;}
+.logo-box{background:white;border-radius:10px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;}
+.logo-box img{width:36px;}
+.footer-center{text-align:center;}
+.footer-right{text-align:right;}
 </style>
 </head>
 
@@ -348,21 +87,12 @@ text-align:right;
 
 <header>
 <div class="top-bar">
-
-<div class="library">
-<a href="index.html">
-<img src="아파트 도서관 로고.1.1.png">
-다온 작은도서관
-</a>
-</div>
-
+<div class="library"><a href="#"><img src="아파트 도서관 로고.1.1.png">다온 작은도서관</a></div>
 <div class="site-title">월간독서퀴즈</div>
-
 <div class="auth">
-<a href="login.html"><img src="로그인.png">로그인</a>
+<a href="#"><img src="로그인.png">로그인</a>
 <a href="#"><img src="회원가입.png">회원가입</a>
 </div>
-
 </div>
 
 <nav class="menu">
@@ -385,23 +115,18 @@ text-align:right;
 
 <div class="card">
 <h3>👥 이용 대상</h3>
-
 <div class="user-grid">
-
 <div class="user-box">
 <div class="u-icon">🏢</div>
 <div class="u-title">아파트 입주민</div>
 <div class="u-desc">에일린의뜰2차 아파트 입주민 누구나 자유롭게 이용 가능합니다.</div>
 </div>
-
 <div class="user-box">
 <div class="u-icon">📌</div>
 <div class="u-title">이용 방법</div>
 <div class="u-desc">도서관 방문 후 자유롭게 이용 가능합니다.</div>
 </div>
-
 </div>
-
 </div>
 
 <div class="card">
@@ -416,33 +141,29 @@ text-align:right;
 <div class="card">
 <h3>🏢 시설 안내</h3>
 <div class="facility">
-
 <div class="fac-box">
 <div class="icon">📖</div>
 <div class="fac-title">열람실</div>
 <div class="fac-desc">자유롭게 독서를 즐길 수 있는 공간</div>
 <div class="fac-sub">편안한 좌석과 조용한 환경 제공</div>
 </div>
-
 <div class="fac-box">
 <div class="icon">🪑</div>
 <div class="fac-title">독서실</div>
 <div class="fac-desc">집중 학습을 위한 정숙 공간</div>
-<div class="fac-sub">개인 학습 및 시험 준비에 적합</div>
+<div class="fac-sub">시험 준비 및 개인 학습 가능</div>
 </div>
-
 <div class="fac-box">
 <div class="icon">👨‍👩‍👧</div>
 <div class="fac-title">세미나실</div>
 <div class="fac-desc">소규모 모임 및 프로그램 공간</div>
 <div class="fac-sub">독서 모임 및 문화 활동 운영</div>
 </div>
-
 </div>
 </div>
 
 <div class="card">
-<h3>⏰ 운영 시간 (3월 기준)</h3>
+<h3>⏰ 운영 시간</h3>
 
 <table class="schedule">
 <tr>
@@ -450,68 +171,22 @@ text-align:right;
 </tr>
 
 <tr>
-<td class="time">10:00~14:00</td>
-<td colspan="4"><span class="badge closed">휴관</span></td>
+<td class="time">19:00~20:00</td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge off">미운영</span></td>
+<td><span class="badge on">운영</span></td>
+<td><span class="badge on">운영</span></td>
 </tr>
 
 <tr>
-<td class="time">14:00~16:00</td>
+<td class="time">20:00~21:00</td>
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
 <td><span class="badge on">운영</span></td>
-<td><span class="badge partial">부분</span></td>
+<td><span class="badge on">운영</span></td>
 </tr>
 
-<tr>
-<td class="time">16:00~17:00</td>
-<td><span class="badge off">미운영</span></td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge off">미운영</span></td>
-</tr>
-
-<tr>
-<td class="time">17:00~18:00</td>
-<td><span class="badge off">미운영</span></td>
-<td><span class="badge off">미운영</span></td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge off">미운영</span></td>
-</tr>
-
-<tr>
-<td class="time">18:00~19:00</td>
-<td colspan="4"><span class="badge off">미운영</span></td>
-</tr>
-
-<tr>
-<td class="time">19:00~21:00</td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge on">운영</span></td>
-<td><span class="badge on">운영</span></td>
-</tr>
 </table>
-
-<div class="info-grid">
-
-<div class="info-card">
-<div class="info-title">🚫 휴관일</div>
-<div class="holiday-list">
-<div class="holiday-item"><div class="h-icon">📅</div><div><div class="h-title">월요일</div><div class="h-desc">정기 휴관일</div></div></div>
-<div class="holiday-item"><div class="h-icon">🏠</div><div><div class="h-title">주말</div><div class="h-desc">토·일 미운영</div></div></div>
-<div class="holiday-item"><div class="h-icon">🏛️</div><div><div class="h-title">공휴일</div><div class="h-desc">전체 휴관</div></div></div>
-</div>
-</div>
-
-<div class="info-card">
-<div class="info-title">📌 이용 안내</div>
-<div class="alert main">⚠️ 운영시간 변동 가능</div>
-<div class="alert sub">✔ 방문 전 확인 권장</div>
-<div class="alert gray">📵 도서관 내 정숙 유지</div>
-<div class="alert sub">📚 도서 훼손 금지</div>
-</div>
-
-</div>
 
 </div>
 
@@ -520,8 +195,8 @@ text-align:right;
 <footer>
 <div class="footer">
 <div class="logo-box"><img src="아파트 도서관 로고.1.1.png"></div>
-<div class="footer-center">다온 작은도서관 | 울산광역시 울주군 청량읍 덕하1로 55</div>
-<div class="footer-right">© 2026 Daon Library</div>
+<div class="footer-center">다온 작은도서관</div>
+<div class="footer-right">© 2026</div>
 </div>
 </footer>
 
